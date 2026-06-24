@@ -1,0 +1,157 @@
+{
+  "name": "Pixel-Art",
+  "tags": [
+    "pixel-art"
+  ],
+  "prompt": "Pixel Art wallpapers featuring retro pixelated artwork, chunky sprites, and nostalgic 8-bit and 16-bit gaming aesthetics.",
+  "palette_weights": {
+    "Orange": 0.182239,
+    "Yellow": 0.153636,
+    "White": 0.026757,
+    "Green": 0.012345,
+    "Black": 0.289924,
+    "Teal-Cyan": 0.071181,
+    "Blue": 0.173414,
+    "Purple": 0.020471,
+    "Red": 0.017919,
+    "Pink-Magenta": 0.038354,
+    "Gray": 0.013761
+  },
+  "style": "drawing",
+  "palette": "purple-blue",
+  "mood": "dramatic",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:46:27",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.408123,
+        "std": 0.447998,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.047582,
+        "std": 0.077175,
+        "min": 0.0,
+        "max": 0.181274,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.265246,
+        "std": 0.352853,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.434749,
+        "std": 0.351013,
+        "min": 0.0,
+        "max": 0.994643,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.161362,
+        "std": 0.303006,
+        "min": 0.0,
+        "max": 0.990952,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.059478,
+        "std": 0.096469,
+        "min": 0.0,
+        "max": 0.226593,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.034116,
+        "std": 0.04869,
+        "min": 0.0,
+        "max": 0.13044,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.033738,
+        "std": 0.061239,
+        "min": 0.0,
+        "max": 0.179248,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 422.715636,
+        "std": 274.085745,
+        "min": 85.148361,
+        "max": 991.16748,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.578822,
+        "std": 0.208843,
+        "min": 0.316437,
+        "max": 0.89702,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.02518,
+        "std": 0.039976,
+        "min": 0.0,
+        "max": 0.08708,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 253.6,
+        "std": 4.64758,
+        "min": 241.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 60,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "Orange": 0.182239,
+      "Yellow": 0.153636,
+      "White": 0.026757,
+      "Green": 0.012345,
+      "Black": 0.289924,
+      "Teal-Cyan": 0.071181,
+      "Blue": 0.173414,
+      "Purple": 0.020471,
+      "Red": 0.017919,
+      "Pink-Magenta": 0.038354,
+      "Gray": 0.013761
+    },
+    "palette_for_config": {
+      "Orange": 0.182239,
+      "Yellow": 0.153636,
+      "White": 0.026757,
+      "Green": 0.012345,
+      "Black": 0.289924,
+      "Teal-Cyan": 0.071181,
+      "Blue": 0.173414,
+      "Purple": 0.020471,
+      "Red": 0.017919,
+      "Pink-Magenta": 0.038354,
+      "Gray": 0.013761
+    },
+    "category": "Pixel-Art"
+  }
+}

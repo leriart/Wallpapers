@@ -1,0 +1,154 @@
+{
+  "name": "NSFW",
+  "tags": [
+    "anime",
+    "black",
+    "portrait",
+    "sci-fi"
+  ],
+  "prompt": "NSFW style: A wallpaper deep blacks, vibrant pink hues. The composition is minimalist composition, centred composition. It evokes a sunset warmth.",
+  "palette_weights": {
+    "Purple": 0.149086,
+    "Pink-Magenta": 0.234779,
+    "Red": 0.173068,
+    "Blue": 0.043717,
+    "Orange": 0.040206,
+    "Yellow": 0.025811,
+    "Black": 0.333333
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.140368,
+        "std": 0.313514,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.029869,
+        "std": 0.073796,
+        "min": 0.0,
+        "max": 0.230973,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.151121,
+        "std": 0.310344,
+        "min": 0.0,
+        "max": 0.966903,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.151328,
+        "std": 0.292977,
+        "min": 0.0,
+        "max": 0.9101,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.018417,
+        "std": 0.042417,
+        "min": 0.0,
+        "max": 0.128319,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.071162,
+        "std": 0.103475,
+        "min": 0.0,
+        "max": 0.264535,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.012832,
+        "std": 0.040578,
+        "min": 0.0,
+        "max": 0.128319,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.028746,
+        "std": 0.065278,
+        "min": 0.0,
+        "max": 0.1952,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 1464.421245,
+        "std": 981.0352,
+        "min": 235.929611,
+        "max": 3224.882324,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.658653,
+        "std": 0.215607,
+        "min": 0.31119,
+        "max": 0.963356,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.068655,
+        "std": 0.136647,
+        "min": 0.0,
+        "max": 0.42045,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 223.6,
+        "std": 80.97901,
+        "min": 1.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 21,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "Blue": 0.179334,
+      "White": 0.315671,
+      "Gray": 0.110936,
+      "Black": 0.157294,
+      "Red": 0.069226,
+      "Orange": 0.047203,
+      "Yellow": 0.006415,
+      "Teal-Cyan": 0.038624,
+      "Purple": 0.049587,
+      "Pink-Magenta": 0.02571
+    },
+    "palette_for_config": {
+      "Blue": 0.179334,
+      "White": 0.315671,
+      "Gray": 0.110936,
+      "Black": 0.157294,
+      "Red": 0.069226,
+      "Orange": 0.047203,
+      "Yellow": 0.006415,
+      "Teal-Cyan": 0.038624,
+      "Purple": 0.049587,
+      "Pink-Magenta": 0.02571
+    },
+    "category": "NSFW"
+  },
+  "style": "anime",
+  "palette": "black",
+  "mood": "warm",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:44:55",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

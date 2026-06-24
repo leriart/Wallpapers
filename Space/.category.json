@@ -1,0 +1,157 @@
+{
+  "name": "Space",
+  "tags": [
+    "cosmos",
+    "galaxy",
+    "space",
+    "stars"
+  ],
+  "prompt": "Space wallpapers showcasing cosmic vistas, distant galaxies, celestial bodies, and the vastness of the universe.",
+  "palette_weights": {
+    "Black": 0.799031,
+    "Red": 0.004659,
+    "Gray": 0.075428,
+    "Pink-Magenta": 0.006619,
+    "Orange": 0.008429,
+    "Blue": 0.061186,
+    "Teal-Cyan": 0.012876,
+    "White": 0.012,
+    "Green": 0.002456,
+    "Purple": 0.017316
+  },
+  "style": "vector",
+  "palette": "dark",
+  "mood": "dramatic",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:47:06",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.000425,
+        "std": 0.001343,
+        "min": 0.0,
+        "max": 0.004248,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.000508,
+        "std": 0.001606,
+        "min": 0.0,
+        "max": 0.00508,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.756965,
+        "std": 0.245068,
+        "min": 0.387124,
+        "max": 1.0,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.025965,
+        "std": 0.067003,
+        "min": 0.0,
+        "max": 0.213053,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.000283,
+        "std": 0.000896,
+        "min": 0.0,
+        "max": 0.002832,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.02429,
+        "std": 0.042194,
+        "min": 0.0,
+        "max": 0.121372,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.000217,
+        "std": 0.000686,
+        "min": 0.0,
+        "max": 0.002168,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.005894,
+        "std": 0.018638,
+        "min": 0.0,
+        "max": 0.058938,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 824.37847,
+        "std": 844.153783,
+        "min": 172.116577,
+        "max": 3060.6521,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.569465,
+        "std": 0.154695,
+        "min": 0.352119,
+        "max": 0.8082,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.000217,
+        "std": 0.000686,
+        "min": 0.0,
+        "max": 0.002168,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 252.1,
+        "std": 8.799621,
+        "min": 228.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 65,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "Black": 0.799031,
+      "Red": 0.004659,
+      "Gray": 0.075428,
+      "Pink-Magenta": 0.006619,
+      "Orange": 0.008429,
+      "Blue": 0.061186,
+      "Teal-Cyan": 0.012876,
+      "White": 0.012,
+      "Green": 0.002456,
+      "Purple": 0.017316
+    },
+    "palette_for_config": {
+      "Black": 0.799031,
+      "Red": 0.004659,
+      "Gray": 0.075428,
+      "Pink-Magenta": 0.006619,
+      "Orange": 0.008429,
+      "Blue": 0.061186,
+      "Teal-Cyan": 0.012876,
+      "White": 0.012,
+      "Green": 0.002456,
+      "Purple": 0.017316
+    },
+    "category": "Space"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "name": "Minimalist",
+  "tags": [
+    "black",
+    "clean",
+    "minimalist",
+    "monochrome",
+    "sci-fi"
+  ],
+  "prompt": "Minimalist style: A wallpaper deep blacks, cool blue tones in a cosmic galaxy scene style. The composition is limited colour palette, sharp high-resolution detail. It evokes a moody dark atmosphere.",
+  "palette_weights": {
+    "White": 0.178894,
+    "Gray": 0.041663,
+    "Black": 0.445809,
+    "Blue": 0.12208,
+    "Red": 0.029348,
+    "Orange": 0.009472,
+    "Purple": 0.054039,
+    "Teal-Cyan": 0.075718,
+    "Pink-Magenta": 0.036441,
+    "Yellow": 0.006536
+  },
+  "style": "mixed",
+  "palette": "black",
+  "mood": "dramatic",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:44:17",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.0359,
+        "std": 0.059322,
+        "min": 0.0,
+        "max": 0.144079,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.021281,
+        "std": 0.052813,
+        "min": 0.0,
+        "max": 0.165514,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.280247,
+        "std": 0.315596,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.112689,
+        "std": 0.206946,
+        "min": 0.0,
+        "max": 0.502262,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.009605,
+        "std": 0.030375,
+        "min": 0.0,
+        "max": 0.096053,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.063691,
+        "std": 0.117006,
+        "min": 0.0,
+        "max": 0.372788,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.005912,
+        "std": 0.018694,
+        "min": 0.0,
+        "max": 0.059115,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.018609,
+        "std": 0.040465,
+        "min": 0.0,
+        "max": 0.114071,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.007202,
+        "std": 0.022776,
+        "min": 0.0,
+        "max": 0.072024,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 997.080373,
+        "std": 1334.375928,
+        "min": 109.296143,
+        "max": 4051.54248,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.59282,
+        "std": 0.113989,
+        "min": 0.393842,
+        "max": 0.77627,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.01166,
+        "std": 0.024882,
+        "min": 0.0,
+        "max": 0.066471,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 255.6,
+        "std": 0.699206,
+        "min": 254.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 103,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "White": 0.178894,
+      "Gray": 0.041663,
+      "Black": 0.445809,
+      "Blue": 0.12208,
+      "Red": 0.029348,
+      "Orange": 0.009472,
+      "Purple": 0.054039,
+      "Teal-Cyan": 0.075718,
+      "Pink-Magenta": 0.036441,
+      "Yellow": 0.006536
+    },
+    "palette_for_config": {
+      "White": 0.178894,
+      "Gray": 0.041663,
+      "Black": 0.445809,
+      "Blue": 0.12208,
+      "Red": 0.029348,
+      "Orange": 0.009472,
+      "Purple": 0.054039,
+      "Teal-Cyan": 0.075718,
+      "Pink-Magenta": 0.036441,
+      "Yellow": 0.006536
+    },
+    "category": "Minimalist"
+  }
+}

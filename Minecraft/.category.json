@@ -1,0 +1,566 @@
+{
+  "name": "Minecraft",
+  "tags": [
+    "black",
+    "game",
+    "minecraft",
+    "sci-fi",
+    "voxel"
+  ],
+  "prompt": "Minecraft style: A wallpaper deep blacks, cool blue tones. The composition is minimalist composition, limited colour palette. It evokes a moody dark atmosphere.",
+  "palette_weights": {
+    "Black": 0.378673,
+    "Blue": 0.225022,
+    "Purple": 0.054729,
+    "Pink-Magenta": 0.043817,
+    "Gray": 0.013618,
+    "Red": 0.075176,
+    "Orange": 0.163414,
+    "White": 0.000736,
+    "Yellow": 0.013552,
+    "Green": 0.031263
+  },
+  "heuristic_pattern": {
+    "features": {
+      "colorfulness": {
+        "mean": 0.261031,
+        "std": 0.194296,
+        "min": 0.026958,
+        "max": 0.681104,
+        "samples": 10
+      },
+      "hsv_S_mean": {
+        "mean": 110.176199,
+        "std": 31.828153,
+        "min": 76.52682,
+        "max": 178.976339,
+        "samples": 10
+      },
+      "hsv_S_std": {
+        "mean": 35.063873,
+        "std": 16.688095,
+        "min": 2.303552,
+        "max": 63.216278,
+        "samples": 10
+      },
+      "hsv_V_mean": {
+        "mean": 96.469066,
+        "std": 59.97974,
+        "min": 9.986109,
+        "max": 192.497713,
+        "samples": 10
+      },
+      "hsv_V_std": {
+        "mean": 37.728625,
+        "std": 22.289308,
+        "min": 6.707129,
+        "max": 67.741861,
+        "samples": 10
+      },
+      "lab_warm_bias": {
+        "mean": 127.050497,
+        "std": 9.019892,
+        "min": 107.303955,
+        "max": 140.252975,
+        "samples": 10
+      },
+      "lab_chroma_mean": {
+        "mean": 180.401704,
+        "std": 12.650763,
+        "min": 152.310272,
+        "max": 198.451614,
+        "samples": 10
+      },
+      "sat_low_fraction": {
+        "mean": 0.250435,
+        "std": 0.172682,
+        "min": 0.009712,
+        "max": 0.546591,
+        "samples": 10
+      },
+      "sat_high_fraction": {
+        "mean": 0.05591,
+        "std": 0.111624,
+        "min": 0.0,
+        "max": 0.366321,
+        "samples": 10
+      },
+      "sat_variance": {
+        "mean": 0.022762,
+        "std": 0.017675,
+        "min": 8.2e-05,
+        "max": 0.061458,
+        "samples": 10
+      },
+      "sat_bimodal": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "edge_density": {
+        "mean": 0.060516,
+        "std": 0.103875,
+        "min": 0.0,
+        "max": 0.322264,
+        "samples": 10
+      },
+      "mean_edge_magnitude": {
+        "mean": 51.866216,
+        "std": 48.22475,
+        "min": 4.855386,
+        "max": 133.678986,
+        "samples": 10
+      },
+      "texture_entropy": {
+        "mean": 2.723449,
+        "std": 1.183051,
+        "min": 0.565507,
+        "max": 3.901869,
+        "samples": 10
+      },
+      "texture_energy": {
+        "mean": 8784.476882,
+        "std": 8393.501079,
+        "min": 79.955864,
+        "max": 27120.762469,
+        "samples": 10
+      },
+      "texture_contrast": {
+        "mean": 110.912909,
+        "std": 192.386728,
+        "min": 0.605754,
+        "max": 627.209876,
+        "samples": 10
+      },
+      "silhouette_ratio": {
+        "mean": 0.442321,
+        "std": 0.234314,
+        "min": 0.206095,
+        "max": 0.955858,
+        "samples": 10
+      },
+      "hog_energy": {
+        "mean": 427.045972,
+        "std": 107.914182,
+        "min": 120.548248,
+        "max": 463.965118,
+        "samples": 10
+      },
+      "high_low_ratio": {
+        "mean": 36.016779,
+        "std": 5.582174,
+        "min": 28.159349,
+        "max": 47.558968,
+        "samples": 10
+      },
+      "anime_score": {
+        "mean": 0.194476,
+        "std": 0.340192,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.075777,
+        "std": 0.239628,
+        "min": 0.0,
+        "max": 0.75777,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.272891,
+        "std": 0.354606,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.392278,
+        "std": 0.343558,
+        "min": 0.0,
+        "max": 0.947212,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.068014,
+        "std": 0.146132,
+        "min": 0.0,
+        "max": 0.47208,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.094721,
+        "std": 0.299535,
+        "min": 0.0,
+        "max": 0.947212,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.078481,
+        "std": 0.161391,
+        "min": 0.0,
+        "max": 0.490708,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "tenengrad": {
+        "mean": 3142.338468,
+        "std": 3502.197616,
+        "min": 20.865217,
+        "max": 8664.799805,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 480.566093,
+        "std": 438.48701,
+        "min": 90.164902,
+        "max": 1327.533691,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.521889,
+        "std": 0.138073,
+        "min": 0.332567,
+        "max": 0.699154,
+        "samples": 10
+      },
+      "noise_estimate": {
+        "mean": 12.008896,
+        "std": 32.289014,
+        "min": 0.0,
+        "max": 103.780579,
+        "samples": 10
+      },
+      "bris_quality_score": {
+        "mean": 0.331445,
+        "std": 0.441247,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "dct_low_energy": {
+        "mean": 0.194008,
+        "std": 0.098373,
+        "min": 0.084919,
+        "max": 0.394537,
+        "samples": 10
+      },
+      "dct_high_energy": {
+        "mean": 0.805992,
+        "std": 0.098373,
+        "min": 0.605463,
+        "max": 0.915081,
+        "samples": 10
+      },
+      "centeredness": {
+        "mean": 0.745294,
+        "std": 0.115734,
+        "min": 0.507085,
+        "max": 0.969046,
+        "samples": 10
+      },
+      "thirds_score": {
+        "mean": 0.040137,
+        "std": 0.008694,
+        "min": 0.024278,
+        "max": 0.059253,
+        "samples": 10
+      },
+      "diagonal_strength": {
+        "mean": 0.11531,
+        "std": 0.036605,
+        "min": 0.065445,
+        "max": 0.165497,
+        "samples": 10
+      },
+      "depth_score": {
+        "mean": 0.336902,
+        "std": 0.390904,
+        "min": 0.005027,
+        "max": 1.0,
+        "samples": 10
+      },
+      "depth_gradient": {
+        "mean": 0.245682,
+        "std": 0.185706,
+        "min": 0.009394,
+        "max": 0.606169,
+        "samples": 10
+      },
+      "saliency_concentration": {
+        "mean": 0.245462,
+        "std": 0.091459,
+        "min": 0.16323,
+        "max": 0.474811,
+        "samples": 10
+      },
+      "subject_area_ratio": {
+        "mean": 0.383307,
+        "std": 0.281558,
+        "min": 0.062018,
+        "max": 0.998554,
+        "samples": 10
+      },
+      "fg_bg_contrast": {
+        "mean": 111.119494,
+        "std": 71.805042,
+        "min": 19.687117,
+        "max": 238.365891,
+        "samples": 10
+      },
+      "periodicity_score": {
+        "mean": 0.088473,
+        "std": 0.160978,
+        "min": 0.0,
+        "max": 0.478523,
+        "samples": 10
+      },
+      "tile_similarity": {
+        "mean": -0.022727,
+        "std": 0.180196,
+        "min": -0.273178,
+        "max": 0.374318,
+        "samples": 10
+      },
+      "texture_complexity": {
+        "mean": 0.317354,
+        "std": 0.152919,
+        "min": 0.108759,
+        "max": 0.538073,
+        "samples": 10
+      },
+      "gradient_complexity": {
+        "mean": 0.570321,
+        "std": 0.477071,
+        "min": 0.013135,
+        "max": 1.0,
+        "samples": 10
+      },
+      "local_variance": {
+        "mean": 180.2118,
+        "std": 186.478333,
+        "min": 1.077042,
+        "max": 449.189209,
+        "samples": 10
+      },
+      "entropy": {
+        "mean": 5.690672,
+        "std": 2.14925,
+        "min": 1.051546,
+        "max": 7.61231,
+        "samples": 10
+      },
+      "h_symmetry": {
+        "mean": 0.432329,
+        "std": 0.304587,
+        "min": 0.103883,
+        "max": 0.942813,
+        "samples": 10
+      },
+      "v_symmetry": {
+        "mean": 0.321184,
+        "std": 0.259569,
+        "min": 0.0,
+        "max": 0.813101,
+        "samples": 10
+      },
+      "point_symmetry": {
+        "mean": 0.019232,
+        "std": 0.051034,
+        "min": 0.0,
+        "max": 0.161906,
+        "samples": 10
+      },
+      "main_diagonal_symmetry": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "anti_diagonal_symmetry": {
+        "mean": 0.019232,
+        "std": 0.051034,
+        "min": 0.0,
+        "max": 0.161906,
+        "samples": 10
+      },
+      "overall_symmetry": {
+        "mean": 0.508512,
+        "std": 0.294385,
+        "min": 0.103883,
+        "max": 0.942813,
+        "samples": 10
+      },
+      "minecraft_score": {
+        "mean": 0.015089,
+        "std": 0.047716,
+        "min": 0.0,
+        "max": 0.150892,
+        "samples": 10
+      },
+      "pixel_art_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "minimalist_score": {
+        "mean": 0.035,
+        "std": 0.024152,
+        "min": 0.0,
+        "max": 0.05,
+        "samples": 10
+      },
+      "portrait_score": {
+        "mean": 0.092868,
+        "std": 0.149774,
+        "min": 0.0,
+        "max": 0.32,
+        "samples": 10
+      },
+      "nsfw_score": {
+        "mean": 0.25851,
+        "std": 0.431286,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "gradient_score": {
+        "mean": 0.1125,
+        "std": 0.039528,
+        "min": 0.0,
+        "max": 0.125,
+        "samples": 10
+      },
+      "theme_catppuccin_score": {
+        "mean": 0.332243,
+        "std": 0.112172,
+        "min": 0.140553,
+        "max": 0.523874,
+        "samples": 10
+      },
+      "theme_dracula_score": {
+        "mean": 0.469538,
+        "std": 0.293442,
+        "min": 0.104762,
+        "max": 0.866025,
+        "samples": 10
+      },
+      "theme_tokyonight_score": {
+        "mean": 0.445309,
+        "std": 0.180917,
+        "min": 0.200758,
+        "max": 0.766723,
+        "samples": 10
+      },
+      "theme_nord_score": {
+        "mean": 0.27833,
+        "std": 0.214158,
+        "min": 0.043105,
+        "max": 0.655603,
+        "samples": 10
+      },
+      "theme_gruvbox_score": {
+        "mean": 0.29877,
+        "std": 0.276892,
+        "min": 0.001221,
+        "max": 0.696033,
+        "samples": 10
+      },
+      "theme_everforest_score": {
+        "mean": 0.194429,
+        "std": 0.201398,
+        "min": 0.001157,
+        "max": 0.667838,
+        "samples": 10
+      },
+      "theme_monochrome_score": {
+        "mean": 0.339392,
+        "std": 0.262348,
+        "min": 0.0,
+        "max": 0.685994,
+        "samples": 10
+      },
+      "theme_neon_score": {
+        "mean": 0.271064,
+        "std": 0.115584,
+        "min": 0.120884,
+        "max": 0.511138,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.120025,
+        "std": 0.210275,
+        "min": 0.0,
+        "max": 0.577067,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 251.0,
+        "std": 12.692955,
+        "min": 216.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 19,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "full",
+    "palette_avg": {
+      "Teal-Cyan": 0.168606,
+      "Blue": 0.179821,
+      "Red": 0.034963,
+      "Black": 0.3492,
+      "Orange": 0.131481,
+      "Pink-Magenta": 0.005765,
+      "Green": 0.06548,
+      "Gray": 0.031876,
+      "White": 0.013717,
+      "Purple": 0.01279,
+      "Yellow": 0.006301
+    },
+    "palette_for_config": {
+      "Teal-Cyan": 0.168606,
+      "Blue": 0.179821,
+      "Red": 0.034963,
+      "Black": 0.3492,
+      "Orange": 0.131481,
+      "Pink-Magenta": 0.005765,
+      "Green": 0.06548,
+      "Gray": 0.031876,
+      "White": 0.013717,
+      "Purple": 0.01279,
+      "Yellow": 0.006301
+    },
+    "category": "Minecraft"
+  },
+  "style": "mixed",
+  "palette": "black",
+  "mood": "dark",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:43:57",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

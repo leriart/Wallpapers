@@ -1,0 +1,147 @@
+{
+  "name": "Monochrome",
+  "tags": [
+    "black",
+    "black-and-white",
+    "grayscale",
+    "monochrome",
+    "sci-fi"
+  ],
+  "prompt": "Monochrome style: A wallpaper deep blacks, neutral grays in a cosmic galaxy scene style. The composition is minimalist composition, centred composition. It evokes a moody dark atmosphere.",
+  "palette_weights": {
+    "Gray": 0.354351,
+    "Black": 0.634477,
+    "White": 0.011173
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.215442,
+        "std": 0.41398,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.183178,
+        "std": 0.243153,
+        "min": 0.0,
+        "max": 0.689292,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.014462,
+        "std": 0.034501,
+        "min": 0.0,
+        "max": 0.106567,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.059563,
+        "std": 0.109385,
+        "min": 0.0,
+        "max": 0.268769,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 640.262839,
+        "std": 480.57212,
+        "min": 132.823166,
+        "max": 1443.51709,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.575735,
+        "std": 0.144388,
+        "min": 0.428824,
+        "max": 0.86175,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.003805,
+        "std": 0.012033,
+        "min": 0.0,
+        "max": 0.038053,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 255.9,
+        "std": 0.316228,
+        "min": 255.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 27,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "White": 0.282941,
+      "Pink-Magenta": 0.00962,
+      "Blue": 0.016739,
+      "Gray": 0.279271,
+      "Black": 0.226746,
+      "Red": 0.011487,
+      "Yellow": 0.044289,
+      "Teal-Cyan": 0.128907
+    },
+    "palette_for_config": {
+      "White": 0.282941,
+      "Pink-Magenta": 0.00962,
+      "Blue": 0.016739,
+      "Gray": 0.279271,
+      "Black": 0.226746,
+      "Red": 0.011487,
+      "Yellow": 0.044289,
+      "Teal-Cyan": 0.128907
+    },
+    "category": "Monochrome"
+  },
+  "style": "mixed",
+  "palette": "monochrome",
+  "mood": "dark",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:44:36",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

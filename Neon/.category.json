@@ -1,0 +1,147 @@
+{
+  "name": "Neon",
+  "tags": [
+    "futuristic",
+    "purple"
+  ],
+  "prompt": "Neon style: A wallpaper rich purple tones, cool blue tones. The composition is centred composition, limited colour palette. It evokes a nighttime calm.",
+  "palette_weights": {
+    "Black": 0.104115,
+    "Blue": 0.311726,
+    "Pink-Magenta": 0.239558,
+    "Purple": 0.344602
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.232239,
+        "std": 0.312111,
+        "min": 0.0,
+        "max": 0.77615,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.058919,
+        "std": 0.135177,
+        "min": 0.0,
+        "max": 0.439796,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.144755,
+        "std": 0.194905,
+        "min": 0.0,
+        "max": 0.452876,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.162386,
+        "std": 0.217826,
+        "min": 0.0,
+        "max": 0.598319,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.026403,
+        "std": 0.078496,
+        "min": 0.0,
+        "max": 0.249425,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.224392,
+        "std": 0.281338,
+        "min": 0.0,
+        "max": 0.857434,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.040296,
+        "std": 0.073709,
+        "min": 0.0,
+        "max": 0.237965,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.009056,
+        "std": 0.025762,
+        "min": 0.0,
+        "max": 0.081972,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.008947,
+        "std": 0.02542,
+        "min": 0.0,
+        "max": 0.080885,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 794.971658,
+        "std": 609.419922,
+        "min": 167.112976,
+        "max": 1823.087769,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.572314,
+        "std": 0.13744,
+        "min": 0.363526,
+        "max": 0.869658,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.001403,
+        "std": 0.004436,
+        "min": 0.0,
+        "max": 0.014027,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 255.9,
+        "std": 0.316228,
+        "min": 255.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 15,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "Black": 0.236872,
+      "Orange": 0.012164,
+      "Purple": 0.314185,
+      "Pink-Magenta": 0.062454,
+      "Blue": 0.184778,
+      "Teal-Cyan": 0.090281,
+      "Gray": 0.007665,
+      "White": 0.015368,
+      "Red": 0.076233
+    },
+    "palette_for_config": {
+      "Black": 0.236872,
+      "Orange": 0.012164,
+      "Purple": 0.314185,
+      "Pink-Magenta": 0.062454,
+      "Blue": 0.184778,
+      "Teal-Cyan": 0.090281,
+      "Gray": 0.007665,
+      "White": 0.015368,
+      "Red": 0.076233
+    },
+    "category": "Neon"
+  },
+  "style": "mixed",
+  "palette": "purple",
+  "mood": "cool",
+  "samples_analysed": 3,
+  "regenerated_at": "2026-06-22T19:45:29",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

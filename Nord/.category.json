@@ -1,0 +1,151 @@
+{
+  "name": "Nord",
+  "tags": [
+    "blue",
+    "minimalist",
+    "nord"
+  ],
+  "prompt": "Nord style: A wallpaper cool blue tones, clean whites. The composition is centred composition, limited colour palette. It evokes a nighttime calm.",
+  "palette_weights": {
+    "Blue": 0.722499,
+    "Gray": 0.044795,
+    "White": 0.123147,
+    "Black": 0.061749,
+    "Purple": 0.013567,
+    "Red": 0.031278,
+    "Pink-Magenta": 0.002965
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.165069,
+        "std": 0.329511,
+        "min": 0.0,
+        "max": 0.98764,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.012823,
+        "std": 0.031227,
+        "min": 0.0,
+        "max": 0.097274,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.061555,
+        "std": 0.081063,
+        "min": 0.0,
+        "max": 0.251071,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.106912,
+        "std": 0.168663,
+        "min": 0.0,
+        "max": 0.566667,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 653.201424,
+        "std": 515.113763,
+        "min": 187.341599,
+        "max": 1482.554199,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.691187,
+        "std": 0.129035,
+        "min": 0.45933,
+        "max": 0.93779,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.011104,
+        "std": 0.035114,
+        "min": 0.0,
+        "max": 0.11104,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 255.8,
+        "std": 0.421637,
+        "min": 255.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 32,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "White": 0.088662,
+      "Blue": 0.567737,
+      "Purple": 0.078708,
+      "Pink-Magenta": 0.054962,
+      "Red": 0.056894,
+      "Orange": 0.026747,
+      "Teal-Cyan": 0.025344,
+      "Gray": 0.068889,
+      "Black": 0.032058
+    },
+    "palette_for_config": {
+      "White": 0.088662,
+      "Blue": 0.567737,
+      "Purple": 0.078708,
+      "Pink-Magenta": 0.054962,
+      "Red": 0.056894,
+      "Orange": 0.026747,
+      "Teal-Cyan": 0.025344,
+      "Gray": 0.068889,
+      "Black": 0.032058
+    },
+    "category": "Nord"
+  },
+  "style": "mixed",
+  "palette": "blue",
+  "mood": "cool",
+  "samples_analysed": 5,
+  "regenerated_at": "2026-06-22T19:45:48",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

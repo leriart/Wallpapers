@@ -1,0 +1,146 @@
+{
+  "name": "Tokyonight",
+  "tags": [
+    "blue",
+    "night",
+    "sci-fi",
+    "tokyo-night"
+  ],
+  "prompt": "Tokyonight style: A wallpaper cool blue tones, deep blacks in a cosmic galaxy scene style. The composition is centred composition, limited colour palette. It evokes a nighttime calm.",
+  "palette_weights": {
+    "Blue": 0.616084,
+    "Red": 0.031593,
+    "Black": 0.352323
+  },
+  "heuristic_pattern": {
+    "features": {
+      "anime_score": {
+        "mean": 0.246421,
+        "std": 0.344499,
+        "min": 0.0,
+        "max": 1.0,
+        "samples": 10
+      },
+      "cyberpunk_score": {
+        "mean": 0.013906,
+        "std": 0.031279,
+        "min": 0.0,
+        "max": 0.092668,
+        "samples": 10
+      },
+      "space_score": {
+        "mean": 0.293772,
+        "std": 0.390458,
+        "min": 0.0,
+        "max": 0.998761,
+        "samples": 10
+      },
+      "nature_score": {
+        "mean": 0.057978,
+        "std": 0.144963,
+        "min": 0.0,
+        "max": 0.455223,
+        "samples": 10
+      },
+      "neon_score": {
+        "mean": 0.006232,
+        "std": 0.019708,
+        "min": 0.0,
+        "max": 0.062321,
+        "samples": 10
+      },
+      "pastel_score": {
+        "mean": 0.135679,
+        "std": 0.269336,
+        "min": 0.0,
+        "max": 0.840596,
+        "samples": 10
+      },
+      "vw_score": {
+        "mean": 0.005799,
+        "std": 0.018337,
+        "min": 0.0,
+        "max": 0.057987,
+        "samples": 10
+      },
+      "sepia_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "vintage_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "samples": 10
+      },
+      "sharpness": {
+        "mean": 634.599916,
+        "std": 363.036493,
+        "min": 211.246689,
+        "max": 1250.228394,
+        "samples": 10
+      },
+      "aesthetic": {
+        "mean": 0.661104,
+        "std": 0.087009,
+        "min": 0.525374,
+        "max": 0.79152,
+        "samples": 10
+      },
+      "skin_fraction": {
+        "mean": 0.008746,
+        "std": 0.027656,
+        "min": 0.0,
+        "max": 0.087455,
+        "samples": 10
+      },
+      "unique_colors": {
+        "mean": 255.5,
+        "std": 0.849837,
+        "min": 254.0,
+        "max": 256.0,
+        "samples": 10
+      }
+    },
+    "total_samples": 41,
+    "used_samples": 10,
+    "sample_size": 10,
+    "sampling": "stratified",
+    "extractor": "fast",
+    "palette_avg": {
+      "Blue": 0.41725,
+      "Black": 0.310792,
+      "Purple": 0.15359,
+      "Pink-Magenta": 0.016289,
+      "Gray": 0.035103,
+      "Green": 0.012456,
+      "Orange": 0.045522,
+      "Red": 0.008997
+    },
+    "palette_for_config": {
+      "Blue": 0.41725,
+      "Black": 0.310792,
+      "Purple": 0.15359,
+      "Pink-Magenta": 0.016289,
+      "Gray": 0.035103,
+      "Green": 0.012456,
+      "Orange": 0.045522,
+      "Red": 0.008997
+    },
+    "category": "Tokyonight"
+  },
+  "style": "mixed",
+  "palette": "blue",
+  "mood": "cool",
+  "samples_analysed": 3,
+  "regenerated_at": "2026-06-22T19:47:39",
+  "regenerated_with": {
+    "vision_model": "llava-phi3:3.8b",
+    "text_model": "qwen2.5:3b",
+    "tag_policies": true
+  }
+}

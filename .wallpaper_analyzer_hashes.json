@@ -1,6 +1,6 @@
 {
-  "/tmp/pytest-of-lerit/pytest-39/test_perceptual_groups_same_ca0/Anime/img.jpg": {
-    "sig": "1302-1782353867",
+  "/tmp/pytest-of-lerit/pytest-11/test_perceptual_groups_same_ca0/Anime/img.jpg": {
+    "sig": "1302-1782367264",
     "size_bytes": 1302,
     "size": [
       200,
@@ -40,8 +40,8 @@
       }
     ]
   },
-  "/tmp/pytest-of-lerit/pytest-39/test_perceptual_groups_same_ca0/Nature/img.jpg": {
-    "sig": "1302-1782353867",
+  "/tmp/pytest-of-lerit/pytest-11/test_perceptual_groups_same_ca0/Nature/img.jpg": {
+    "sig": "1302-1782367264",
     "size_bytes": 1302,
     "size": [
       200,

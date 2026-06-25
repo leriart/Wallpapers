@@ -16,73 +16,73 @@
   "heuristic_pattern": {
     "features": {
       "colorfulness": {
-        "mean": 0.009577,
-        "std": 0.019515,
+        "mean": 0.01332,
+        "std": 0.026136,
         "min": 0.0,
-        "max": 0.06193,
+        "max": 0.063722,
         "samples": 10
       },
       "hsv_S_mean": {
-        "mean": 0.170474,
-        "std": 0.313736,
+        "mean": 3.576707,
+        "std": 10.956533,
         "min": 0.0,
-        "max": 0.915028,
+        "max": 34.749068,
         "samples": 10
       },
       "hsv_S_std": {
-        "mean": 3.30033,
-        "std": 5.243227,
+        "mean": 7.962039,
+        "std": 18.962082,
         "min": 0.0,
-        "max": 15.126655,
+        "max": 60.281612,
         "samples": 10
       },
       "hsv_V_mean": {
-        "mean": 61.551968,
-        "std": 65.347739,
+        "mean": 72.832995,
+        "std": 77.0331,
         "min": 7.547905,
-        "max": 212.958802,
+        "max": 237.124387,
         "samples": 10
       },
       "hsv_V_std": {
-        "mean": 32.876098,
-        "std": 32.150217,
+        "mean": 33.304677,
+        "std": 27.688601,
         "min": 7.164148,
-        "max": 99.417073,
+        "max": 80.400314,
         "samples": 10
       },
       "lab_warm_bias": {
-        "mean": 128.010864,
-        "std": 0.020974,
+        "mean": 128.135883,
+        "std": 0.41516,
         "min": 127.996674,
-        "max": 128.055557,
+        "max": 129.316788,
         "samples": 10
       },
       "lab_chroma_mean": {
-        "mean": 181.045425,
-        "std": 0.05585,
+        "mean": 181.224113,
+        "std": 0.591657,
         "min": 181.014786,
-        "max": 181.187561,
+        "max": 182.90123,
         "samples": 10
       },
       "sat_low_fraction": {
-        "mean": 0.999283,
-        "std": 0.001313,
-        "min": 0.996354,
+        "mean": 0.985305,
+        "std": 0.0451,
+        "min": 0.856989,
         "max": 1.0,
         "samples": 10
       },
       "sat_high_fraction": {
-        "mean": 0.000532,
-        "std": 0.001214,
+        "mean": 0.005846,
+        "std": 0.017245,
         "min": 0.0,
-        "max": 0.003646,
+        "max": 0.054817,
         "samples": 10
       },
       "sat_variance": {
-        "mean": 0.000548,
-        "std": 0.001169,
+        "mean": 0.005952,
+        "std": 0.017579,
         "min": 0.0,
-        "max": 0.003519,
+        "max": 0.055884,
         "samples": 10
       },
       "sat_bimodal": {
@@ -93,59 +93,59 @@
         "samples": 10
       },
       "edge_density": {
-        "mean": 0.033064,
-        "std": 0.040849,
+        "mean": 0.054425,
+        "std": 0.058874,
         "min": 0.0,
-        "max": 0.121035,
+        "max": 0.186575,
         "samples": 10
       },
       "mean_edge_magnitude": {
-        "mean": 56.298988,
-        "std": 53.54073,
+        "mean": 110.376974,
+        "std": 193.439528,
         "min": 15.981301,
-        "max": 196.332047,
+        "max": 652.986755,
         "samples": 10
       },
       "texture_entropy": {
-        "mean": 1.534746,
-        "std": 0.773032,
-        "min": 0.591171,
-        "max": 3.117465,
+        "mean": 1.815643,
+        "std": 1.099299,
+        "min": 0.541084,
+        "max": 3.404119,
         "samples": 10
       },
       "texture_energy": {
-        "mean": 9617.317516,
-        "std": 17145.065474,
+        "mean": 12330.345582,
+        "std": 20447.110669,
         "min": 108.295882,
-        "max": 50964.839779,
+        "max": 60012.719211,
         "samples": 10
       },
       "texture_contrast": {
-        "mean": 316.133205,
-        "std": 905.728503,
-        "min": 3.933779,
-        "max": 2891.730491,
+        "mean": 242.36035,
+        "std": 516.804698,
+        "min": 5.559383,
+        "max": 1634.331168,
         "samples": 10
       },
       "silhouette_ratio": {
-        "mean": 0.291935,
-        "std": 0.255357,
-        "min": 0.061436,
-        "max": 0.824085,
+        "mean": 0.416096,
+        "std": 0.300721,
+        "min": 0.066624,
+        "max": 0.926786,
         "samples": 10
       },
       "hog_energy": {
-        "mean": 323.778824,
-        "std": 122.895556,
-        "min": 138.410324,
-        "max": 463.860657,
+        "mean": 379.101036,
+        "std": 111.831535,
+        "min": 173.765961,
+        "max": 463.905945,
         "samples": 10
       },
       "high_low_ratio": {
-        "mean": 32.391026,
-        "std": 4.27212,
-        "min": 22.239252,
-        "max": 37.706699,
+        "mean": 31.411413,
+        "std": 5.523935,
+        "min": 20.994719,
+        "max": 38.237873,
         "samples": 10
       },
       "anime_score": {
@@ -163,9 +163,9 @@
         "samples": 10
       },
       "space_score": {
-        "mean": 0.600912,
-        "std": 0.353185,
-        "min": 0.06156,
+        "mean": 0.540265,
+        "std": 0.360448,
+        "min": 0.0,
         "max": 1.0,
         "samples": 10
       },
@@ -212,171 +212,171 @@
         "samples": 10
       },
       "tenengrad": {
-        "mean": 3090.310648,
-        "std": 6407.09228,
-        "min": 167.438141,
-        "max": 21061.330078,
+        "mean": 10237.591345,
+        "std": 22597.428876,
+        "min": 221.708984,
+        "max": 72705.59375,
         "samples": 10
       },
       "sharpness": {
-        "mean": 454.303408,
-        "std": 421.755453,
-        "min": 112.300835,
-        "max": 1299.071899,
+        "mean": 915.15358,
+        "std": 1043.48951,
+        "min": 153.605316,
+        "max": 2954.33252,
         "samples": 10
       },
       "aesthetic": {
-        "mean": 0.481778,
-        "std": 0.203019,
+        "mean": 0.50018,
+        "std": 0.183898,
         "min": 0.272917,
-        "max": 0.928307,
+        "max": 0.883416,
         "samples": 10
       },
       "noise_estimate": {
-        "mean": 0.593032,
-        "std": 1.250221,
+        "mean": 3.261675,
+        "std": 7.807628,
         "min": 0.0,
-        "max": 2.965159,
+        "max": 25.203856,
         "samples": 10
       },
       "bris_quality_score": {
-        "mean": 0.355741,
-        "std": 0.467793,
+        "mean": 0.453747,
+        "std": 0.481123,
         "min": 0.0,
         "max": 1.0,
         "samples": 10
       },
       "dct_low_energy": {
-        "mean": 0.153147,
-        "std": 0.042997,
-        "min": 0.056038,
-        "max": 0.213964,
+        "mean": 0.129728,
+        "std": 0.048431,
+        "min": 0.048169,
+        "max": 0.194156,
         "samples": 10
       },
       "dct_high_energy": {
-        "mean": 0.846853,
-        "std": 0.042997,
-        "min": 0.786036,
-        "max": 0.943962,
+        "mean": 0.870272,
+        "std": 0.048431,
+        "min": 0.805844,
+        "max": 0.951831,
         "samples": 10
       },
       "centeredness": {
-        "mean": 0.734493,
-        "std": 0.187385,
+        "mean": 0.791446,
+        "std": 0.181277,
         "min": 0.456949,
-        "max": 0.965525,
+        "max": 0.989324,
         "samples": 10
       },
       "thirds_score": {
-        "mean": 0.042021,
-        "std": 0.028267,
-        "min": 0.00198,
+        "mean": 0.044779,
+        "std": 0.024807,
+        "min": 0.016106,
         "max": 0.099842,
         "samples": 10
       },
       "diagonal_strength": {
-        "mean": 0.125616,
-        "std": 0.05132,
+        "mean": 0.12318,
+        "std": 0.051914,
         "min": 0.009854,
-        "max": 0.175049,
+        "max": 0.199659,
         "samples": 10
       },
       "depth_score": {
-        "mean": 0.266855,
-        "std": 0.392576,
+        "mean": 0.328481,
+        "std": 0.38644,
         "min": 0.025578,
         "max": 1.0,
         "samples": 10
       },
       "depth_gradient": {
-        "mean": 0.32976,
-        "std": 0.286734,
-        "min": 0.063102,
+        "mean": 0.251688,
+        "std": 0.284786,
+        "min": 0.044199,
         "max": 0.910744,
         "samples": 10
       },
       "saliency_concentration": {
-        "mean": 0.34197,
-        "std": 0.154475,
-        "min": 0.121242,
-        "max": 0.581398,
+        "mean": 0.327078,
+        "std": 0.144138,
+        "min": 0.142823,
+        "max": 0.534767,
         "samples": 10
       },
       "subject_area_ratio": {
-        "mean": 0.199461,
-        "std": 0.232448,
+        "mean": 0.265619,
+        "std": 0.250536,
         "min": 0.024778,
-        "max": 0.719671,
+        "max": 0.711438,
         "samples": 10
       },
       "fg_bg_contrast": {
-        "mean": 137.348254,
-        "std": 119.270592,
+        "mean": 145.298935,
+        "std": 131.425282,
         "min": 23.543798,
-        "max": 352.929718,
+        "max": 401.101227,
         "samples": 10
       },
       "periodicity_score": {
-        "mean": 0.143649,
-        "std": 0.193726,
+        "mean": 0.104188,
+        "std": 0.180553,
         "min": 0.0,
         "max": 0.49767,
         "samples": 10
       },
       "tile_similarity": {
-        "mean": 0.032128,
-        "std": 0.088579,
-        "min": -0.128491,
+        "mean": 0.040387,
+        "std": 0.100518,
+        "min": -0.133838,
         "max": 0.202145,
         "samples": 10
       },
       "texture_complexity": {
-        "mean": 0.22722,
-        "std": 0.214021,
-        "min": 0.051811,
-        "max": 0.774456,
+        "mean": 0.329057,
+        "std": 0.296395,
+        "min": 0.066845,
+        "max": 0.980412,
         "samples": 10
       },
       "gradient_complexity": {
-        "mean": 0.50136,
-        "std": 0.380889,
+        "mean": 0.591054,
+        "std": 0.382279,
         "min": 0.071557,
         "max": 1.0,
         "samples": 10
       },
       "local_variance": {
-        "mean": 243.842636,
-        "std": 530.93906,
+        "mean": 454.238482,
+        "std": 870.566238,
         "min": 8.095245,
-        "max": 1725.393311,
+        "max": 2776.69043,
         "samples": 10
       },
       "entropy": {
-        "mean": 3.23803,
-        "std": 1.672872,
-        "min": 1.131257,
-        "max": 6.482884,
+        "mean": 3.828057,
+        "std": 2.20725,
+        "min": 0.914006,
+        "max": 6.897859,
         "samples": 10
       },
       "h_symmetry": {
-        "mean": 0.156877,
-        "std": 0.198256,
+        "mean": 0.175776,
+        "std": 0.206681,
         "min": 0.0,
         "max": 0.559285,
         "samples": 10
       },
       "v_symmetry": {
-        "mean": 0.370187,
-        "std": 0.255319,
-        "min": 0.046217,
+        "mean": 0.274843,
+        "std": 0.246084,
+        "min": 0.020277,
         "max": 0.725179,
         "samples": 10
       },
       "point_symmetry": {
-        "mean": 0.038512,
-        "std": 0.108331,
+        "mean": 0.095378,
+        "std": 0.142822,
         "min": 0.0,
-        "max": 0.3447,
+        "max": 0.350978,
         "samples": 10
       },
       "main_diagonal_symmetry": {
@@ -387,15 +387,15 @@
         "samples": 10
       },
       "anti_diagonal_symmetry": {
-        "mean": 0.038512,
-        "std": 0.108331,
+        "mean": 0.095378,
+        "std": 0.142822,
         "min": 0.0,
-        "max": 0.3447,
+        "max": 0.350978,
         "samples": 10
       },
       "overall_symmetry": {
-        "mean": 0.423371,
-        "std": 0.233524,
+        "mean": 0.325172,
+        "std": 0.243153,
         "min": 0.060256,
         "max": 0.725179,
         "samples": 10
@@ -436,65 +436,65 @@
         "samples": 10
       },
       "gradient_score": {
-        "mean": 0.054762,
-        "std": 0.059167,
+        "mean": 0.070855,
+        "std": 0.06201,
         "min": 0.0,
         "max": 0.125,
         "samples": 10
       },
       "theme_catppuccin_score": {
-        "mean": 0.443827,
-        "std": 0.056085,
-        "min": 0.387298,
-        "max": 0.54396,
+        "mean": 0.458259,
+        "std": 0.099441,
+        "min": 0.365127,
+        "max": 0.645482,
         "samples": 10
       },
       "theme_dracula_score": {
-        "mean": 0.759894,
-        "std": 0.252058,
-        "min": 0.095351,
+        "mean": 0.693272,
+        "std": 0.314535,
+        "min": 0.021095,
         "max": 0.871193,
         "samples": 10
       },
       "theme_tokyonight_score": {
-        "mean": 0.47009,
-        "std": 0.082448,
-        "min": 0.244831,
-        "max": 0.533781,
+        "mean": 0.449737,
+        "std": 0.109916,
+        "min": 0.171489,
+        "max": 0.517305,
         "samples": 10
       },
       "theme_nord_score": {
-        "mean": 0.24437,
-        "std": 0.175901,
+        "mean": 0.308424,
+        "std": 0.257746,
         "min": 0.107833,
-        "max": 0.627547,
+        "max": 0.824865,
         "samples": 10
       },
       "theme_gruvbox_score": {
-        "mean": 0.291545,
-        "std": 0.072625,
+        "mean": 0.314336,
+        "std": 0.110491,
         "min": 0.226455,
-        "max": 0.415482,
+        "max": 0.531054,
         "samples": 10
       },
       "theme_everforest_score": {
-        "mean": 0.164722,
-        "std": 0.087081,
+        "mean": 0.192703,
+        "std": 0.122109,
         "min": 0.096225,
-        "max": 0.347183,
+        "max": 0.435774,
         "samples": 10
       },
       "theme_monochrome_score": {
-        "mean": 0.743528,
-        "std": 0.073086,
-        "min": 0.685994,
-        "max": 0.923609,
+        "mean": 0.721778,
+        "std": 0.057322,
+        "min": 0.614772,
+        "max": 0.824806,
         "samples": 10
       },
       "theme_neon_score": {
-        "mean": 0.188325,
-        "std": 0.066351,
-        "min": 0.013399,
+        "mean": 0.168796,
+        "std": 0.084399,
+        "min": 0.0,
         "max": 0.218218,
         "samples": 10
       },
@@ -506,27 +506,27 @@
         "samples": 10
       },
       "unique_colors": {
-        "mean": 164.6,
-        "std": 78.349927,
+        "mean": 168.6,
+        "std": 78.400964,
         "min": 32.0,
         "max": 256.0,
         "samples": 10
       }
     },
-    "total_samples": 47,
+    "total_samples": 43,
     "used_samples": 10,
     "sample_size": 10,
     "sampling": "stratified",
     "extractor": "full",
     "palette_avg": {
-      "Black": 0.787619,
-      "Gray": 0.100936,
-      "White": 0.111444
+      "Black": 0.712053,
+      "Gray": 0.184324,
+      "White": 0.103623
     },
     "palette_for_config": {
-      "Black": 0.787619,
-      "Gray": 0.100936,
-      "White": 0.111444
+      "Black": 0.712053,
+      "Gray": 0.184324,
+      "White": 0.103623
     },
     "category": "Monochrome"
   },

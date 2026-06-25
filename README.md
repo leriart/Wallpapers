@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/1915%20images-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/2074%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
     <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
@@ -36,7 +36,7 @@
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/295%20images-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/339%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Anime/Anime_teal-cyan_red_white.jpg" height="160">
@@ -57,7 +57,7 @@
 <div align="center">
   <h2>Catppuccin</h2>
   <p>
-    <img src="https://img.shields.io/badge/34%20images-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
+    <img src="https://img.shields.io/badge/35%20files-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Catppuccin/catppuccin_blue_cool.jpg" height="160">
@@ -78,7 +78,7 @@
 <div align="center">
   <h2>Cyberpunk</h2>
   <p>
-    <img src="https://img.shields.io/badge/94%20images-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
+    <img src="https://img.shields.io/badge/101%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Cyberpunk/cyberpunk_dark_photo_110.jpg" height="160">
@@ -99,7 +99,7 @@
 <div align="center">
   <h2>Dracula</h2>
   <p>
-    <img src="https://img.shields.io/badge/14%20images-ff79c6?style=for-the-badge&logo=none" alt="Dracula">
+    <img src="https://img.shields.io/badge/15%20files-ff79c6?style=for-the-badge&logo=none" alt="Dracula">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Dracula/dracula_dark_stars.png" height="160">
@@ -120,7 +120,7 @@
 <div align="center">
   <h2>Everforest</h2>
   <p>
-    <img src="https://img.shields.io/badge/39%20images-a7c080?style=for-the-badge&logo=none" alt="Everforest">
+    <img src="https://img.shields.io/badge/41%20files-a7c080?style=for-the-badge&logo=none" alt="Everforest">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Everforest/everforest_dark_stars_26.jpg" height="160">
@@ -141,7 +141,7 @@
 <div align="center">
   <h2>Gruvbox</h2>
   <p>
-    <img src="https://img.shields.io/badge/70%20images-fb4934?style=for-the-badge&logo=none" alt="Gruvbox">
+    <img src="https://img.shields.io/badge/71%20files-fb4934?style=for-the-badge&logo=none" alt="Gruvbox">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Gruvbox/gruvbox_blue_cool_65.jpg" height="160">
@@ -162,7 +162,7 @@
 <div align="center">
   <h2>Landscape</h2>
   <p>
-    <img src="https://img.shields.io/badge/78%20images-7ee787?style=for-the-badge&logo=none" alt="Landscape">
+    <img src="https://img.shields.io/badge/79%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Landscape/landscape_pink_warm.jpg" height="160">
@@ -183,7 +183,7 @@
 <div align="center">
   <h2>Low-Quality</h2>
   <p>
-    <img src="https://img.shields.io/badge/27%20images-8b949e?style=for-the-badge&logo=none" alt="Low-Quality">
+    <img src="https://img.shields.io/badge/28%20files-8b949e?style=for-the-badge&logo=none" alt="Low-Quality">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Low-Quality/blue_teal_dark.png" height="160">
@@ -204,7 +204,7 @@
 <div align="center">
   <h2>Minecraft</h2>
   <p>
-    <img src="https://img.shields.io/badge/15%20images-62b788?style=for-the-badge&logo=none" alt="Minecraft">
+    <img src="https://img.shields.io/badge/18%20files-62b788?style=for-the-badge&logo=none" alt="Minecraft">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Minecraft/Minecraft_city_night_digital.png" height="160">
@@ -225,7 +225,7 @@
 <div align="center">
   <h2>Minimalist</h2>
   <p>
-    <img src="https://img.shields.io/badge/50%20images-c0caf5?style=for-the-badge&logo=none" alt="Minimalist">
+    <img src="https://img.shields.io/badge/51%20files-c0caf5?style=for-the-badge&logo=none" alt="Minimalist">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Minimalist/Minimalist_blue_calm_fingerprint.png" height="160">
@@ -246,7 +246,7 @@
 <div align="center">
   <h2>Monochrome</h2>
   <p>
-    <img src="https://img.shields.io/badge/40%20images-565f89?style=for-the-badge&logo=none" alt="Monochrome">
+    <img src="https://img.shields.io/badge/47%20files-565f89?style=for-the-badge&logo=none" alt="Monochrome">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Monochrome/Monochrome_001_6.png" height="160">
@@ -267,7 +267,7 @@
 <div align="center">
   <h2>NSFW</h2>
   <p>
-    <img src="https://img.shields.io/badge/78%20images-e06c75?style=for-the-badge&logo=none" alt="NSFW">
+    <img src="https://img.shields.io/badge/94%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
   </p>
   <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
@@ -289,7 +289,7 @@
 <div align="center">
   <h2>Neon</h2>
   <p>
-    <img src="https://img.shields.io/badge/69%20images-ff007c?style=for-the-badge&logo=none" alt="Neon">
+    <img src="https://img.shields.io/badge/72%20files-ff007c?style=for-the-badge&logo=none" alt="Neon">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Neon/gray_red_blue.png" height="160">
@@ -310,7 +310,7 @@
 <div align="center">
   <h2>Nord</h2>
   <p>
-    <img src="https://img.shields.io/badge/38%20images-5e81ac?style=for-the-badge&logo=none" alt="Nord">
+    <img src="https://img.shields.io/badge/39%20files-5e81ac?style=for-the-badge&logo=none" alt="Nord">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Nord/teal-cyan_black_gray.png" height="160">
@@ -331,7 +331,7 @@
 <div align="center">
   <h2>Phone</h2>
   <p>
-    <img src="https://img.shields.io/badge/701%20images-ff9e64?style=for-the-badge&logo=none" alt="Phone">
+    <img src="https://img.shields.io/badge/702%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Phone/Phone_phone_dark_photo_17.jpg" height="220">
@@ -352,7 +352,7 @@
 <div align="center">
   <h2>Pixel-Art</h2>
   <p>
-    <img src="https://img.shields.io/badge/111%20images-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
+    <img src="https://img.shields.io/badge/161%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Pixel-Art/red_pink-magenta_purple.gif" height="160">
@@ -373,7 +373,7 @@
 <div align="center">
   <h2>Space</h2>
   <p>
-    <img src="https://img.shields.io/badge/79%20images-7aa2f7?style=for-the-badge&logo=none" alt="Space">
+    <img src="https://img.shields.io/badge/80%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Space/space_dark_photo_18.png" height="160">
@@ -394,7 +394,7 @@
 <div align="center">
   <h2>Tokyonight</h2>
   <p>
-    <img src="https://img.shields.io/badge/83%20images-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
+    <img src="https://img.shields.io/badge/101%20files-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Tokyonight/teal_dark_photo.png" height="160">

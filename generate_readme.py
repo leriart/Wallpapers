@@ -34,18 +34,25 @@ def discover_categories(root: Path):
     for folder in sorted(root.iterdir()):
         if not folder.is_dir() or folder.name.startswith("."):
             continue
-        files = [
+        all_files = [
+            f.name
+            for f in folder.iterdir()
+            if f.is_file()
+        ]
+        image_files = [
             f.name
             for f in folder.iterdir()
             if f.is_file() and f.suffix.lower() in IMAGE_EXTENSIONS
         ]
-        files.sort(key=str.lower)
+        all_files.sort(key=str.lower)
+        image_files.sort(key=str.lower)
         random.seed(folder.name)  # deterministic but different per category
-        shuffled = files.copy()
+        shuffled = image_files.copy()
         random.shuffle(shuffled)
         categories.append({
             "name": folder.name,
-            "count": len(files),
+            "count": len(all_files),
+            "image_count": len(image_files),
             "samples": shuffled[:10],
         })
     return categories
@@ -62,6 +69,7 @@ def badge(label: str, value: str, color: str) -> str:
 def format_carousel(category: dict) -> str:
     name = category["name"]
     count = category["count"]
+    image_count = category["image_count"]
     samples = category["samples"]
     color = BADGE_COLORS.get(name, "7aa2f7")
 
@@ -69,7 +77,7 @@ def format_carousel(category: dict) -> str:
         f'<div align="center">',
         f"  <h2>{name}</h2>",
         "  <p>",
-        f'    <img src="{badge(name, f"{count}%20images", color)}" alt="{name}">',
+        f'    <img src="{badge(name, f"{count}%20files", color)}" alt="{name}">',
         "  </p>",
     ]
 
@@ -97,7 +105,7 @@ def generate_readme(categories: list) -> str:
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="{badge('total', f'{total_files}%20images', '7aa2f7')}" alt="Total">
+    <img src="{badge('total', f'{total_files}%20files', '7aa2f7')}" alt="Total">
     <img src="{badge('categories', f'{len(categories)}%20categories', 'bb9af7')}" alt="Categories">
     <img src="{badge('license', 'MIT', '9ece6a')}" alt="License">
   </p>

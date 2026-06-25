@@ -4,7 +4,6 @@
   <p>
     <img src="https://img.shields.io/badge/2074%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
-    <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
 </div>
 

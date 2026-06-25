@@ -107,7 +107,6 @@ def generate_readme(categories: list) -> str:
   <p>
     <img src="{badge('total', f'{total_files}%20files', '7aa2f7')}" alt="Total">
     <img src="{badge('categories', f'{len(categories)}%20categories', 'bb9af7')}" alt="Categories">
-    <img src="{badge('license', 'MIT', '9ece6a')}" alt="License">
   </p>
 </div>
 

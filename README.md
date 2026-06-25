@@ -2,8 +2,8 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/2067%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
-    <img src="https://img.shields.io/badge/19%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
+    <img src="https://img.shields.io/badge/2056%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
     <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
 </div>
@@ -16,7 +16,6 @@
 - [Catppuccin](#catppuccin)
 - [Cyberpunk](#cyberpunk)
 - [Dracula](#dracula)
-- [Duplicates](#duplicates)
 - [Everforest](#everforest)
 - [Gruvbox](#gruvbox)
 - [Landscape](#landscape)
@@ -37,7 +36,7 @@
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/339%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/338%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Anime/Anime_anime_blue_cool.jpg" height="160">
@@ -58,7 +57,7 @@
 <div align="center">
   <h2>Catppuccin</h2>
   <p>
-    <img src="https://img.shields.io/badge/36%20files-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
+    <img src="https://img.shields.io/badge/34%20files-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Catppuccin/Catppuccin_001.jpg" height="160">
@@ -79,7 +78,7 @@
 <div align="center">
   <h2>Cyberpunk</h2>
   <p>
-    <img src="https://img.shields.io/badge/101%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
+    <img src="https://img.shields.io/badge/100%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Cyberpunk/cyberpunk_art_blue.jpg" height="160">
@@ -89,9 +88,9 @@
     <img src="Cyberpunk/cyberpunk_art_sky.png" height="160">
     <img src="Cyberpunk/cyberpunk_art_teal.jpg" height="160">
     <img src="Cyberpunk/cyberpunk_blue_cool.gif" height="160">
-    <img src="Cyberpunk/cyberpunk_blue_cool.jpg" height="160">
     <img src="Cyberpunk/cyberpunk_blue_cool.png" height="160">
     <img src="Cyberpunk/cyberpunk_blue_cool_105.png" height="160">
+    <img src="Cyberpunk/cyberpunk_blue_cool_106.jpg" height="160">
   </marquee>
 </div>
 
@@ -113,18 +112,6 @@
     <img src="Dracula/dracula_dark_stars.png" height="160">
     <img src="Dracula/dracula_dark_stars_3.png" height="160">
     <img src="Dracula/dracula_dark_stars_5.png" height="160">
-  </marquee>
-</div>
-
----
-
-<div align="center">
-  <h2>Duplicates</h2>
-  <p>
-    <img src="https://img.shields.io/badge/1%20files-7aa2f7?style=for-the-badge&logo=none" alt="Duplicates">
-  </p>
-  <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Duplicates/20200616_125716.jpg" height="160">
   </marquee>
 </div>
 
@@ -344,7 +331,7 @@
 <div align="center">
   <h2>Phone</h2>
   <p>
-    <img src="https://img.shields.io/badge/706%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
+    <img src="https://img.shields.io/badge/701%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Phone/Anime_20260423_210103.jpg" height="220">
@@ -386,7 +373,7 @@
 <div align="center">
   <h2>Space</h2>
   <p>
-    <img src="https://img.shields.io/badge/80%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
+    <img src="https://img.shields.io/badge/79%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Space/space_art_blue.jpg" height="160">

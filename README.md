@@ -2,8 +2,8 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/1805%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
-    <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
+    <img src="https://img.shields.io/badge/2067%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/19%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
     <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
 </div>
@@ -16,6 +16,7 @@
 - [Catppuccin](#catppuccin)
 - [Cyberpunk](#cyberpunk)
 - [Dracula](#dracula)
+- [Duplicates](#duplicates)
 - [Everforest](#everforest)
 - [Gruvbox](#gruvbox)
 - [Landscape](#landscape)
@@ -36,19 +37,19 @@
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/323%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/339%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
+    <img src="Anime/Anime_anime_blue_cool.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_photo.png" height="160">
+    <img src="Anime/Anime_anime_blue_photo_72.png" height="160">
+    <img src="Anime/Anime_anime_blue_wide.jpg" height="160">
     <img src="Anime/Anime_anime_car_bikini.jpg" height="160">
     <img src="Anime/Anime_anime_cartoon_character.jpg" height="160">
     <img src="Anime/Anime_anime_cartoon_girl.gif" height="160">
     <img src="Anime/Anime_anime_cool_dark.jpg" height="160">
+    <img src="Anime/Anime_anime_cool_teal.jpg" height="160">
     <img src="Anime/Anime_anime_dark_detailed_163.jpg" height="160">
-    <img src="Anime/Anime_anime_dark_space_137.jpg" height="160">
-    <img src="Anime/Anime_anime_face_dark_112.jpg" height="160">
-    <img src="Anime/Anime_anime_face_warm.jpg" height="160">
-    <img src="Anime/Anime_anime_fantasy_girls.jpg" height="160">
-    <img src="Anime/Anime_anime_female_girls_1.jpg" height="160">
   </marquee>
 </div>
 
@@ -112,6 +113,18 @@
     <img src="Dracula/dracula_dark_stars.png" height="160">
     <img src="Dracula/dracula_dark_stars_3.png" height="160">
     <img src="Dracula/dracula_dark_stars_5.png" height="160">
+  </marquee>
+</div>
+
+---
+
+<div align="center">
+  <h2>Duplicates</h2>
+  <p>
+    <img src="https://img.shields.io/badge/1%20files-7aa2f7?style=for-the-badge&logo=none" alt="Duplicates">
+  </p>
+  <marquee behavior="scroll" direction="left" scrollamount="4">
+    <img src="Duplicates/20200616_125716.jpg" height="160">
   </marquee>
 </div>
 
@@ -267,7 +280,7 @@
 <div align="center">
   <h2>NSFW</h2>
   <p>
-    <img src="https://img.shields.io/badge/174%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
+    <img src="https://img.shields.io/badge/93%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
   </p>
   <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
@@ -310,7 +323,7 @@
 <div align="center">
   <h2>Nord</h2>
   <p>
-    <img src="https://img.shields.io/badge/39%20files-5e81ac?style=for-the-badge&logo=none" alt="Nord">
+    <img src="https://img.shields.io/badge/38%20files-5e81ac?style=for-the-badge&logo=none" alt="Nord">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Nord/black_blue_teal-cyan.jpg" height="160">
@@ -331,7 +344,7 @@
 <div align="center">
   <h2>Phone</h2>
   <p>
-    <img src="https://img.shields.io/badge/381%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
+    <img src="https://img.shields.io/badge/706%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Phone/Anime_20260423_210103.jpg" height="220">
@@ -341,9 +354,9 @@
     <img src="Phone/Anime_20260430_013114.jpg" height="220">
     <img src="Phone/Anime_Anime_001.jpg" height="220">
     <img src="Phone/Anime_Anime_anime_art_blue.jpg" height="220">
+    <img src="Phone/Anime_Anime_anime_art_red.jpg" height="220">
     <img src="Phone/Anime_Anime_anime_blue_cool.jpg" height="220">
     <img src="Phone/Anime_Anime_anime_blue_cool.png" height="220">
-    <img src="Phone/Anime_Anime_anime_blue_cool_122.jpg" height="220">
   </marquee>
 </div>
 
@@ -352,7 +365,7 @@
 <div align="center">
   <h2>Pixel-Art</h2>
   <p>
-    <img src="https://img.shields.io/badge/159%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
+    <img src="https://img.shields.io/badge/160%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Pixel-Art/black_blue_gray.gif" height="160">
@@ -394,7 +407,7 @@
 <div align="center">
   <h2>Tokyonight</h2>
   <p>
-    <img src="https://img.shields.io/badge/99%20files-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
+    <img src="https://img.shields.io/badge/100%20files-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Tokyonight/art_blue_cool_1.jpg" height="160">

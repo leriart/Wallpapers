@@ -1,0 +1,12 @@
+{
+  "name": "Phone",
+  "tags": [
+    "phone",
+    "mobile",
+    "vertical",
+    "portrait",
+    "square"
+  ],
+  "prompt": "Vertical and square images collected for phone wallpapers.",
+  "palette_weights": {}
+}

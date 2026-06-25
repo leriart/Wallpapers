@@ -9,6 +9,12 @@
 
 ---
 
+## Organized with <a href="https://github.com/leriart/Wanalizer">Wanalizer</a>
+
+This collection is organized thanks to <strong>Wanalizer</strong>, an intelligent local wallpaper analyzer and categorizer.
+
+---
+
 ## Table of contents
 
 - [Anime](#anime)

@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/1449%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/1452%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
     <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
@@ -36,7 +36,7 @@
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/303%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/306%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Anime/Anime_anime_car_bikini.jpg" height="160">

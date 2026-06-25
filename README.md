@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/1452%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/1805%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
     <img src="https://img.shields.io/badge/MIT-9ece6a?style=for-the-badge&logo=none" alt="License">
   </p>
@@ -36,19 +36,19 @@
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/306%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/485%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Anime/Anime_anime_car_bikini.jpg" height="160">
-    <img src="Anime/Anime_anime_cartoon_character.jpg" height="160">
-    <img src="Anime/Anime_anime_cartoon_girl.gif" height="160">
-    <img src="Anime/Anime_anime_fantasy_girls.jpg" height="160">
-    <img src="Anime/Anime_anime_female_girls_1.jpg" height="160">
-    <img src="Anime/Anime_anime_female_glasses.jpg" height="160">
-    <img src="Anime/Anime_anime_illustration_digital-art.jpg" height="160">
-    <img src="Anime/Anime_anime_illustration_female.png" height="160">
-    <img src="Anime/Anime_anime_illustration_manga.png" height="160">
-    <img src="Anime/Anime_anime_pink_bikini.jpg" height="160">
+    <img src="Anime/Anime_anime_art_blue.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_cool.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_cool.png" height="160">
+    <img src="Anime/Anime_anime_blue_cool_122.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_cool_175.png" height="160">
+    <img src="Anime/Anime_anime_blue_cool_178.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_cool_30.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_detailed.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_face.jpg" height="160">
+    <img src="Anime/Anime_anime_blue_light.jpg" height="160">
   </marquee>
 </div>
 
@@ -57,7 +57,7 @@
 <div align="center">
   <h2>Catppuccin</h2>
   <p>
-    <img src="https://img.shields.io/badge/36%20files-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
+    <img src="https://img.shields.io/badge/38%20files-f5e0dc?style=for-the-badge&logo=none" alt="Catppuccin">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Catppuccin/Catppuccin_001.jpg" height="160">
@@ -68,8 +68,8 @@
     <img src="Catppuccin/catppuccin_blue_cool.png" height="160">
     <img src="Catppuccin/catppuccin_blue_cool_49.jpg" height="160">
     <img src="Catppuccin/catppuccin_blue_photo.png" height="160">
-    <img src="Catppuccin/catppuccin_cool_photo.png" height="160">
-    <img src="Catppuccin/catppuccin_dark_city.png" height="160">
+    <img src="Catppuccin/Catppuccin_catppuccin_dark_photo.jpg" height="160">
+    <img src="Catppuccin/Catppuccin_catppuccin_sky_pink.jpg" height="160">
   </marquee>
 </div>
 
@@ -78,7 +78,7 @@
 <div align="center">
   <h2>Cyberpunk</h2>
   <p>
-    <img src="https://img.shields.io/badge/99%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
+    <img src="https://img.shields.io/badge/105%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Cyberpunk/cyberpunk_art_blue.jpg" height="160">
@@ -99,7 +99,7 @@
 <div align="center">
   <h2>Dracula</h2>
   <p>
-    <img src="https://img.shields.io/badge/14%20files-ff79c6?style=for-the-badge&logo=none" alt="Dracula">
+    <img src="https://img.shields.io/badge/17%20files-ff79c6?style=for-the-badge&logo=none" alt="Dracula">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Dracula/dracula_art_wide.png" height="160">
@@ -141,7 +141,7 @@
 <div align="center">
   <h2>Gruvbox</h2>
   <p>
-    <img src="https://img.shields.io/badge/70%20files-fb4934?style=for-the-badge&logo=none" alt="Gruvbox">
+    <img src="https://img.shields.io/badge/72%20files-fb4934?style=for-the-badge&logo=none" alt="Gruvbox">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Gruvbox/Gruvbox_001.png" height="160">
@@ -204,7 +204,7 @@
 <div align="center">
   <h2>Minecraft</h2>
   <p>
-    <img src="https://img.shields.io/badge/17%20files-62b788?style=for-the-badge&logo=none" alt="Minecraft">
+    <img src="https://img.shields.io/badge/19%20files-62b788?style=for-the-badge&logo=none" alt="Minecraft">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Minecraft/Minecraft_anime_illustration_red.jpg" height="160">
@@ -246,7 +246,7 @@
 <div align="center">
   <h2>Monochrome</h2>
   <p>
-    <img src="https://img.shields.io/badge/46%20files-565f89?style=for-the-badge&logo=none" alt="Monochrome">
+    <img src="https://img.shields.io/badge/54%20files-565f89?style=for-the-badge&logo=none" alt="Monochrome">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Monochrome/Monochrome_001.jpg" height="160">
@@ -267,7 +267,7 @@
 <div align="center">
   <h2>NSFW</h2>
   <p>
-    <img src="https://img.shields.io/badge/69%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
+    <img src="https://img.shields.io/badge/174%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
   </p>
   <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
@@ -310,7 +310,7 @@
 <div align="center">
   <h2>Nord</h2>
   <p>
-    <img src="https://img.shields.io/badge/38%20files-5e81ac?style=for-the-badge&logo=none" alt="Nord">
+    <img src="https://img.shields.io/badge/39%20files-5e81ac?style=for-the-badge&logo=none" alt="Nord">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Nord/black_blue_teal-cyan.jpg" height="160">
@@ -331,7 +331,7 @@
 <div align="center">
   <h2>Phone</h2>
   <p>
-    <img src="https://img.shields.io/badge/161%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
+    <img src="https://img.shields.io/badge/182%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Phone/Anime_20260423_210103.jpg" height="220">
@@ -352,7 +352,7 @@
 <div align="center">
   <h2>Pixel-Art</h2>
   <p>
-    <img src="https://img.shields.io/badge/154%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
+    <img src="https://img.shields.io/badge/162%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel-Art">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Pixel-Art/black_blue_gray.gif" height="160">
@@ -373,7 +373,7 @@
 <div align="center">
   <h2>Space</h2>
   <p>
-    <img src="https://img.shields.io/badge/80%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
+    <img src="https://img.shields.io/badge/81%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Space/space_art_blue.jpg" height="160">
@@ -394,7 +394,7 @@
 <div align="center">
   <h2>Tokyonight</h2>
   <p>
-    <img src="https://img.shields.io/badge/96%20files-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
+    <img src="https://img.shields.io/badge/111%20files-565f89?style=for-the-badge&logo=none" alt="Tokyonight">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Tokyonight/art_blue_cool_1.jpg" height="160">

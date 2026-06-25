@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Generate README.md with dynamic image carousels from each category folder."""
 
+import random
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
-VIDEO_EXTENSIONS = {".mp4", ".webm"}
-MEDIA_EXTENSIONS = IMAGE_EXTENSIONS | VIDEO_EXTENSIONS
 
 BADGE_COLORS = {
     "Anime": "f7768e",
@@ -38,13 +37,16 @@ def discover_categories(root: Path):
         files = [
             f.name
             for f in folder.iterdir()
-            if f.is_file() and f.suffix.lower() in MEDIA_EXTENSIONS
+            if f.is_file() and f.suffix.lower() in IMAGE_EXTENSIONS
         ]
         files.sort(key=str.lower)
+        random.seed(folder.name)  # deterministic but different per category
+        shuffled = files.copy()
+        random.shuffle(shuffled)
         categories.append({
             "name": folder.name,
             "count": len(files),
-            "samples": files,
+            "samples": shuffled[:10],
         })
     return categories
 
@@ -67,7 +69,7 @@ def format_carousel(category: dict) -> str:
         f'<div align="center">',
         f"  <h2>{name}</h2>",
         "  <p>",
-        f'    <img src="{badge(name, f"{count}%20files", color)}" alt="{name}">',
+        f'    <img src="{badge(name, f"{count}%20images", color)}" alt="{name}">',
         "  </p>",
     ]
 
@@ -77,7 +79,7 @@ def format_carousel(category: dict) -> str:
     if samples:
         lines.append('  <marquee behavior="scroll" direction="left" scrollamount="4">')
         height = 220 if name == "Phone" else 160
-        for sample in samples[:10]:
+        for sample in samples:
             sample_quoted = sample.replace(" ", "%20")
             lines.append(f'    <img src="{name}/{sample_quoted}" height="{height}">')
         lines.append("  </marquee>")
@@ -95,7 +97,7 @@ def generate_readme(categories: list) -> str:
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="{badge('total', f'{total_files}%20files', '7aa2f7')}" alt="Total">
+    <img src="{badge('total', f'{total_files}%20images', '7aa2f7')}" alt="Total">
     <img src="{badge('categories', f'{len(categories)}%20categories', 'bb9af7')}" alt="Categories">
     <img src="{badge('license', 'MIT', '9ece6a')}" alt="License">
   </p>
@@ -123,7 +125,6 @@ The collection includes static and animated media:
 | PNG | Flat colors and transparent artwork |
 | WEBP | High-performance images |
 | GIF | Looping animated wallpapers |
-| MP4 / WEBM | Short videos for animated backgrounds |
 
 ## How to use
 

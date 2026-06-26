@@ -41,19 +41,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/339%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/333%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Anime/Anime_teal-cyan_red_white.jpg" height="160">
-    <img src="Anime/Anime_blue_black_purple_91.jpg" height="160">
-    <img src="Anime/Anime_anime_sky_art.jpg" height="160">
-    <img src="Anime/Anime_black_gray_white.jpg" height="160">
-    <img src="Anime/Anime_yellow_black_standard.jpg" height="160">
-    <img src="Anime/Anime_orange_red_ultrawide.png" height="160">
-    <img src="Anime/Anime_orange_yellow_standard.png" height="160">
-    <img src="Anime/Anime_gray_teal-cyan_white.png" height="160">
-    <img src="Anime/Anime_blue_orange_gray.gif" height="160">
-    <img src="Anime/Anime_teal-cyan_black_pink-magenta.jpg" height="160">
+    <img src="Anime/Anime_white_black_blue.jpg" height="160">
+    <img src="Anime/Anime_orange_black_red_342.jpg" height="160">
+    <img src="Anime/Anime_orange_teal-cyan_yellow.gif" height="160">
+    <img src="Anime/Anime_teal-cyan_red_pink-magenta.jpg" height="160">
+    <img src="Anime/Anime_black_gray_ultrawide.jpg" height="160">
+    <img src="Anime/Anime_blue_pink-magenta_ultrawide.png" height="160">
+    <img src="Anime/Anime_black_teal-cyan_ultrawide.jpg" height="160">
+    <img src="Anime/Anime_black_red_pink-magenta.png" height="160">
+    <img src="Anime/Anime_blue_gray_white_337.jpg" height="160">
+    <img src="Anime/Anime_red_orange_white.png" height="160">
   </marquee>
 </div>
 
@@ -167,19 +167,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Landscape</h2>
   <p>
-    <img src="https://img.shields.io/badge/79%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
+    <img src="https://img.shields.io/badge/80%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Landscape/landscape_pink_warm.jpg" height="160">
-    <img src="Landscape/landscape_dark_blue_64.jpg" height="160">
-    <img src="Landscape/landscape_blue_dark.jpg" height="160">
-    <img src="Landscape/landscape_blue_photo_56.jpg" height="160">
-    <img src="Landscape/landscape_dark_photo_78.jpg" height="160">
-    <img src="Landscape/landscape_sky_warm.png" height="160">
-    <img src="Landscape/landscape_pink_photo.jpg" height="160">
-    <img src="Landscape/landscape_sky_red_16.jpg" height="160">
-    <img src="Landscape/landscape_dark_stars.jpg" height="160">
+    <img src="Landscape/landscape_face_photo.jpg" height="160">
+    <img src="Landscape/landscape_red_warm.jpg" height="160">
+    <img src="Landscape/landscape_dark_blue.png" height="160">
+    <img src="Landscape/landscape_blue_photo_19.jpg" height="160">
+    <img src="Landscape/landscape_photo_light_23.jpg" height="160">
     <img src="Landscape/Landscape_cartoon_illustration_manga.jpg" height="160">
+    <img src="Landscape/landscape_dark_blue_64.jpg" height="160">
+    <img src="Landscape/Landscape_artistic_illustration_pink.jpg" height="160">
+    <img src="Landscape/landscape_pink_warm.jpg" height="160">
+    <img src="Landscape/landscape_sky_warm_77.jpg" height="160">
   </marquee>
 </div>
 
@@ -251,19 +251,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Monochrome</h2>
   <p>
-    <img src="https://img.shields.io/badge/47%20files-565f89?style=for-the-badge&logo=none" alt="Monochrome">
+    <img src="https://img.shields.io/badge/52%20files-565f89?style=for-the-badge&logo=none" alt="Monochrome">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Monochrome/Monochrome_001_6.png" height="160">
-    <img src="Monochrome/monochrome_dark_stars_11.png" height="160">
-    <img src="Monochrome/monochrome_dark_space_1.png" height="160">
-    <img src="Monochrome/monochrome_grayscale_black-and-white.png" height="160">
     <img src="Monochrome/monochrome_dark_photo_23.jpg" height="160">
-    <img src="Monochrome/monochrome_dark_photo.png" height="160">
+    <img src="Monochrome/monochrome_dark_stars_14.jpg" height="160">
+    <img src="Monochrome/monochrome_photo_detailed_22.jpg" height="160">
+    <img src="Monochrome/monochrome_dark_stars_29.jpg" height="160">
+    <img src="Monochrome/Monochrome_bedroom_messy_cluttered.jpg" height="160">
+    <img src="Monochrome/Monochrome_anime_illustration_manga.jpg" height="160">
+    <img src="Monochrome/Monochrome_face_anime_illustration.jpg" height="160">
     <img src="Monochrome/monochrome_blue_photo.png" height="160">
-    <img src="Monochrome/monochrome_dark_stars_18.jpg" height="160">
-    <img src="Monochrome/monochrome_blue_cool.jpg" height="160">
-    <img src="Monochrome/monochrome_dark_stars.png" height="160">
+    <img src="Monochrome/monochrome_photo_detailed.jpg" height="160">
+    <img src="Monochrome/monochrome_dark_stars_11.png" height="160">
   </marquee>
 </div>
 
@@ -272,20 +272,20 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>NSFW</h2>
   <p>
-    <img src="https://img.shields.io/badge/94%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
+    <img src="https://img.shields.io/badge/93%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
   </p>
   <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="NSFW/NSFW_swinging_nude_orange.jpg" height="160">
-    <img src="NSFW/NSFW_cartoon_anime_bikini_54.png" height="160">
-    <img src="NSFW/NSFW_nsfw_dark_photo_92.jpg" height="160">
-    <img src="NSFW/NSFW_nsfw_red_sky_34.jpg" height="160">
-    <img src="NSFW/NSFW_anime_female_blue.jpg" height="160">
-    <img src="NSFW/NSFW_anime_erotic_photograph.jpg" height="160">
     <img src="NSFW/NSFW_anime_cartoon_erotic_1.jpg" height="160">
-    <img src="NSFW/NSFW_nsfw_sky_warm_80.jpg" height="160">
-    <img src="NSFW/NSFW_nsfw_red_sky_52.png" height="160">
-    <img src="NSFW/NSFW_nsfw_red_sky_88.jpg" height="160">
+    <img src="NSFW/NSFW_orange_white_red.jpg" height="160">
+    <img src="NSFW/NSFW_anime_female_blue.jpg" height="160">
+    <img src="NSFW/NSFW_nsfw_sky_red_1.png" height="160">
+    <img src="NSFW/NSFW_anime_digital-art_photograph.jpg" height="160">
+    <img src="NSFW/NSFW_anime_erotic_photograph.jpg" height="160">
+    <img src="NSFW/NSFW_anime_cartoon_face.jpg" height="160">
+    <img src="NSFW/NSFW_anime_erotic_artistic.jpg" height="160">
+    <img src="NSFW/NSFW_nsfw_red_sky_34.jpg" height="160">
+    <img src="NSFW/NSFW_nsfw_sky_face.jpg" height="160">
   </marquee>
 </div>
 
@@ -294,19 +294,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Neon</h2>
   <p>
-    <img src="https://img.shields.io/badge/72%20files-ff007c?style=for-the-badge&logo=none" alt="Neon">
+    <img src="https://img.shields.io/badge/73%20files-ff007c?style=for-the-badge&logo=none" alt="Neon">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
     <img src="Neon/gray_red_blue.png" height="160">
-    <img src="Neon/purple_blue_teal-cyan.jpg" height="160">
-    <img src="Neon/pink-magenta_black_purple.jpg" height="160">
-    <img src="Neon/pink-magenta_blue_purple.jpg" height="160">
-    <img src="Neon/purple_blue_pink-magenta.png" height="160">
-    <img src="Neon/red_widescreen_mid.jpg" height="160">
+    <img src="Neon/purple_blue_pink-magenta_11.jpg" height="160">
+    <img src="Neon/orange_red_white.jpg" height="160">
+    <img src="Neon/pink-magenta_blue_orange.jpg" height="160">
+    <img src="Neon/purple_blue_pink-magenta.jpg" height="160">
+    <img src="Neon/red_pink-magenta_orange.jpg" height="160">
     <img src="Neon/black_pink-magenta_teal-cyan.jpg" height="160">
     <img src="Neon/black_red_gray.png" height="160">
     <img src="Neon/black_orange_ultrawide.png" height="160">
-    <img src="Neon/purple_black_blue.jpg" height="160">
+    <img src="Neon/purple_black_blue.jpeg" height="160">
   </marquee>
 </div>
 
@@ -339,16 +339,16 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
     <img src="https://img.shields.io/badge/702%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Phone/Phone_phone_dark_photo_17.jpg" height="220">
-    <img src="Phone/Cyberpunk_cyberpunk_sky_red.jpg" height="220">
-    <img src="Phone/Anime_Anime_yellow_white_gray.gif" height="220">
-    <img src="Phone/Space_Space_space_art_blue.jpg" height="220">
-    <img src="Phone/Anime_Anime_anime_sky_red_133.png" height="220">
-    <img src="Phone/NSFW_NSFW_nsfw_art_neon.jpg" height="220">
-    <img src="Phone/Anime_Anime_anime_sky_warm_80.png" height="220">
-    <img src="Phone/NSFW_NSFW_anime_white_gray.jpg" height="220">
-    <img src="Phone/Anime_Anime_gray_white_portrait.jpg" height="220">
-    <img src="Phone/Tokyonight_Tokyonight_face_dark_photo.jpg" height="220">
+    <img src="Phone/Phone_microphone_singing_dreamy.gif" height="220">
+    <img src="Phone/Phone_art_design_music.png" height="220">
+    <img src="Phone/Phone_anime_punk_cartoon.jpg" height="220">
+    <img src="Phone/Phone_skirt_necklace_red.png" height="220">
+    <img src="Phone/Phone_anime_female_satan.jpg" height="220">
+    <img src="Phone/Phone_cartoon_anime_erotic_471.jpg" height="220">
+    <img src="Phone/Phone_anime_illustration_cartoon_655.jpg" height="220">
+    <img src="Phone/Phone_cartoon_anime_bikini_499.jpg" height="220">
+    <img src="Phone/Phone_anime_illustration_female.webp" height="220">
+    <img src="Phone/Phone_white_orange_gray.jpg" height="220">
   </marquee>
 </div>
 

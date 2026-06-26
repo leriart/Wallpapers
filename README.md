@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/2074%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/2139%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/18%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
@@ -41,19 +41,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/333%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/336%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Anime/Anime_white_black_blue.jpg" height="160">
-    <img src="Anime/Anime_orange_black_red_342.jpg" height="160">
-    <img src="Anime/Anime_orange_teal-cyan_yellow.gif" height="160">
-    <img src="Anime/Anime_teal-cyan_red_pink-magenta.jpg" height="160">
-    <img src="Anime/Anime_black_gray_ultrawide.jpg" height="160">
-    <img src="Anime/Anime_blue_pink-magenta_ultrawide.png" height="160">
-    <img src="Anime/Anime_black_teal-cyan_ultrawide.jpg" height="160">
-    <img src="Anime/Anime_black_red_pink-magenta.png" height="160">
-    <img src="Anime/Anime_blue_gray_white_337.jpg" height="160">
-    <img src="Anime/Anime_red_orange_white.png" height="160">
+    <img src="Anime/Anime_orange_black_red.jpg" height="160">
+    <img src="Anime/Anime_gray_white_black.png" height="160">
+    <img src="Anime/Anime_blue_gray_widescreen_87.webp" height="160">
+    <img src="Anime/Anime_orange_red_gray.jpg" height="160">
+    <img src="Anime/Anime_white_gray_red_207.jpg" height="160">
+    <img src="Anime/Anime_teal-cyan_pink-magenta_black.png" height="160">
+    <img src="Anime/Anime_teal-cyan_red_black.png" height="160">
+    <img src="Anime/Anime_white_gray_pink-magenta.jpeg" height="160">
+    <img src="Anime/Anime_blue_gray_black.gif" height="160">
+    <img src="Anime/Anime_orange_black_gray.jpg" height="160">
   </marquee>
 </div>
 
@@ -167,19 +167,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Landscape</h2>
   <p>
-    <img src="https://img.shields.io/badge/80%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
+    <img src="https://img.shields.io/badge/81%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Landscape/landscape_face_photo.jpg" height="160">
-    <img src="Landscape/landscape_red_warm.jpg" height="160">
+    <img src="Landscape/landscape_sky_red_16.jpg" height="160">
+    <img src="Landscape/landscape_teal_cool.jpg" height="160">
+    <img src="Landscape/landscape_neon_teal.jpg" height="160">
     <img src="Landscape/landscape_dark_blue.png" height="160">
-    <img src="Landscape/landscape_blue_photo_19.jpg" height="160">
-    <img src="Landscape/landscape_photo_light_23.jpg" height="160">
-    <img src="Landscape/Landscape_cartoon_illustration_manga.jpg" height="160">
-    <img src="Landscape/landscape_dark_blue_64.jpg" height="160">
+    <img src="Landscape/landscape_photo_light_45.jpg" height="160">
+    <img src="Landscape/landscape_face_photo.jpg" height="160">
+    <img src="Landscape/landscape_dark_photo_54.jpg" height="160">
     <img src="Landscape/Landscape_artistic_illustration_pink.jpg" height="160">
-    <img src="Landscape/landscape_pink_warm.jpg" height="160">
-    <img src="Landscape/landscape_sky_warm_77.jpg" height="160">
+    <img src="Landscape/landscape_dark_photo_78.jpg" height="160">
+    <img src="Landscape/landscape_red_warm_13.jpg" height="160">
   </marquee>
 </div>
 
@@ -272,20 +272,20 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>NSFW</h2>
   <p>
-    <img src="https://img.shields.io/badge/93%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
+    <img src="https://img.shields.io/badge/99%20files-e06c75?style=for-the-badge&logo=none" alt="NSFW">
   </p>
   <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
+    <img src="NSFW/NSFW_nsfw_red_sky_52.png" height="160">
     <img src="NSFW/NSFW_anime_cartoon_erotic_1.jpg" height="160">
-    <img src="NSFW/NSFW_orange_white_red.jpg" height="160">
-    <img src="NSFW/NSFW_anime_female_blue.jpg" height="160">
-    <img src="NSFW/NSFW_nsfw_sky_red_1.png" height="160">
-    <img src="NSFW/NSFW_anime_digital-art_photograph.jpg" height="160">
-    <img src="NSFW/NSFW_anime_erotic_photograph.jpg" height="160">
-    <img src="NSFW/NSFW_anime_cartoon_face.jpg" height="160">
-    <img src="NSFW/NSFW_anime_erotic_artistic.jpg" height="160">
+    <img src="NSFW/NSFW_anime_illustration_female.jpg" height="160">
+    <img src="NSFW/NSFW_anime_cartoon_female.jpg" height="160">
     <img src="NSFW/NSFW_nsfw_red_sky_34.jpg" height="160">
-    <img src="NSFW/NSFW_nsfw_sky_face.jpg" height="160">
+    <img src="NSFW/NSFW_anime_girl_hentai.jpg" height="160">
+    <img src="NSFW/NSFW_anime_red_gray.jpg" height="160">
+    <img src="NSFW/NSFW_cartoon_anime_erotic_2.jpg" height="160">
+    <img src="NSFW/NSFW_nsfw_red_sky_88.jpg" height="160">
+    <img src="NSFW/NSFW_anime_erotic_artistic.jpg" height="160">
   </marquee>
 </div>
 
@@ -336,19 +336,19 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Phone</h2>
   <p>
-    <img src="https://img.shields.io/badge/702%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
+    <img src="https://img.shields.io/badge/757%20files-ff9e64?style=for-the-badge&logo=none" alt="Phone">
   </p>
   <marquee behavior="scroll" direction="left" scrollamount="4">
-    <img src="Phone/Phone_microphone_singing_dreamy.gif" height="220">
-    <img src="Phone/Phone_art_design_music.png" height="220">
-    <img src="Phone/Phone_anime_punk_cartoon.jpg" height="220">
-    <img src="Phone/Phone_skirt_necklace_red.png" height="220">
-    <img src="Phone/Phone_anime_female_satan.jpg" height="220">
-    <img src="Phone/Phone_cartoon_anime_erotic_471.jpg" height="220">
-    <img src="Phone/Phone_anime_illustration_cartoon_655.jpg" height="220">
-    <img src="Phone/Phone_cartoon_anime_bikini_499.jpg" height="220">
-    <img src="Phone/Phone_anime_illustration_female.webp" height="220">
-    <img src="Phone/Phone_white_orange_gray.jpg" height="220">
+    <img src="Phone/Phone_anime_painting_illustration_530.jpg" height="220">
+    <img src="Phone/Phone_bikini_punk_cosplay.jpg" height="220">
+    <img src="Phone/Phone_cartoon_anime_erotic.jpg" height="220">
+    <img src="Phone/Phone_bunny_cute_sexy.png" height="220">
+    <img src="Phone/Phone_fantasy_artistic_vampire.jpg" height="220">
+    <img src="Phone/Phone_pink-magenta_red_white.png" height="220">
+    <img src="Phone/Phone_cartoon_anime_female_531.png" height="220">
+    <img src="Phone/Phone_anime_bikini_nude.jpg" height="220">
+    <img src="Phone/Phone_glasses_pigtails_red.jpg" height="220">
+    <img src="Phone/Phone_female_cartoon_anime.jpg" height="220">
   </marquee>
 </div>
 

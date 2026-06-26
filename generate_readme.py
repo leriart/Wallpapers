@@ -53,7 +53,7 @@ def discover_categories(root: Path):
             "name": folder.name,
             "count": len(all_files),
             "image_count": len(image_files),
-            "samples": shuffled[:10],
+            "samples": shuffled[:15],
         })
     return categories
 
@@ -85,12 +85,20 @@ def format_carousel(category: dict) -> str:
         lines.append("  <p><strong>Adult content.</strong> Browse the <code>NSFW/</code> folder directly.</p>")
 
     if samples:
-        lines.append('  <marquee behavior="scroll" direction="left" scrollamount="4">')
-        height = 220 if name == "Phone" else 160
+        height = 220 if name == "Phone" else 180
+        lines.append(
+            f'  <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;'
+            f'scroll-snap-type:x mandatory;scroll-behavior:smooth;'
+            f'background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;'
+            f'max-width:960px;margin:0 auto;">'
+        )
         for sample in samples:
             sample_quoted = sample.replace(" ", "%20")
-            lines.append(f'    <img src="{name}/{sample_quoted}" height="{height}">')
-        lines.append("  </marquee>")
+            lines.append(
+                f'    <img src="{name}/{sample_quoted}" height="{height}" '
+                f'style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">'
+            )
+        lines.append("  </div>")
 
     lines.append("</div>")
     return "\n".join(lines)

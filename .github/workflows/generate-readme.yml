@@ -1,9 +1,11 @@
 name: Generate README
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  # Auto-run on push disabled (2026-08-25): repo is ~19GB, checkout takes 45+ min
+  # and GitHub Actions struggles with repos >5GB. Run manually to regenerate README.
+  # push:
+  #   branches: [main]
 
 permissions:
   contents: write

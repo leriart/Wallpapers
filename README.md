@@ -7,6 +7,15 @@
   </p>
 </div>
 
+<div align="center">
+  <a href="https://leriart.github.io/Wallpapers/" style="display:inline-block;text-decoration:none;">
+    <img src="https://img.shields.io/badge/Open%20Gallery-browse%2C%20preview%20%26%20download-6ea8fe?style=for-the-badge&logo=github" alt="Open Gallery">
+  </a>
+  <p>
+    <a href="https://leriart.github.io/Wallpapers/"><strong>https://leriart.github.io/Wallpapers/</strong></a>
+  </p>
+</div>
+
 ---
 
 ## Organized with <a href="https://github.com/leriart/Wanalizer">Wanalizer</a>
@@ -731,7 +740,7 @@ The collection includes static and animated media:
 
 ## How to use
 
-1. Open the category you like.
+1. Browse the <a href="https://leriart.github.io/Wallpapers/">online gallery</a> or open a category below.
 2. Pick the wallpaper you want.
 3. Download it or copy its raw URL to use it as your desktop or phone wallpaper.
 

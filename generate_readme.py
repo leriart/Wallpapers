@@ -50,7 +50,7 @@ BADGE_COLORS = {
 def discover_categories(root: Path):
     categories = []
     for folder in sorted(root.iterdir()):
-        if not folder.is_dir() or folder.name.startswith("."):
+        if not folder.is_dir() or folder.name.startswith(".") or folder.name == "docs":
             continue
         files = [
             f.name for f in folder.iterdir()
@@ -202,6 +202,20 @@ def generate_readme(categories: list, characters: list) -> str:
     chars_block = format_characters(characters)
     chars_section = f"\n---\n\n{chars_block}\n" if chars_block else ""
 
+    gallery_link = "https://leriart.github.io/Wallpapers/"
+    gallery_banner = f"""
+<div align="center">
+  <a href="{gallery_link}" style="display:inline-block;text-decoration:none;">
+    <img src="https://img.shields.io/badge/Open%20Gallery-browse%2C%20preview%20%26%20download-6ea8fe?style=for-the-badge&logo=github" alt="Open Gallery">
+  </a>
+  <p>
+    <a href="{gallery_link}"><strong>{gallery_link}</strong></a>
+  </p>
+</div>
+
+---
+"""
+
     return f"""<div align="center">
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
@@ -210,9 +224,7 @@ def generate_readme(categories: list, characters: list) -> str:
     <img src="{badge('categories', f'{len(categories)}%20categories', 'bb9af7')}" alt="Categories">
   </p>
 </div>
-
----
-
+{gallery_banner}
 ## Organized with <a href="https://github.com/leriart/Wanalizer">Wanalizer</a>
 
 This collection is organized thanks to <strong>Wanalizer</strong>, an intelligent local wallpaper analyzer and categorizer.
@@ -241,7 +253,7 @@ The collection includes static and animated media:
 
 ## How to use
 
-1. Open the category you like.
+1. Browse the <a href="{gallery_link}">online gallery</a> or open a category below.
 2. Pick the wallpaper you want.
 3. Download it or copy its raw URL to use it as your desktop or phone wallpaper.
 

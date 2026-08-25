@@ -3,41 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wallpapers Gallery</title>
+<meta name="description" content="Curated collection of wallpapers organized by category — browse, preview and download.">
+<title>Wallpapers — Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>🖼️ Wallpapers Gallery</h1>
-  <p id="stats" class="stats">Loading…</p>
-  <div class="controls">
-    <input id="search" type="search" placeholder="Search by name, character, tag…" autocomplete="off">
-    <select id="category"></select>
-    <select id="kind">
-      <option value="all">All types</option>
-      <option value="image">Images</option>
-      <option value="video">Videos</option>
-    </select>
-    <button id="select-none" class="btn" title="Clear selection">Clear</button>
-    <button id="download-selected" class="btn primary" title="Download selected files">⬇ Download (<span id="sel-count">0</span>)</button>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>Wallpapers</h1>
+        <p id="stats" class="stats">Loading catalog…</p>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="search-wrap">
+        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="9" cy="9" r="5.5"></circle>
+          <path d="M13.2 13.2 17 17"></path>
+        </svg>
+        <input id="search" type="search" placeholder="Search name, character, tag…" autocomplete="off" spellcheck="false">
+      </div>
+      <select id="category" aria-label="Category"></select>
+      <select id="kind" aria-label="Media type">
+        <option value="all">All media</option>
+        <option value="image">Images</option>
+        <option value="video">Videos</option>
+      </select>
+      <div class="btn-group">
+        <button id="select-none" class="btn ghost" title="Clear selection">Clear</button>
+        <button id="download-selected" class="btn primary" title="Download selected files">
+          <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5"></path>
+            <path d="M4 15.5h12"></path>
+          </svg>
+          <span>Download</span>
+          <span id="sel-count" class="count">0</span>
+        </button>
+      </div>
+    </div>
   </div>
 </header>
 
-<main id="grid" class="grid"></main>
+<main id="grid" class="grid" aria-live="polite"></main>
 
-<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Wallpaper preview">
   <div class="lightbox-inner">
-    <button id="lb-close" class="lb-close" title="Close">✕</button>
+    <button id="lb-close" class="lb-close" aria-label="Close preview">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"></path></svg>
+    </button>
     <div id="lb-media"></div>
-    <div id="lb-info" class="lb-info"></div>
-    <div class="lb-actions">
-      <button id="lb-select" class="btn">Select</button>
-      <a id="lb-download" class="btn primary" download>⬇ Download</a>
+    <div class="lb-footer">
+      <div id="lb-info" class="lb-info"></div>
+      <div class="lb-actions">
+        <button id="lb-select" class="btn ghost">Select</button>
+        <a id="lb-download" class="btn primary" download>
+          <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5"></path>
+            <path d="M4 15.5h12"></path>
+          </svg>
+          <span>Download</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="toast" class="toast hidden"></div>
+<div id="toast" class="toast hidden" role="status"></div>
 
 <script src="app.js"></script>
 </body>

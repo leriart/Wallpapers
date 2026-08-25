@@ -7,7 +7,7 @@
 const REPO = "leriart/Wallpapers";
 const BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
-const THUMB = (path) => `https://images.weserv.nl/?url=${encodeURIComponent(`${RAW}/${path}`)}&w=420&output=jpg&q=75`;
+const THUMB = (path) => `https://images.weserv.nl/?url=${encodeURIComponent(`${RAW}/${path}`)}&w=480&output=jpg&q=75`;
 
 let DATA = null;
 let selected = new Set(); // "cat/name"
@@ -25,7 +25,7 @@ function fmtSize(bytes) {
 }
 
 function esc(s) {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
 function toast(msg) {
@@ -33,22 +33,38 @@ function toast(msg) {
   t.textContent = msg;
   t.classList.remove("hidden");
   clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.classList.add("hidden"), 2500);
+  t._timer = setTimeout(() => t.classList.add("hidden"), 2600);
 }
 
+function showSkeleton(count) {
+  grid.innerHTML = Array.from({ length: count }, () => '<div class="skel"></div>').join("");
+}
+
+function plural(n, one, many) {
+  return n === 1 ? one : many;
+}
+
+/* ---------- Load ---------- */
+
 async function loadIndex() {
+  showSkeleton(18);
   const res = await fetch("index.json", { cache: "no-cache" });
   if (!res.ok) throw new Error("index.json HTTP " + res.status);
   DATA = await res.json();
   const cats = DATA.categories;
   const total = cats.reduce((a, c) => a + c.files.length, 0);
   const videos = cats.reduce((a, c) => a + c.files.filter((f) => f.kind === "video").length, 0);
-  $("stats").textContent = `${total} wallpapers · ${cats.length} categories · ${videos} videos · click to preview, select to download`;
+  $("stats").textContent =
+    `${total.toLocaleString()} ${plural(total, "wallpaper", "wallpapers")} · ` +
+    `${cats.length} ${plural(cats.length, "category", "categories")} · ` +
+    `${videos} ${plural(videos, "video", "videos")}`;
 
   categoryEl.innerHTML = '<option value="all">All categories</option>' +
-    cats.map((c) => `<option value="${esc(c.name)}">${esc(c.name)} (${c.files.length})</option>`).join("");
+    cats.map((c) => `<option value="${esc(c.name)}">${esc(c.name)} &middot; ${c.files.length}</option>`).join("");
   render();
 }
+
+/* ---------- Filtering ---------- */
 
 function visibleFiles() {
   const q = searchEl.value.trim().toLowerCase();
@@ -66,10 +82,13 @@ function visibleFiles() {
   return out;
 }
 
+/* ---------- Render ---------- */
+
 function render() {
   const items = visibleFiles();
   if (!items.length) {
     grid.innerHTML = '<div class="empty">No wallpapers match your filters.</div>';
+    updateCount();
     return;
   }
   const frag = document.createDocumentFragment();
@@ -84,10 +103,17 @@ function render() {
       : `<img loading="lazy" src="${THUMB(`${cat}/${file.name}`)}" alt="${esc(file.name)}">`;
 
     card.innerHTML = media +
-      (file.char ? `<span class="char-badge">${esc(file.char)}</span>` : "") +
-      (file.kind === "video" ? '<span class="video-flag">▶ video</span>' : "") +
+      (file.char ? `<span class="badge">${esc(file.char)}</span>` : "") +
+      (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
       `<span class="check">✓</span>` +
-      `<div class="meta">${esc(file.name)} · ${fmtSize(file.size)}</div>`;
+      `<div class="meta"><span class="fname" title="${esc(file.name)}">${esc(file.name)}</span><span class="fsize">${fmtSize(file.size)}</span></div>`;
+
+    // hover play/pause for videos
+    if (file.kind === "video") {
+      const v = card.querySelector("video");
+      card.addEventListener("mouseenter", () => { try { v.play(); } catch (_) {} });
+      card.addEventListener("mouseleave", () => { v.pause(); v.currentTime = 0; });
+    }
 
     card.addEventListener("click", () => openLightbox(cat, file));
     card.addEventListener("dblclick", (e) => { e.stopPropagation(); toggleSelect(cat, file); });
@@ -95,16 +121,29 @@ function render() {
   }
   grid.innerHTML = "";
   grid.appendChild(frag);
-  $("sel-count").textContent = selected.size;
+  updateCount();
 }
+
+function updateCount() {
+  $("sel-count").textContent = selected.size;
+  const items = visibleFiles();
+  $("stats").textContent = $("stats").textContent.split(" · showing")[0] +
+    (searchEl.value || categoryEl.value !== "all" || kindEl.value !== "all"
+      ? ` · showing ${items.length}`
+      : "");
+}
+
+/* ---------- Selection ---------- */
 
 function toggleSelect(cat, file) {
   const key = `${cat}/${file.name}`;
   if (selected.has(key)) selected.delete(key); else selected.add(key);
   const card = grid.querySelector(`.card[data-key="${CSS.escape(key)}"]`);
   if (card) card.classList.toggle("selected", selected.has(key));
-  $("sel-count").textContent = selected.size;
+  updateCount();
 }
+
+/* ---------- Download ---------- */
 
 async function downloadFile(cat, file) {
   const url = `${RAW}/${cat}/${encodeURIComponent(file.name)}`;
@@ -128,17 +167,21 @@ async function downloadFile(cat, file) {
 
 async function downloadSelected() {
   const keys = [...selected];
-  if (!keys.length) return toast("Nothing selected — double-click items to select them.");
-  toast(`Downloading ${keys.length} file(s)…`);
+  if (!keys.length) return toast("Nothing selected. Double-click a wallpaper to select it.");
+  toast(`Downloading ${keys.length} ${plural(keys.length, "file", "files")}…`);
   let ok = 0;
   for (const key of keys) {
-    const [cat, name] = key.split("/");
+    const idx = key.indexOf("/");
+    const cat = key.slice(0, idx);
+    const name = key.slice(idx + 1);
     const c = DATA.categories.find((x) => x.name === cat);
     const f = c && c.files.find((x) => x.name === name);
     if (f && (await downloadFile(cat, f))) ok++;
   }
-  toast(`Downloaded ${ok}/${keys.length}.`);
+  toast(`Downloaded ${ok} of ${keys.length} ${plural(keys.length, "file", "files")}.`);
 }
+
+/* ---------- Lightbox ---------- */
 
 function openLightbox(cat, file) {
   const url = `${RAW}/${cat}/${encodeURIComponent(file.name)}`;
@@ -147,11 +190,14 @@ function openLightbox(cat, file) {
     ? `<video src="${url}" controls autoplay></video>`
     : `<img src="${url}" alt="${esc(file.name)}">`;
   $("lb-info").innerHTML =
-    `<strong>${esc(file.name)}</strong> · ${fmtSize(file.size)} · ${esc(cat)}` +
-    (file.char ? ` · ⭐ ${esc(file.char)}` : "");
+    `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}` +
+    (file.char ? `<span class="char-tag">${esc(file.char)}</span>` : "");
   $("lb-download").href = url;
   $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select";
-  $("lb-select").onclick = () => { toggleSelect(cat, file); $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select"; };
+  $("lb-select").onclick = () => {
+    toggleSelect(cat, file);
+    $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select";
+  };
   $("lightbox").classList.remove("hidden");
 }
 
@@ -162,7 +208,10 @@ function closeLightbox() {
 
 $("lb-close").addEventListener("click", closeLightbox);
 $("lightbox").addEventListener("click", (e) => { if (e.target === $("lightbox")) closeLightbox(); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "/" && document.activeElement !== searchEl) { e.preventDefault(); searchEl.focus(); }
+});
 
 searchEl.addEventListener("input", render);
 categoryEl.addEventListener("change", render);
@@ -171,5 +220,5 @@ $("select-none").addEventListener("click", () => { selected.clear(); render(); }
 $("download-selected").addEventListener("click", downloadSelected);
 
 loadIndex().catch((err) => {
-  grid.innerHTML = `<div class="empty">Failed to load index.json: ${esc(String(err))}</div>`;
+  grid.innerHTML = `<div class="empty">Failed to load catalog: ${esc(String(err))}</div>`;
 });

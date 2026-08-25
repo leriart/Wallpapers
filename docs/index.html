@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wallpapers Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>🖼️ Wallpapers Gallery</h1>
+  <p id="stats" class="stats">Loading…</p>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search by name, character, tag…" autocomplete="off">
+    <select id="category"></select>
+    <select id="kind">
+      <option value="all">All types</option>
+      <option value="image">Images</option>
+      <option value="video">Videos</option>
+    </select>
+    <button id="select-none" class="btn" title="Clear selection">Clear</button>
+    <button id="download-selected" class="btn primary" title="Download selected files">⬇ Download (<span id="sel-count">0</span>)</button>
+  </div>
+</header>
+
+<main id="grid" class="grid"></main>
+
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+  <div class="lightbox-inner">
+    <button id="lb-close" class="lb-close" title="Close">✕</button>
+    <div id="lb-media"></div>
+    <div id="lb-info" class="lb-info"></div>
+    <div class="lb-actions">
+      <button id="lb-select" class="btn">Select</button>
+      <a id="lb-download" class="btn primary" download>⬇ Download</a>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

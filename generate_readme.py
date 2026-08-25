@@ -86,6 +86,34 @@ def discover_categories(root: Path):
     return categories
 
 
+def discover_characters(root: Path, min_count: int = 2, limit: int = 24):
+    """Count recognizable characters from filenames (Clase_Personaje_tag1_tag2.ext).
+
+    Heuristic: the 2nd underscore segment starts with an uppercase letter and is not
+    a category-ish token; a 3rd segment also starting uppercase extends the name
+    (e.g. Hatsune_Miku). Tags from the vision pipeline are lowercase.
+    """
+    from collections import Counter
+    counter: Counter = Counter()
+    skip = {"Render", "Art", "Fi", "Sci", "3d", "2d", "V2", "V3"}
+    for folder in root.iterdir():
+        if not folder.is_dir() or folder.name.startswith("."):
+            continue
+        for f in folder.iterdir():
+            if not f.is_file() or f.name.startswith("."):
+                continue
+            parts = f.name.rsplit(".", 1)[0].split("_")
+            if len(parts) < 3:
+                continue
+            seg2 = parts[1]
+            if seg2[:1].isupper() and seg2 not in skip and not seg2.isupper():
+                name = seg2
+                if len(parts) > 2 and parts[2][:1].isupper():
+                    name = f"{seg2}_{parts[2]}"
+                counter[name] += 1
+    return [(name, n) for name, n in counter.most_common() if n >= min_count][:limit]
+
+
 def anchor(name: str) -> str:
     return name.lower().replace("_", "-").replace(" ", "-")
 
@@ -142,7 +170,27 @@ def format_carousel(category: dict) -> str:
     return "\n".join(lines)
 
 
-def generate_readme(categories: list) -> str:
+def format_characters(characters: list) -> str:
+    if not characters:
+        return ""
+    lines = [
+        "<div align=\"center\">",
+        "  <h2>Popular characters</h2>",
+        "  <p>",
+    ]
+    for name, count in characters:
+        color = "f7768e" if count >= 10 else "7aa2f7"
+        display = name.replace("_", " ").replace("%20", " ")
+        lines.append(
+            f'    <img src="https://img.shields.io/badge/{quote(display)}-{count}-{color}'
+            f'?style=for-the-badge&logo=none" alt="{display}">'
+        )
+    lines.append("  </p>")
+    lines.append("</div>")
+    return "\n".join(lines)
+
+
+def generate_readme(categories: list, characters: list) -> str:
     total_files = sum(c["count"] for c in categories)
     total_videos = sum(c["video_count"] for c in categories)
     toc = "\n".join(f"- [{c['name']}](#{anchor(c['name'])}) — {c['count']} files" for c in categories)
@@ -151,6 +199,8 @@ def generate_readme(categories: list) -> str:
         "\n> 🎞️ This collection includes **animated/live wallpapers** (MP4/WebM) — "
         "click the play button on video previews.\n" if total_videos else ""
     )
+    chars_block = format_characters(characters)
+    chars_section = f"\n---\n\n{chars_block}\n" if chars_block else ""
 
     return f"""<div align="center">
   <h1>WALLPAPERS</h1>
@@ -176,7 +226,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 ---
 
 {carousels}
-
+{chars_section}
 ---
 
 ## File formats
@@ -207,12 +257,14 @@ Suggestions and contributions are welcome. If you want to add a new wallpaper, p
 
 def main():
     categories = discover_categories(REPO_ROOT)
+    characters = discover_characters(REPO_ROOT)
     readme_path = REPO_ROOT / "README.md"
-    readme_path.write_text(generate_readme(categories), encoding="utf-8")
+    readme_path.write_text(generate_readme(categories, characters), encoding="utf-8")
     print(f"Generated README.md with {len(categories)} categories.")
     total = sum(c["count"] for c in categories)
     videos = sum(c["video_count"] for c in categories)
     print(f"Total files: {total} ({videos} videos)")
+    print(f"Characters listed: {len(characters)}")
 
 
 if __name__ == "__main__":

@@ -687,6 +687,38 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 
 ---
 
+<div align="center">
+  <h2>Popular characters</h2>
+  <p>
+    <img src="https://img.shields.io/badge/Hatsune%20Miku-27-f7768e?style=for-the-badge&logo=none" alt="Hatsune Miku">
+    <img src="https://img.shields.io/badge/Power-19-f7768e?style=for-the-badge&logo=none" alt="Power">
+    <img src="https://img.shields.io/badge/Asuka%20Langley-9-7aa2f7?style=for-the-badge&logo=none" alt="Asuka Langley">
+    <img src="https://img.shields.io/badge/Guts-8-7aa2f7?style=for-the-badge&logo=none" alt="Guts">
+    <img src="https://img.shields.io/badge/Spider%20Man-7-7aa2f7?style=for-the-badge&logo=none" alt="Spider Man">
+    <img src="https://img.shields.io/badge/Geralt-7-7aa2f7?style=for-the-badge&logo=none" alt="Geralt">
+    <img src="https://img.shields.io/badge/Frieren-5-7aa2f7?style=for-the-badge&logo=none" alt="Frieren">
+    <img src="https://img.shields.io/badge/Lucy-5-7aa2f7?style=for-the-badge&logo=none" alt="Lucy">
+    <img src="https://img.shields.io/badge/Rei%20Ayanami-5-7aa2f7?style=for-the-badge&logo=none" alt="Rei Ayanami">
+    <img src="https://img.shields.io/badge/Totoro-5-7aa2f7?style=for-the-badge&logo=none" alt="Totoro">
+    <img src="https://img.shields.io/badge/Sonic-4-7aa2f7?style=for-the-badge&logo=none" alt="Sonic">
+    <img src="https://img.shields.io/badge/Hornet-4-7aa2f7?style=for-the-badge&logo=none" alt="Hornet">
+    <img src="https://img.shields.io/badge/Albedo-3-7aa2f7?style=for-the-badge&logo=none" alt="Albedo">
+    <img src="https://img.shields.io/badge/Ghost%20Rider-3-7aa2f7?style=for-the-badge&logo=none" alt="Ghost Rider">
+    <img src="https://img.shields.io/badge/Kiana%20Kaslana-3-7aa2f7?style=for-the-badge&logo=none" alt="Kiana Kaslana">
+    <img src="https://img.shields.io/badge/Nezuko%20Kamado-3-7aa2f7?style=for-the-badge&logo=none" alt="Nezuko Kamado">
+    <img src="https://img.shields.io/badge/Ryuko%20Matoi-3-7aa2f7?style=for-the-badge&logo=none" alt="Ryuko Matoi">
+    <img src="https://img.shields.io/badge/Scott%20Pilgrim-3-7aa2f7?style=for-the-badge&logo=none" alt="Scott Pilgrim">
+    <img src="https://img.shields.io/badge/Zero%20Two-3-7aa2f7?style=for-the-badge&logo=none" alt="Zero Two">
+    <img src="https://img.shields.io/badge/Link-3-7aa2f7?style=for-the-badge&logo=none" alt="Link">
+    <img src="https://img.shields.io/badge/Darth%20Vader-3-7aa2f7?style=for-the-badge&logo=none" alt="Darth Vader">
+    <img src="https://img.shields.io/badge/Huang%20Lee-3-7aa2f7?style=for-the-badge&logo=none" alt="Huang Lee">
+    <img src="https://img.shields.io/badge/Tux-3-7aa2f7?style=for-the-badge&logo=none" alt="Tux">
+    <img src="https://img.shields.io/badge/Michael%20Jackson-3-7aa2f7?style=for-the-badge&logo=none" alt="Michael Jackson">
+  </p>
+</div>
+
+---
+
 ## File formats
 
 The collection includes static and animated media:

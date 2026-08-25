@@ -7,7 +7,8 @@
 const REPO = "leriart/Wallpapers";
 const BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
-const THUMB = (path) => `https://images.weserv.nl/?url=${encodeURIComponent(`${RAW}/${path}`)}&w=480&output=jpg&q=75`;
+// Thumbnails are local (served by Pages, same origin, no third-party proxy).
+const THUMB = (path) => path;
 
 let DATA = null;
 let selected = new Set(); // "cat/name"
@@ -99,8 +100,8 @@ function render() {
     if (selected.has(card.dataset.key)) card.classList.add("selected");
 
     const media = file.kind === "video"
-      ? `<video src="${RAW}/${cat}/${encodeURIComponent(file.name)}" preload="metadata" muted loop></video>`
-      : `<img loading="lazy" src="${THUMB(`${cat}/${file.name}`)}" alt="${esc(file.name)}">`;
+      ? `<video src="${RAW}/${cat}/${encodeURIComponent(file.name)}" poster="${esc(file.thumb)}" preload="none" muted loop></video>`
+      : `<img loading="lazy" src="${esc(file.thumb)}" alt="${esc(file.name)}">`;
 
     card.innerHTML = media +
       (file.char ? `<span class="badge">${esc(file.char)}</span>` : "") +

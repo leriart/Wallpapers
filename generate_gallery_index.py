@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
-"""Generate docs/index.json — gallery index for the GitHub Pages viewer.
+"""Generate docs/index.json + docs/thumbs/* for the GitHub Pages gallery.
 
-Lists every category with its files (name, kind, size, character) so the
-front-end can render the gallery without hitting the GitHub API (rate limits).
+Thumbnails are generated locally (no third-party proxy at runtime):
+  - images: Pillow resize to 480px, JPEG q75
+  - videos: ffmpeg first-frame extract, then Pillow resize
+
 Run from repo root: python3 generate_gallery_index.py
 """
 
 import json
 import os
-import re
+import subprocess
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent
 OUT = REPO_ROOT / "docs" / "index.json"
+THUMBS_DIR = REPO_ROOT / "docs" / "thumbs"
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif"}
 VIDEO_EXTENSIONS = {".mp4", ".webm", ".mov", ".mkv"}
@@ -21,7 +25,6 @@ SKIP_TOKENS = {"Render", "Art", "Fi", "Sci", "3d", "2d", "V2", "V3"}
 
 
 def character_from_name(name: str) -> str:
-    """Extract character from Clase_Personaje_tag1_tag2.ext (heuristic)."""
     parts = name.rsplit(".", 1)[0].split("_")
     if len(parts) < 3:
         return ""
@@ -33,13 +36,47 @@ def character_from_name(name: str) -> str:
     return ""
 
 
+def make_thumb(src: Path, dst: Path, is_video: bool) -> bool:
+    if dst.exists():
+        return True
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dst.with_suffix(".tmp.jpg")
+    try:
+        if is_video:
+            r = subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+                 "-frames:v", "1", "-vf", "scale=480:-2", str(tmp)],
+                capture_output=True, timeout=60,
+            )
+            if r.returncode != 0 or not tmp.exists():
+                return False
+        else:
+            from PIL import Image
+            im = Image.open(src).convert("RGB")
+            im.thumbnail((480, 480))
+            im.save(tmp, "JPEG", quality=75)
+        os.replace(tmp, dst)
+        return True
+    except Exception:
+        try:
+            if tmp.exists():
+                tmp.unlink()
+        except OSError:
+            pass
+        return False
+
+
 def main():
     categories = []
+    total_media = 0
+    thumbs_ok = 0
+    thumbs_fail = 0
+
     for folder in sorted(REPO_ROOT.iterdir()):
-        if not folder.is_dir() or folder.name.startswith("."):
+        if not folder.is_dir() or folder.name.startswith(".") or folder.name == "docs":
             continue
         files = []
-        for f in folder.iterdir():
+        for f in sorted(folder.iterdir()):
             if not f.is_file() or f.name.startswith("."):
                 continue
             ext = f.suffix.lower()
@@ -49,26 +86,36 @@ def main():
                 kind = "video"
             else:
                 continue
+            total_media += 1
+            thumb_rel = f"thumbs/{folder.name}/{f.stem}.jpg"
+            if make_thumb(f, REPO_ROOT / "docs" / thumb_rel, kind == "video"):
+                thumbs_ok += 1
+            else:
+                thumbs_fail += 1
             files.append({
                 "name": f.name,
                 "kind": kind,
                 "size": f.stat().st_size,
                 "char": character_from_name(f.name),
+                "thumb": thumb_rel,
             })
         files.sort(key=lambda x: x["name"].lower())
-        categories.append({
-            "name": folder.name,
-            "files": files,
-        })
+        categories.append({"name": folder.name, "files": files})
 
     OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(json.dumps({"repo": "leriart/Wallpapers", "branch": "main", "categories": categories}),
-                   encoding="utf-8")
+    OUT.write_text(json.dumps({
+        "repo": "leriart/Wallpapers",
+        "branch": "main",
+        "categories": categories,
+    }), encoding="utf-8")
+
     total = sum(len(c["files"]) for c in categories)
     videos = sum(1 for c in categories for f in c["files"] if f["kind"] == "video")
-    print(f"index.json generado: {len(categories)} categorías, {total} archivos ({videos} videos)")
-    print(f"Tamaño: {OUT.stat().st_size/1024:.0f} KB")
+    print(f"index.json: {len(categories)} categorías, {total} archivos ({videos} videos)")
+    print(f"thumbs OK: {thumbs_ok} | fallos: {thumbs_fail}")
+    print(f"index.json: {OUT.stat().st_size/1024:.0f} KB | thumbs dir: "
+          f"{sum(p.stat().st_size for p in THUMBS_DIR.rglob('*.jpg'))/1024/1024:.0f} MB")
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

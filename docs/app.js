@@ -282,19 +282,56 @@ function updateCount() {
 
 /* ---------- Download ---------- */
 
-async function downloadFile(cat, file) {
+// iOS Safari ignores the `download` attribute on cross-origin URLs, so we
+// open blob URLs in a new tab there (Safari shows the viewer + save/share).
+// Android/desktop (Chrome & Firefox): blob URL + download attribute works.
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const blobCache = new Map(); // key -> { url }
+
+async function getBlobUrl(cat, file) {
+  const key = `${cat}/${file.name}`;
+  const cached = blobCache.get(key);
+  if (cached) return cached;
   const url = `${RAW}/${cat}/${encodeURIComponent(file.name)}`;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const blob = await res.blob();
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const blob = await res.blob();
+  const obj = { url: URL.createObjectURL(blob) };
+  blobCache.set(key, obj);
+  return obj;
+}
+
+function triggerBlobDownload(obj, filename) {
+  const a = document.createElement("a");
+  a.href = obj.url;
+  a.download = filename;
+  a.rel = "noopener";
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+function openOnIOS(obj) {
+  const win = window.open(obj.url, "_blank");
+  if (!win) {
+    // Popup blocked: same-gesture anchor tap as fallback.
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = file.name;
+    a.href = obj.url;
+    a.target = "_blank";
+    a.rel = "noopener";
     document.body.appendChild(a);
     a.click();
     a.remove();
-    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }
+}
+
+async function downloadFile(cat, file) {
+  try {
+    const obj = await getBlobUrl(cat, file);
+    if (IS_IOS) openOnIOS(obj);
+    else triggerBlobDownload(obj, file.name);
     return true;
   } catch (err) {
     console.error(err);
@@ -304,18 +341,41 @@ async function downloadFile(cat, file) {
 
 async function downloadSelected() {
   const keys = [...selected];
-  if (!keys.length) return toast("Nothing selected. Tap the check on a wallpaper to select it.");
-  toast(`Downloading ${keys.length} ${plural(keys.length, "file", "files")}…`);
-  let ok = 0;
+  if (!keys.length) return toast("Nothing selected. Tap the + on a wallpaper to select it.");
+  toast(`Preparing ${keys.length} ${plural(keys.length, "file", "files")}…`);
+
+  const jobs = [];
   for (const key of keys) {
     const idx = key.indexOf("/");
     const cat = key.slice(0, idx);
     const name = key.slice(idx + 1);
     const c = DATA.categories.find((x) => x.name === cat);
     const f = c && c.files.find((x) => x.name === name);
-    if (f && (await downloadFile(cat, f))) ok++;
+    if (f) jobs.push({ cat, file: f });
   }
-  toast(`Downloaded ${ok} of ${keys.length} ${plural(keys.length, "file", "files")}.`);
+
+  let ok = 0;
+  if (IS_IOS) {
+    // iOS: one download per user gesture — open them sequentially.
+    for (let i = 0; i < jobs.length; i++) {
+      try {
+        const obj = await getBlobUrl(jobs[i].cat, jobs[i].file);
+        openOnIOS(obj);
+        ok++;
+        if (i < jobs.length - 1) await new Promise((r) => setTimeout(r, 1200));
+      } catch (_) { /* keep going */ }
+    }
+  } else {
+    for (const { cat, file } of jobs) {
+      try {
+        const obj = await getBlobUrl(cat, file);
+        triggerBlobDownload(obj, file.name);
+        ok++;
+        await new Promise((r) => setTimeout(r, 350));
+      } catch (_) { /* keep going */ }
+    }
+  }
+  toast(`Started ${ok} of ${jobs.length} ${plural(jobs.length, "download", "downloads")}.`);
 }
 
 /* ---------- Lightbox ---------- */
@@ -328,7 +388,18 @@ function openLightbox(cat, file) {
     : `<img src="${url}" alt="${esc(file.name)}">`;
   $("lb-info").innerHTML =
     `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}`;
+  // Download uses the blob path (works on mobile); keep href as fallback.
   $("lb-download").href = url;
+  $("lb-download").onclick = (e) => {
+    if (!IS_IOS) {
+      e.preventDefault();
+      downloadFile(cat, file);
+    }
+    // iOS: let the anchor open the blob/new tab flow handled by downloadFile
+    // via openOnIOS — prevent default too so we control the gesture.
+    e.preventDefault();
+    downloadFile(cat, file);
+  };
   const isSel = selected.has(key);
   $("lb-select").textContent = isSel ? "Deselect" : "Select";
   $("lb-select").classList.toggle("active", isSel);

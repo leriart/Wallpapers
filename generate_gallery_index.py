@@ -96,7 +96,6 @@ def main():
                 "name": f.name,
                 "kind": kind,
                 "size": f.stat().st_size,
-                "char": character_from_name(f.name),
                 "thumb": thumb_rel,
             })
         files.sort(key=lambda x: x["name"].lower())

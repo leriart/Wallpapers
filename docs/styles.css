@@ -562,5 +562,20 @@ select:focus { border-color: var(--accent); }
 @media (hover: none) {
   .btn { padding: 11px 15px; }
   .card video, .card img { min-height: 100px; }
-  .select-btn { width: 30px; height: 30px; }
+  .select-btn {
+    width: 34px;
+    height: 34px;
+    border-width: 2px;
+    border-color: var(--accent);
+    background: rgba(110, 168, 254, 0.15);
+    color: var(--accent);
+    font-size: 19px;
+  }
+  .select-btn .plus { font-size: 21px; }
+  .card.selected .select-btn {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: #0b0e14;
+  }
+  .card.selected .select-btn .check { font-size: 17px; }
 }

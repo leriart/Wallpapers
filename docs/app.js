@@ -225,10 +225,14 @@ function render() {
     return;
   }
   const frag = document.createDocumentFragment();
-  for (const { cat, file } of items) {
+  for (let idx = 0; idx < items.length; idx++) {
+    const { cat, file } = items[idx];
     const card = document.createElement("div");
     card.className = "card";
     card.dataset.key = `${cat}/${file.name}`;
+    // Staggered entrance: cap the delay so long lists stay snappy
+    const delay = Math.min(idx, 24) * 18;
+    card.style.animationDelay = `${delay}ms`;
     const isSel = selected.has(card.dataset.key);
     if (isSel) card.classList.add("selected");
 
@@ -238,8 +242,13 @@ function render() {
 
     card.innerHTML = media +
       (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
-      `<button class="select-btn" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}"><span class="check">✓</span></button>` +
-      `<div class="meta"><span class="fname" title="${esc(file.name)}">${esc(file.name)}</span><span class="fsize">${fmtSize(file.size)}</span></div>`;
+      `<div class="meta">` +
+        `<span class="fname" title="${esc(file.name)}">${esc(file.name)}</span>` +
+        `<span class="meta-right">` +
+          `<span class="fsize">${fmtSize(file.size)}</span>` +
+          `<button class="select-btn" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}"><span class="check">✓</span></button>` +
+        `</span>` +
+      `</div>`;
 
     // hover play/pause for videos (desktop only)
     if (file.kind === "video" && !IS_TOUCH) {

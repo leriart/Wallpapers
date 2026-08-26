@@ -293,7 +293,7 @@ select:focus { border-color: var(--accent); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
+  gap: 8px;
 }
 
 .card .fname {
@@ -303,13 +303,21 @@ select:focus { border-color: var(--accent); }
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: var(--mono);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.card .meta-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
 }
 
 .card .fsize {
   font-size: 10px;
   color: var(--text-faint);
   font-family: var(--mono);
-  flex: none;
 }
 
 .kind-flag {
@@ -329,31 +337,29 @@ select:focus { border-color: var(--accent); }
   pointer-events: none;
 }
 
-/* Select button: big, always visible, touch-friendly */
+/* Select button: sits in the meta bar, next to the filename */
 .select-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: rgba(10, 13, 19, 0.75);
-  backdrop-filter: blur(6px);
-  border: 2px solid var(--border-strong);
-  color: var(--text);
+  background: var(--panel-2);
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-faint);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s, color 0.15s;
   touch-action: manipulation;
-  z-index: 2;
+  flex: none;
 }
 
-.select-btn:active { transform: scale(0.92); }
+.select-btn:hover { border-color: var(--pink); color: var(--pink); }
 
-.select-btn .check { display: none; font-size: 15px; font-weight: 700; }
+.select-btn:active { transform: scale(0.88); }
+
+.select-btn .check { display: none; font-size: 13px; font-weight: 700; }
 
 .card.selected .select-btn {
   background: var(--pink);
@@ -363,8 +369,13 @@ select:focus { border-color: var(--accent); }
 
 .card.selected .select-btn .check { display: block; }
 
-.card:not(.selected) .select-btn { color: var(--text-faint); }
-.card:not(.selected) .select-btn:hover { border-color: var(--pink); color: var(--pink); }
+/* Card entrance animation (staggered via JS inline delay) */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card { animation: cardIn 0.3s ease both; }
 
 /* Skeleton loading */
 
@@ -532,14 +543,13 @@ select:focus { border-color: var(--accent); }
 
 /* ---------- Desktop niceties (hover capable) ---------- */
 @media (hover: hover) {
-  .select-btn { opacity: 0; transition: opacity 0.15s, background 0.15s, border-color 0.15s, transform 0.1s; }
-  .card:hover .select-btn { opacity: 1; }
-  .card.selected .select-btn { opacity: 1; }
+  .card:hover .select-btn { border-color: var(--pink); color: var(--pink); }
+  .card.selected .select-btn { border-color: var(--pink); color: #0b0e14; }
 }
 
 /* ---------- Touch: bigger targets, no hover-play ---------- */
 @media (hover: none) {
   .btn { padding: 11px 15px; }
   .card video, .card img { min-height: 100px; }
-  .select-btn { width: 38px; height: 38px; }
+  .select-btn { width: 30px; height: 30px; }
 }

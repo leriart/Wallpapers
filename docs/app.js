@@ -287,7 +287,7 @@ function updateCount() {
 // Android/desktop (Chrome & Firefox): blob URL + download attribute works.
 const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-const blobCache = new Map(); // key -> { url }
+const blobCache = new Map(); // key -> { url, blob }
 
 async function getBlobUrl(cat, file) {
   const key = `${cat}/${file.name}`;
@@ -297,7 +297,7 @@ async function getBlobUrl(cat, file) {
   const res = await fetch(url);
   if (!res.ok) throw new Error("HTTP " + res.status);
   const blob = await res.blob();
-  const obj = { url: URL.createObjectURL(blob) };
+  const obj = { url: URL.createObjectURL(blob), blob };
   blobCache.set(key, obj);
   return obj;
 }
@@ -313,10 +313,45 @@ function triggerBlobDownload(obj, filename) {
   a.remove();
 }
 
+// iOS: native share sheet is the only reliable save path. Needs a user
+// gesture, so we pre-fetch blobs (e.g. when the lightbox opens) and share
+// with File objects within the tap.
+async function shareOnIOS(items) {
+  if (!navigator.share || !navigator.canShare) return false;
+  const files = items.map(({ cat, file, obj }) =>
+    new File([obj.blob], file.name, { type: obj.blob.type || "application/octet-stream" })
+  );
+  const shareData = files.length === 1 ? { files } : { files };
+  if (!navigator.canShare(shareData)) return false;
+  try {
+    await navigator.share(shareData);
+    return true;
+  } catch (err) {
+    if (err && err.name === "AbortError") return true; // user dismissed = fine
+    console.error(err);
+    return false;
+  }
+}
+
+async function downloadFile(cat, file) {
+  try {
+    const obj = await getBlobUrl(cat, file);
+    if (IS_IOS) {
+      const shared = await shareOnIOS([{ cat, file, obj }]);
+      if (!shared) openOnIOS(obj); // fallback: open blob in new tab
+      return true;
+    }
+    triggerBlobDownload(obj, file.name);
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
 function openOnIOS(obj) {
   const win = window.open(obj.url, "_blank");
   if (!win) {
-    // Popup blocked: same-gesture anchor tap as fallback.
     const a = document.createElement("a");
     a.href = obj.url;
     a.target = "_blank";
@@ -327,16 +362,10 @@ function openOnIOS(obj) {
   }
 }
 
-async function downloadFile(cat, file) {
-  try {
-    const obj = await getBlobUrl(cat, file);
-    if (IS_IOS) openOnIOS(obj);
-    else triggerBlobDownload(obj, file.name);
-    return true;
-  } catch (err) {
-    console.error(err);
-    return false;
-  }
+// Pre-fetch a single file's blob (no gesture needed) so a later tap can
+// share/download it synchronously — required for iOS.
+function prefetchBlob(cat, file) {
+  getBlobUrl(cat, file).catch(() => {});
 }
 
 async function downloadSelected() {
@@ -354,26 +383,31 @@ async function downloadSelected() {
     if (f) jobs.push({ cat, file: f });
   }
 
-  let ok = 0;
   if (IS_IOS) {
-    // iOS: one download per user gesture — open them sequentially.
-    for (let i = 0; i < jobs.length; i++) {
-      try {
-        const obj = await getBlobUrl(jobs[i].cat, jobs[i].file);
-        openOnIOS(obj);
-        ok++;
-        if (i < jobs.length - 1) await new Promise((r) => setTimeout(r, 1200));
-      } catch (_) { /* keep going */ }
-    }
-  } else {
+    // Fetch all blobs first, then share the whole set in ONE gesture.
+    const prepared = [];
     for (const { cat, file } of jobs) {
       try {
         const obj = await getBlobUrl(cat, file);
-        triggerBlobDownload(obj, file.name);
-        ok++;
-        await new Promise((r) => setTimeout(r, 350));
-      } catch (_) { /* keep going */ }
+        prepared.push({ cat, file, obj });
+      } catch (_) { /* skip */ }
     }
+    if (!prepared.length) return toast("Could not fetch the selected files.");
+    const shared = await shareOnIOS(prepared);
+    toast(shared
+      ? `Share sheet opened with ${prepared.length} ${plural(prepared.length, "file", "files")}.`
+      : "Sharing not available — open each file from its preview.");
+    return;
+  }
+
+  let ok = 0;
+  for (const { cat, file } of jobs) {
+    try {
+      const obj = await getBlobUrl(cat, file);
+      triggerBlobDownload(obj, file.name);
+      ok++;
+      await new Promise((r) => setTimeout(r, 350));
+    } catch (_) { /* keep going */ }
   }
   toast(`Started ${ok} of ${jobs.length} ${plural(jobs.length, "download", "downloads")}.`);
 }
@@ -388,15 +422,10 @@ function openLightbox(cat, file) {
     : `<img src="${url}" alt="${esc(file.name)}">`;
   $("lb-info").innerHTML =
     `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}`;
-  // Download uses the blob path (works on mobile); keep href as fallback.
+  // Pre-fetch the blob so Download can act within the user gesture (iOS).
+  prefetchBlob(cat, file);
   $("lb-download").href = url;
   $("lb-download").onclick = (e) => {
-    if (!IS_IOS) {
-      e.preventDefault();
-      downloadFile(cat, file);
-    }
-    // iOS: let the anchor open the blob/new tab flow handled by downloadFile
-    // via openOnIOS — prevent default too so we control the gesture.
     e.preventDefault();
     downloadFile(cat, file);
   };

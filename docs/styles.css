@@ -337,14 +337,15 @@ select:focus { border-color: var(--accent); }
   pointer-events: none;
 }
 
-/* Select button: sits in the meta bar, next to the filename */
+/* Select button: sits in the meta bar, next to the filename.
+   Always visible: shows a plus icon when unselected, check when selected. */
 .select-btn {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--panel-2);
-  border: 1.5px solid var(--border-strong);
-  color: var(--text-faint);
+  border: 2px solid var(--border-strong);
+  color: var(--text-dim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,13 +354,23 @@ select:focus { border-color: var(--accent); }
   transition: background 0.15s, border-color 0.15s, transform 0.1s, color 0.15s;
   touch-action: manipulation;
   flex: none;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
 }
 
-.select-btn:hover { border-color: var(--pink); color: var(--pink); }
+.select-btn .plus {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.select-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .select-btn:active { transform: scale(0.88); }
 
-.select-btn .check { display: none; font-size: 13px; font-weight: 700; }
+.select-btn .check { display: none; font-size: 14px; font-weight: 700; }
 
 .card.selected .select-btn {
   background: var(--pink);

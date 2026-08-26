@@ -141,7 +141,11 @@ function toggleSelect(cat, file) {
   if (card) {
     card.classList.toggle("selected", selected.has(key));
     const btn = card.querySelector(".select-btn");
-    if (btn) btn.setAttribute("aria-pressed", String(selected.has(key)));
+    if (btn) {
+      const isSel = selected.has(key);
+      btn.setAttribute("aria-pressed", String(isSel));
+      btn.innerHTML = isSel ? '<span class="check">✓</span>' : '<span class="plus">+</span>';
+    }
   }
   updateCount();
 }
@@ -246,7 +250,9 @@ function render() {
         `<span class="fname" title="${esc(file.name)}">${esc(file.name)}</span>` +
         `<span class="meta-right">` +
           `<span class="fsize">${fmtSize(file.size)}</span>` +
-          `<button class="select-btn" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}"><span class="check">✓</span></button>` +
+          `<button class="select-btn" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}">` +
+            (isSel ? '<span class="check">✓</span>' : '<span class="plus">+</span>') +
+          `</button>` +
         `</span>` +
       `</div>`;
 

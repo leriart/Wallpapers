@@ -121,46 +121,14 @@ def discover_categories_from_index(index_path: Path):
     return categories
 
 
-def discover_characters_from_index(index_path: Path, min_count: int = 2, limit: int = 24):
-    """Count characters from index.json chars (works without cloning media)."""
-    from collections import Counter
-    import json
-    data = json.loads(index_path.read_text(encoding="utf-8"))
-    counter: Counter = Counter()
-    for c in data.get("categories", []):
-        for f in c.get("files", []):
-            ch = f.get("char", "")
-            if ch:
-                counter[ch] += 1
-    return [(n, k) for n, k in counter.most_common() if k >= min_count][:limit]
-
-
 def discover_characters(root: Path, min_count: int = 2, limit: int = 24):
-    """Count recognizable characters from filenames (Clase_Personaje_tag1_tag2.ext).
+    """Legacy: characters were removed from filenames; returns empty."""
+    return []
 
-    Heuristic: the 2nd underscore segment starts with an uppercase letter and is not
-    a category-ish token; a 3rd segment also starting uppercase extends the name
-    (e.g. Hatsune_Miku). Tags from the vision pipeline are lowercase.
-    """
-    from collections import Counter
-    counter: Counter = Counter()
-    skip = {"Render", "Art", "Fi", "Sci", "3d", "2d", "V2", "V3"}
-    for folder in root.iterdir():
-        if not folder.is_dir() or folder.name.startswith("."):
-            continue
-        for f in folder.iterdir():
-            if not f.is_file() or f.name.startswith("."):
-                continue
-            parts = f.name.rsplit(".", 1)[0].split("_")
-            if len(parts) < 3:
-                continue
-            seg2 = parts[1]
-            if seg2[:1].isupper() and seg2 not in skip and not seg2.isupper():
-                name = seg2
-                if len(parts) > 2 and parts[2][:1].isupper():
-                    name = f"{seg2}_{parts[2]}"
-                counter[name] += 1
-    return [(name, n) for name, n in counter.most_common() if n >= min_count][:limit]
+
+def discover_characters_from_index(index_path: Path, min_count: int = 2, limit: int = 24):
+    """Legacy: characters were removed; returns empty."""
+    return []
 
 
 def anchor(name: str) -> str:

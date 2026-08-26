@@ -79,7 +79,7 @@ function visibleFiles() {
     if (cat !== "all" && c.name !== cat) continue;
     for (const f of c.files) {
       if (kind !== "all" && f.kind !== kind) continue;
-      if (q && !`${f.name} ${f.char}`.toLowerCase().includes(q)) continue;
+      if (q && !f.name.toLowerCase().includes(q)) continue;
       out.push({ cat: c.name, file: f });
     }
   }
@@ -107,7 +107,6 @@ function render() {
       : `<img loading="lazy" src="${esc(file.thumb)}" alt="${esc(file.name)}">`;
 
     card.innerHTML = media +
-      (file.char ? `<span class="badge">${esc(file.char)}</span>` : "") +
       (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
       `<span class="check">✓</span>` +
       `<div class="meta"><span class="fname" title="${esc(file.name)}">${esc(file.name)}</span><span class="fsize">${fmtSize(file.size)}</span></div>`;
@@ -120,7 +119,18 @@ function render() {
     }
 
     card.addEventListener("click", () => openLightbox(cat, file));
-    card.addEventListener("dblclick", (e) => { e.stopPropagation(); toggleSelect(cat, file); });
+    // Right-click (desktop) or long-press (touch) toggles selection
+    card.addEventListener("contextmenu", (e) => { e.preventDefault(); toggleSelect(cat, file); });
+    let pressTimer = null;
+    card.addEventListener("touchstart", (e) => {
+      if (IS_TOUCH) {
+        pressTimer = setTimeout(() => { toggleSelect(cat, file); }, 450);
+      }
+    }, { passive: true });
+    const clearPress = () => { if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; } };
+    card.addEventListener("touchend", clearPress);
+    card.addEventListener("touchmove", clearPress);
+    card.addEventListener("touchcancel", clearPress);
     frag.appendChild(card);
   }
   grid.innerHTML = "";
@@ -194,8 +204,7 @@ function openLightbox(cat, file) {
     ? `<video src="${url}" controls autoplay></video>`
     : `<img src="${url}" alt="${esc(file.name)}">`;
   $("lb-info").innerHTML =
-    `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}` +
-    (file.char ? `<span class="char-tag">${esc(file.char)}</span>` : "");
+    `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}`;
   $("lb-download").href = url;
   $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select";
   $("lb-select").onclick = () => {

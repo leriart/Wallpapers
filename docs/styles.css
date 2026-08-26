@@ -162,7 +162,20 @@ select {
 select:hover { border-color: var(--border-strong); }
 select:focus { border-color: var(--accent); }
 
-.btn-group { display: flex; gap: 8px; }
+.btn-group { display: flex; gap: 8px; align-items: center; }
+
+.hint {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  flex-basis: 100%;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .hint { text-align: left; }
+}
 
 .btn {
   display: inline-flex;
@@ -331,21 +344,7 @@ select:focus { border-color: var(--accent); }
 }
 
 .badge {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  max-width: calc(100% - 80px);
-  background: rgba(10, 13, 19, 0.78);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(240, 166, 202, 0.35);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--pink);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: none;
 }
 
 .kind-flag {

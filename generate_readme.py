@@ -86,6 +86,55 @@ def discover_categories(root: Path):
     return categories
 
 
+def discover_categories_from_index(index_path: Path):
+    """Build categories from docs/index.json (used by the auto-README workflow,
+    so it never needs to clone the 19GB media tree)."""
+    import json
+    data = json.loads(index_path.read_text(encoding="utf-8"))
+    categories = []
+    for c in data.get("categories", []):
+        files = [f["name"] for f in c["files"]]
+        image_files = [f["name"] for f in c["files"] if f["kind"] == "image"]
+        video_files = [f["name"] for f in c["files"] if f["kind"] == "video"]
+        random.seed(c["name"])
+        shuffled_images = image_files.copy()
+        random.shuffle(shuffled_images)
+        shuffled_videos = video_files.copy()
+        random.shuffle(shuffled_videos)
+        samples = []
+        for i in range(15):
+            if i % 3 == 2 and shuffled_videos:
+                samples.append(("video", shuffled_videos.pop(0)))
+            elif shuffled_images:
+                samples.append(("image", shuffled_images.pop(0)))
+            elif shuffled_videos:
+                samples.append(("video", shuffled_videos.pop(0)))
+            else:
+                break
+        categories.append({
+            "name": c["name"],
+            "count": len(files),
+            "image_count": len(image_files),
+            "video_count": len(video_files),
+            "samples": samples,
+        })
+    return categories
+
+
+def discover_characters_from_index(index_path: Path, min_count: int = 2, limit: int = 24):
+    """Count characters from index.json chars (works without cloning media)."""
+    from collections import Counter
+    import json
+    data = json.loads(index_path.read_text(encoding="utf-8"))
+    counter: Counter = Counter()
+    for c in data.get("categories", []):
+        for f in c.get("files", []):
+            ch = f.get("char", "")
+            if ch:
+                counter[ch] += 1
+    return [(n, k) for n, k in counter.most_common() if k >= min_count][:limit]
+
+
 def discover_characters(root: Path, min_count: int = 2, limit: int = 24):
     """Count recognizable characters from filenames (Clase_Personaje_tag1_tag2.ext).
 
@@ -268,8 +317,15 @@ Suggestions and contributions are welcome. If you want to add a new wallpaper, p
 
 
 def main():
-    categories = discover_categories(REPO_ROOT)
-    characters = discover_characters(REPO_ROOT)
+    import sys
+    use_index = "--from-index" in sys.argv
+    if use_index:
+        index_path = REPO_ROOT / "docs" / "index.json"
+        categories = discover_categories_from_index(index_path)
+        characters = discover_characters_from_index(index_path)
+    else:
+        categories = discover_categories(REPO_ROOT)
+        characters = discover_characters(REPO_ROOT)
     readme_path = REPO_ROOT / "README.md"
     readme_path.write_text(generate_readme(categories, characters), encoding="utf-8")
     print(f"Generated README.md with {len(categories)} categories.")
@@ -277,6 +333,7 @@ def main():
     videos = sum(c["video_count"] for c in categories)
     print(f"Total files: {total} ({videos} videos)")
     print(f"Characters listed: {len(characters)}")
+    print(f"Source: {'docs/index.json' if use_index else 'filesystem'}")
 
 
 if __name__ == "__main__":

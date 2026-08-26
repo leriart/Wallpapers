@@ -1,11 +1,13 @@
-name: Generate README
+name: Auto-update README
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/index.json'
+      - 'generate_readme.py'
+      - 'README.md'
   workflow_dispatch:
-  # Auto-run on push disabled (2026-08-25): repo is ~19GB, checkout takes 45+ min
-  # and GitHub Actions struggles with repos >5GB. Run manually to regenerate README.
-  # push:
-  #   branches: [main]
 
 permissions:
   contents: write
@@ -14,16 +16,22 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout (sparse — scripts + index only)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            generate_readme.py
+            docs/index.json
+            README.md
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Generate README
-        run: python generate_readme.py
+      - name: Generate README from index
+        run: python generate_readme.py --from-index
 
       - name: Commit and push changes
         run: |

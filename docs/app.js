@@ -1,13 +1,17 @@
 /* Wallpapers gallery — loads docs/index.json and renders the grid.
  * Media is served from GitHub raw URLs (no Pages 1GB limit).
- * Thumbnails go through images.weserv.nl for fast loading.
+ * Thumbnails are local (served by Pages, same origin).
+ *
+ * Selection:
+ *   - Desktop: right-click on a card, or the check button on the card.
+ *   - Touch: tap the check button, or long-press (400ms) a card.
+ *   - Plain click (or tap without holding) opens the preview.
  */
 "use strict";
 
 const REPO = "leriart/Wallpapers";
 const BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
-// Thumbnails are local (served by Pages, same origin, no third-party proxy).
 const THUMB = (path) => path;
 
 let DATA = null;
@@ -18,6 +22,9 @@ const grid = $("grid");
 const searchEl = $("search");
 const categoryEl = $("category");
 const kindEl = $("kind");
+const filterToggle = $("filter-toggle");
+const filterPanel = $("filter-panel");
+const filterBadge = $("filter-badge");
 
 // Touch devices: disable hover-play of videos (no hover state)
 const IS_TOUCH = window.matchMedia("(hover: none)").matches;
@@ -47,6 +54,45 @@ function showSkeleton(count) {
 function plural(n, one, many) {
   return n === 1 ? one : many;
 }
+
+/* ---------- Filters panel ---------- */
+
+function filterCount() {
+  let n = 0;
+  if (searchEl.value.trim()) n++;
+  if (categoryEl.value !== "all") n++;
+  if (kindEl.value !== "all") n++;
+  return n;
+}
+
+function updateFilterBadge() {
+  const n = filterCount();
+  filterBadge.textContent = n;
+  filterBadge.classList.toggle("hidden", n === 0);
+  // keep panel open on touch when user interacts with it
+}
+
+function toggleFilters(force) {
+  const willShow = force !== undefined ? force : filterPanel.classList.contains("hidden");
+  filterPanel.classList.toggle("hidden", !willShow);
+  filterToggle.setAttribute("aria-expanded", String(willShow));
+  filterToggle.classList.toggle("active", willShow);
+}
+
+filterToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleFilters();
+});
+
+// Close panel on outside click (desktop)
+document.addEventListener("click", (e) => {
+  if (!IS_TOUCH && !filterPanel.contains(e.target) && e.target !== filterToggle && !filterToggle.contains(e.target)) {
+    if (!filterPanel.classList.contains("hidden")) toggleFilters(false);
+  }
+});
+
+// Keep panel open while interacting with its controls
+filterPanel.addEventListener("click", (e) => e.stopPropagation());
 
 /* ---------- Load ---------- */
 
@@ -86,6 +132,89 @@ function visibleFiles() {
   return out;
 }
 
+/* ---------- Selection ---------- */
+
+function toggleSelect(cat, file) {
+  const key = `${cat}/${file.name}`;
+  if (selected.has(key)) selected.delete(key); else selected.add(key);
+  const card = grid.querySelector(`.card[data-key="${CSS.escape(key)}"]`);
+  if (card) {
+    card.classList.toggle("selected", selected.has(key));
+    const btn = card.querySelector(".select-btn");
+    if (btn) btn.setAttribute("aria-pressed", String(selected.has(key)));
+  }
+  updateCount();
+}
+
+function clearSelection() {
+  selected.clear();
+  render();
+}
+
+/* ---------- Card interaction ---------- */
+
+function attachCardEvents(card, cat, file) {
+  // Explicit select button: works on every device with a plain tap/click.
+  const selectBtn = card.querySelector(".select-btn");
+  selectBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    toggleSelect(cat, file);
+  });
+
+  // Plain click / tap (no hold) → preview
+  card.addEventListener("click", (e) => {
+    if (e.target.closest(".select-btn")) return;
+    openLightbox(cat, file);
+  });
+
+  // Desktop: right-click toggles selection
+  card.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    toggleSelect(cat, file);
+  });
+
+  // Touch: long-press (400ms) toggles selection; scroll cancels it.
+  if (IS_TOUCH) {
+    let pressTimer = null;
+    let startX = 0, startY = 0;
+    let longPressFired = false;
+
+    card.addEventListener("touchstart", (e) => {
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      longPressFired = false;
+      if (pressTimer) clearTimeout(pressTimer);
+      pressTimer = setTimeout(() => {
+        longPressFired = true;
+        toggleSelect(cat, file);
+        if (navigator.vibrate) { try { navigator.vibrate(30); } catch (_) {} }
+      }, 400);
+    }, { passive: true });
+
+    card.addEventListener("touchmove", (e) => {
+      const t = e.touches[0];
+      // movement > 12px = user is scrolling → cancel long-press
+      if (Math.abs(t.clientX - startX) > 12 || Math.abs(t.clientY - startY) > 12) {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      }
+    }, { passive: true });
+
+    const cancelPress = (e) => {
+      if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      // Suppress the synthetic click that follows a long-press so the
+      // lightbox does not open right after selecting.
+      if (longPressFired) {
+        e.preventDefault();
+        longPressFired = false;
+      }
+    };
+    card.addEventListener("touchend", cancelPress, { passive: false });
+    card.addEventListener("touchcancel", cancelPress, { passive: false });
+  }
+}
+
 /* ---------- Render ---------- */
 
 function render() {
@@ -100,7 +229,8 @@ function render() {
     const card = document.createElement("div");
     card.className = "card";
     card.dataset.key = `${cat}/${file.name}`;
-    if (selected.has(card.dataset.key)) card.classList.add("selected");
+    const isSel = selected.has(card.dataset.key);
+    if (isSel) card.classList.add("selected");
 
     const media = file.kind === "video"
       ? `<video src="${RAW}/${cat}/${encodeURIComponent(file.name)}" poster="${esc(file.thumb)}" preload="none" muted loop></video>`
@@ -108,7 +238,7 @@ function render() {
 
     card.innerHTML = media +
       (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
-      `<span class="check">✓</span>` +
+      `<button class="select-btn" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}"><span class="check">✓</span></button>` +
       `<div class="meta"><span class="fname" title="${esc(file.name)}">${esc(file.name)}</span><span class="fsize">${fmtSize(file.size)}</span></div>`;
 
     // hover play/pause for videos (desktop only)
@@ -118,19 +248,7 @@ function render() {
       card.addEventListener("mouseleave", () => { v.pause(); v.currentTime = 0; });
     }
 
-    card.addEventListener("click", () => openLightbox(cat, file));
-    // Right-click (desktop) or long-press (touch) toggles selection
-    card.addEventListener("contextmenu", (e) => { e.preventDefault(); toggleSelect(cat, file); });
-    let pressTimer = null;
-    card.addEventListener("touchstart", (e) => {
-      if (IS_TOUCH) {
-        pressTimer = setTimeout(() => { toggleSelect(cat, file); }, 450);
-      }
-    }, { passive: true });
-    const clearPress = () => { if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; } };
-    card.addEventListener("touchend", clearPress);
-    card.addEventListener("touchmove", clearPress);
-    card.addEventListener("touchcancel", clearPress);
+    attachCardEvents(card, cat, file);
     frag.appendChild(card);
   }
   grid.innerHTML = "";
@@ -140,21 +258,11 @@ function render() {
 
 function updateCount() {
   $("sel-count").textContent = selected.size;
+  updateFilterBadge();
   const items = visibleFiles();
-  $("stats").textContent = $("stats").textContent.split(" · showing")[0] +
-    (searchEl.value || categoryEl.value !== "all" || kindEl.value !== "all"
-      ? ` · showing ${items.length}`
-      : "");
-}
-
-/* ---------- Selection ---------- */
-
-function toggleSelect(cat, file) {
-  const key = `${cat}/${file.name}`;
-  if (selected.has(key)) selected.delete(key); else selected.add(key);
-  const card = grid.querySelector(`.card[data-key="${CSS.escape(key)}"]`);
-  if (card) card.classList.toggle("selected", selected.has(key));
-  updateCount();
+  const base = $("stats").textContent.split(" · showing")[0];
+  const n = filterCount();
+  $("stats").textContent = base + (n > 0 ? ` · showing ${items.length}` : "");
 }
 
 /* ---------- Download ---------- */
@@ -181,7 +289,7 @@ async function downloadFile(cat, file) {
 
 async function downloadSelected() {
   const keys = [...selected];
-  if (!keys.length) return toast("Nothing selected. Double-click a wallpaper to select it.");
+  if (!keys.length) return toast("Nothing selected. Tap the check on a wallpaper to select it.");
   toast(`Downloading ${keys.length} ${plural(keys.length, "file", "files")}…`);
   let ok = 0;
   for (const key of keys) {
@@ -206,10 +314,14 @@ function openLightbox(cat, file) {
   $("lb-info").innerHTML =
     `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}`;
   $("lb-download").href = url;
-  $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select";
+  const isSel = selected.has(key);
+  $("lb-select").textContent = isSel ? "Deselect" : "Select";
+  $("lb-select").classList.toggle("active", isSel);
   $("lb-select").onclick = () => {
     toggleSelect(cat, file);
-    $("lb-select").textContent = selected.has(key) ? "Deselect" : "Select";
+    const nowSel = selected.has(key);
+    $("lb-select").textContent = nowSel ? "Deselect" : "Select";
+    $("lb-select").classList.toggle("active", nowSel);
   };
   $("lightbox").classList.remove("hidden");
 }
@@ -224,12 +336,13 @@ $("lightbox").addEventListener("click", (e) => { if (e.target === $("lightbox"))
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
   if (e.key === "/" && document.activeElement !== searchEl) { e.preventDefault(); searchEl.focus(); }
+  if ((e.key === "f" || e.key === "F") && !e.ctrlKey && !e.metaKey) { e.preventDefault(); toggleFilters(); }
 });
 
-searchEl.addEventListener("input", render);
-categoryEl.addEventListener("change", render);
-kindEl.addEventListener("change", render);
-$("select-none").addEventListener("click", () => { selected.clear(); render(); });
+searchEl.addEventListener("input", () => { render(); updateFilterBadge(); });
+categoryEl.addEventListener("change", () => { render(); updateFilterBadge(); });
+kindEl.addEventListener("change", () => { render(); updateFilterBadge(); });
+$("select-none").addEventListener("click", clearSelection);
 $("download-selected").addEventListener("click", downloadSelected);
 
 loadIndex().catch((err) => {

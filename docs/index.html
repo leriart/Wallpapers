@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Curated collection of wallpapers organized by category — browse, preview and download.">
 <title>Wallpapers — Gallery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,18 @@
         <p id="stats" class="stats">Loading catalog…</p>
       </div>
     </div>
-    <div class="controls">
-      <div class="search-wrap">        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+
+    <button id="filter-toggle" class="btn filter-toggle" aria-expanded="false" aria-controls="filter-panel">
+      <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5h14M6 10h8M9 15h2"></path>
+      </svg>
+      <span>Filters</span>
+      <span id="filter-badge" class="filter-badge hidden">0</span>
+    </button>
+
+    <div id="filter-panel" class="filter-panel hidden">
+      <div class="search-wrap">
+        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
           <circle cx="9" cy="9" r="5.5"></circle>
           <path d="M13.2 13.2 17 17"></path>
         </svg>
@@ -45,7 +55,6 @@
           <span id="sel-count" class="count">0</span>
         </button>
       </div>
-      <p class="hint">Right-click or long-press to select · click to preview</p>
     </div>
   </div>
 </header>

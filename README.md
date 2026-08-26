@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/5803%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/5798%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/25%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
@@ -29,7 +29,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [3D_Render](#3d-render) — 90 files
 - [Abstract](#abstract) — 200 files
 - [Animals](#animals) — 50 files
-- [Anime](#anime) — 2208 files
+- [Anime](#anime) — 2203 files
 - [Cars](#cars) — 51 files
 - [Cyberpunk](#cyberpunk) — 183 files
 - [Dark](#dark) — 236 files
@@ -135,24 +135,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/2208%20files%20(215%20videos)-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/2203%20files%20(215%20videos)-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
-    <img src="Anime/Anime_beach_bikini_sword_palm_trees.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_barefoot_blush_drink_honkai%3A_star_rail_long_hair_pink_hair_pointed_ears.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_anime_blue_hair_cat_girl_fantasy.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Anime/Anime_anime_girl_sunset_train_station.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_monster_lab_hoodie_tanks.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_redhead_smoking_portrait_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Anime/Anime_zelda_wolf_blue_eyes.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_reflection_clouds_blue_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_girl_field_sunset_purple.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Anime/Anime_blonde_hair_leotard_back_view_bending_over.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_black_eyes_blue_archive_blush_bubbles_close_flat_chest_halo.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_anime_girl_graffiti_teddy_bear.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Anime/Anime_black_hair_blush_long_hair_sakamuke_school_uniform_thighhighs_yellow_eyes.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_01_evangelion_mecha_pink_montage.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_moon_water_blue_star.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_anime_girl_umbrella_rain.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <video src="Anime/Anime_girl_close_up_crt_retro.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_girl_kimono_beach_wand.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_barefoot_blue_archive_blue_eyes_bondage_braids_cat_smile_dress.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <video src="Anime/Anime_anime_blue_hair_cat_girl_fantasy.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_demon_horns_black_hair_lingerie_sword.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_blonde_blue_eyes_maid_windows.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <video src="Anime/Anime_redhead_female_sunset_railing.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_dark_elven_flowers_portrait.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_Woo_shadow_monster_sketch_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <video src="Anime/Anime_anime_girl_graffiti_teddy_bear.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_sci_fi_mecha_pilot_glasses.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_amusement_park_night_ferris_wheel_atmosphere.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <video src="Anime/Anime_cyan_beach_sunglasses_summer.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
   </div>
 </div>
 

@@ -187,6 +187,9 @@ body {
   animation: slideDown 0.18s ease;
 }
 
+/* Push the panel to its own full-width row under the actions */
+.filter-panel { order: 3; }
+
 .filter-panel.hidden { display: none; }
 
 @keyframes slideDown {
@@ -243,6 +246,13 @@ select:hover { border-color: var(--border-strong); }
 select:focus { border-color: var(--accent); }
 
 .btn-group { display: flex; gap: 8px; margin-left: auto; }
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
 
 /* ---------- Grid ---------- */
 

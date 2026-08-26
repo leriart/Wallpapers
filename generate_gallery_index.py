@@ -109,10 +109,31 @@ def main():
         "categories": categories,
     }), encoding="utf-8")
 
+    # Clean orphan thumbnails (files that no longer exist in the repo)
+    valid_thumbs = set()
+    for c in categories:
+        for f in c["files"]:
+            valid_thumbs.add((REPO_ROOT / "docs" / f["thumb"]).resolve())
+    removed = 0
+    for p in THUMBS_DIR.rglob("*.jpg"):
+        if p.resolve() not in valid_thumbs:
+            try:
+                p.unlink()
+                removed += 1
+            except OSError:
+                pass
+    # remove empty dirs
+    for d in sorted(THUMBS_DIR.rglob("*"), reverse=True):
+        try:
+            if d.is_dir() and not any(d.iterdir()):
+                d.rmdir()
+        except OSError:
+            pass
+
     total = sum(len(c["files"]) for c in categories)
     videos = sum(1 for c in categories for f in c["files"] if f["kind"] == "video")
     print(f"index.json: {len(categories)} categorías, {total} archivos ({videos} videos)")
-    print(f"thumbs OK: {thumbs_ok} | fallos: {thumbs_fail}")
+    print(f"thumbs OK: {thumbs_ok} | fallos: {thumbs_fail} | huérfanos eliminados: {removed}")
     print(f"index.json: {OUT.stat().st_size/1024:.0f} KB | thumbs dir: "
           f"{sum(p.stat().st_size for p in THUMBS_DIR.rglob('*.jpg'))/1024/1024:.0f} MB")
 

@@ -19,6 +19,9 @@ const searchEl = $("search");
 const categoryEl = $("category");
 const kindEl = $("kind");
 
+// Touch devices: disable hover-play of videos (no hover state)
+const IS_TOUCH = window.matchMedia("(hover: none)").matches;
+
 function fmtSize(bytes) {
   if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + " MB";
   if (bytes >= 1024) return (bytes / 1024).toFixed(0) + " KB";
@@ -109,8 +112,8 @@ function render() {
       `<span class="check">✓</span>` +
       `<div class="meta"><span class="fname" title="${esc(file.name)}">${esc(file.name)}</span><span class="fsize">${fmtSize(file.size)}</span></div>`;
 
-    // hover play/pause for videos
-    if (file.kind === "video") {
+    // hover play/pause for videos (desktop only)
+    if (file.kind === "video" && !IS_TOUCH) {
       const v = card.querySelector("video");
       card.addEventListener("mouseenter", () => { try { v.play(); } catch (_) {} });
       card.addEventListener("mouseleave", () => { v.pause(); v.currentTime = 0; });

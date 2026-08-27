@@ -40,7 +40,7 @@ def _merge_clip_tags(categories):
             if not extra:
                 continue
             t = f.setdefault("tags", {"series": [], "characters": [], "tags": []})
-            for key in ("series", "characters"):
+            for key in ("series", "characters", "tags"):
                 cur = set(t.get(key, []))
                 cur.update(extra.get(key, []))
                 t[key] = sorted(cur)

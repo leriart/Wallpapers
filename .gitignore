@@ -6,3 +6,4 @@
 .wallpaper_analyzer_hashes.json
 __pycache__/
 .clip-cache/
+.tmp_*

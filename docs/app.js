@@ -17,6 +17,14 @@
  */
 "use strict";
 
+// If anything unexpected happens, surface it instead of hanging forever.
+window.addEventListener("error", (e) => {
+  const s = $("stats");
+  if (s && s.textContent && s.textContent.includes("Loading catalog")) {
+    s.textContent = "Error al cargar: " + (e.message || "algo falló — recarga la página");
+  }
+});
+
 const REPO = "leriart/Wallpapers";
 const BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
@@ -41,6 +49,14 @@ const filterToggle = $("filter-toggle");
 const filterPanel = $("filter-panel");
 const filterBadge = $("filter-badge");
 const clearBtn = $("clear-filters");
+const nsfwToggle = $("nsfw-toggle");
+
+// NSFW content is hidden by default; opt-in via the filters panel.
+// Preference persists in localStorage.
+let showNSFW = false;
+try { showNSFW = localStorage.getItem("wallpapers:nsfw") === "1"; } catch (_) {}
+if (nsfwToggle) nsfwToggle.checked = showNSFW;
+const wire = (el, evt, fn) => { if (el) el.addEventListener(evt, fn); };
 
 // Touch devices: disable hover-play of videos (no hover state)
 const IS_TOUCH = window.matchMedia("(hover: none)").matches || ("ontouchstart" in window);
@@ -94,7 +110,7 @@ function updateFilterBadge() {
   filterBadge.classList.toggle("hidden", n === 0);
 }
 
-nsfwToggle.addEventListener("change", () => {
+wire(nsfwToggle, "change", () => {
   showNSFW = nsfwToggle.checked;
   try { localStorage.setItem("wallpapers:nsfw", showNSFW ? "1" : "0"); } catch (_) {}
   if (!showNSFW) closeLightbox();
@@ -157,7 +173,7 @@ function toggleFilters(force) {
   filterToggle.classList.toggle("active", willShow);
 }
 
-filterToggle.addEventListener("click", (e) => {
+wire(filterToggle, "click", (e) => {
   e.stopPropagation();
   toggleFilters();
 });
@@ -169,7 +185,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-filterPanel.addEventListener("click", (e) => e.stopPropagation());
+wire(filterPanel, "click", (e) => e.stopPropagation());
 
 function clearFilters() {
   searchEl.value = "";
@@ -180,7 +196,7 @@ function clearFilters() {
   updateFilterBadge();
   render();
 }
-clearBtn.addEventListener("click", clearFilters);
+wire(clearBtn, "click", clearFilters);
 
 /* ---------- Load ---------- */
 
@@ -200,14 +216,22 @@ async function loadIndex() {
 
   // 2) fresh catalog in the background, then re-render + refresh cache
   try {
-    const res = await fetch("index.json", { cache: "no-cache" });
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 25000); // never hang forever
+    const res = await fetch("index.json", { cache: "no-cache", signal: ctrl.signal });
+    clearTimeout(timer);
     if (!res.ok) throw new Error("index.json HTTP " + res.status);
     DATA = await res.json();
     try { localStorage.setItem("catalog:v2", JSON.stringify(DATA)); } catch (_) {}
     afterLoad();
   } catch (err) {
     if (!cached) {
-      grid.innerHTML = `<div class="empty">Failed to load catalog: ${esc(String(err))}</div>`;
+      grid.innerHTML = `<div class="empty">
+          <p>Failed to load catalog: ${esc(String(err))}</p>
+          <button class="btn ghost" id="retry-load">Retry</button>
+        </div>`;
+      const b = $("retry-load");
+      if (b) b.addEventListener("click", () => { loadIndex(); });
     }
   }
 }
@@ -630,10 +654,10 @@ function closeLightbox() {
   viewIndex = -1;
 }
 
-$("lb-close").addEventListener("click", closeLightbox);
-$("lb-prev").addEventListener("click", () => lbStep(-1));
-$("lb-next").addEventListener("click", () => lbStep(1));
-$("lightbox").addEventListener("click", (e) => { if (e.target === $("lightbox")) closeLightbox(); });
+wire($("lb-close"), "click", closeLightbox);
+wire($("lb-prev"), "click", () => lbStep(-1));
+wire($("lb-next"), "click", () => lbStep(1));
+wire($("lightbox"), "click", (e) => { if (e.target === $("lightbox")) closeLightbox(); });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
   const typing = document.activeElement && /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName);
@@ -660,16 +684,16 @@ $("lb-media").addEventListener("touchend", (e) => {
 /* ---------- Events ---------- */
 
 let searchTimer = null;
-searchEl.addEventListener("input", () => {
+wire(searchEl, "input", () => {
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => { render(); updateFilterBadge(); }, 180);
 });
-categoryEl.addEventListener("change", () => { render(); updateFilterBadge(); });
-kindEl.addEventListener("change", () => { render(); updateFilterBadge(); });
-seriesEl.addEventListener("change", () => { render(); updateFilterBadge(); });
-sortEl.addEventListener("change", render);
-$("select-none").addEventListener("click", clearSelection);
-$("download-selected").addEventListener("click", downloadSelected);
+wire(categoryEl, "change", () => { render(); updateFilterBadge(); });
+wire(kindEl, "change", () => { render(); updateFilterBadge(); });
+wire(seriesEl, "change", () => { render(); updateFilterBadge(); });
+wire(sortEl, "change", render);
+wire($("select-none"), "click", clearSelection);
+wire($("download-selected"), "click", downloadSelected);
 
 loadIndex().catch((err) => {
   grid.innerHTML = `<div class="empty">Failed to load catalog: ${esc(String(err))}</div>`;

@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/6202%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/6200%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/25%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
@@ -36,7 +36,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [Fantasy](#fantasy) — 185 files
 - [Games](#games) — 132 files
 - [Landscape](#landscape) — 638 files
-- [Manga](#manga) — 75 files
+- [Manga](#manga) — 73 files
 - [Minimalist](#minimalist) — 274 files
 - [Monochrome](#monochrome) — 117 files
 - [Nature](#nature) — 291 files
@@ -317,23 +317,23 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Manga</h2>
   <p>
-    <img src="https://img.shields.io/badge/75%20files%20(8%20videos)-ff9e64?style=for-the-badge&logo=none" alt="Manga">
+    <img src="https://img.shields.io/badge/73%20files%20(8%20videos)-ff9e64?style=for-the-badge&logo=none" alt="Manga">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
-    <img src="Manga/Manga_girl_halftone_black_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Manga/Manga_manga_faces_collage_black_and_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_girl_manga_smoke_monochrome.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_manga_face_intense_monochrome.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Manga/Manga_naruto_sharingan_hood_red_eyes.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Manga/Manga_sketch_crowd_street_urban.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_samurai_black_and_white_ink_detailed.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_destruction_sketch_action_debris.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Manga/Manga_combat_dynamic_black_dress.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_cherry_blossom_street_anime_style_spring.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_falling_sketch_monochrome_road.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Manga/Manga_manga_monochrome_girl_apron.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
-    <img src="Manga/Manga_girl_black_hair_monochrome_thumbs_up.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Manga/Manga_girl_shoujo_halftone_black_and_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_girl_blonde_monochrome_sketch.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_red_black_hands_blood.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Manga/Manga_green_hair_blood_bars_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_berserk_starry_sky_moon_armor.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Manga/Manga_car_monochrome_comic_vintage.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_hallway_ceramic_jars_creepy.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Manga/Manga_doodle_sketch_chibi_girls.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
   </div>
 </div>

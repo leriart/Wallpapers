@@ -128,8 +128,21 @@ def main():
         if not folder.is_dir() or folder.name.startswith((".", "_")) or folder.name in ("docs", "Por organizar"):
             continue
         files = []
-        for f in sorted(folder.iterdir()):
-            if not f.is_file() or f.name.startswith("."):
+        if folder.name == "Videos":
+            # Videos/ holds one subfolder per video: <stem>/<stem>.<ext> + poster.jpg
+            # (structure the ryowalls library browser expects). The poster is a
+            # sidecar for Ryoku — never listed as a wallpaper itself.
+            items = []
+            for sub in sorted(folder.iterdir()):
+                if not sub.is_dir():
+                    continue
+                for f in sorted(sub.iterdir()):
+                    if f.is_file() and f.suffix.lower() in VIDEO_EXTENSIONS:
+                        items.append(f)
+        else:
+            items = [f for f in sorted(folder.iterdir()) if f.is_file()]
+        for f in items:
+            if f.name.startswith("."):
                 continue
             ext = f.suffix.lower()
             if ext in IMAGE_EXTENSIONS:

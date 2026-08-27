@@ -3,7 +3,7 @@
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
     <img src="https://img.shields.io/badge/6199%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
-    <img src="https://img.shields.io/badge/25%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
+    <img src="https://img.shields.io/badge/26%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
 
@@ -26,55 +26,56 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 
 ## Table of contents
 
-- [3D_Render](#3d-render) — 90 files
-- [Abstract](#abstract) — 200 files
+- [3D_Render](#3d-render) — 84 files
+- [Abstract](#abstract) — 197 files
 - [Animals](#animals) — 51 files
-- [Anime](#anime) — 2602 files
-- [Cars](#cars) — 51 files
-- [Cyberpunk](#cyberpunk) — 182 files
-- [Dark](#dark) — 236 files
-- [Fantasy](#fantasy) — 185 files
-- [Games](#games) — 132 files
-- [Landscape](#landscape) — 638 files
-- [Manga](#manga) — 73 files
-- [Minimalist](#minimalist) — 274 files
-- [Monochrome](#monochrome) — 117 files
-- [Nature](#nature) — 291 files
+- [Anime](#anime) — 2388 files
+- [Cars](#cars) — 48 files
+- [Cyberpunk](#cyberpunk) — 167 files
+- [Dark](#dark) — 211 files
+- [Fantasy](#fantasy) — 164 files
+- [Games](#games) — 126 files
+- [Landscape](#landscape) — 621 files
+- [Manga](#manga) — 65 files
+- [Minimalist](#minimalist) — 267 files
+- [Monochrome](#monochrome) — 107 files
+- [Nature](#nature) — 283 files
 - [Neon](#neon) — 11 files
-- [Other](#other) — 180 files
-- [Pastel](#pastel) — 16 files
-- [Photography](#photography) — 380 files
-- [Pixel_Art](#pixel-art) — 112 files
-- [Portrait](#portrait) — 9 files
-- [Retro](#retro) — 134 files
+- [Other](#other) — 174 files
+- [Pastel](#pastel) — 15 files
+- [Photography](#photography) — 367 files
+- [Pixel_Art](#pixel-art) — 87 files
+- [Portrait](#portrait) — 6 files
+- [Retro](#retro) — 124 files
 - [Sci_Fi](#sci-fi) — 50 files
-- [Space](#space) — 146 files
-- [Voxel](#voxel) — 14 files
-- [Watercolor](#watercolor) — 25 files
+- [Space](#space) — 139 files
+- [Videos](#videos) — 413 files
+- [Voxel](#voxel) — 12 files
+- [Watercolor](#watercolor) — 22 files
 
 ---
 
 <div align="center">
   <h2>3D_Render</h2>
   <p>
-    <img src="https://img.shields.io/badge/90%20files%20(6%20videos)-a371f7?style=for-the-badge&logo=none" alt="3D_Render">
+    <img src="https://img.shields.io/badge/84%20files-a371f7?style=for-the-badge&logo=none" alt="3D_Render">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="3D_Render/3D_Render_coffee_shop_storefront_neon_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="3D_Render/3D_Render_cyberpunk_apartment_chess_futuristic.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="3D_Render/3D_Render_cave_creature_fantasy_video_game.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="3D_Render/3D_Render_room_interior_shelves_cozy.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="3D_Render/3D_Render_Chloe_Price_bedroom_lighthouse_beanie_sitting.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="3D_Render/3D_Render_polygon_city_giant_tokyo.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="3D_Render/3D_Render_cube_geometric_minimal_texture.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="3D_Render/3D_Render_purple_bunny_smile_hallway.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="3D_Render/3D_Render_clown_night_dark_blue.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="3D_Render/3D_Render_puppet_red_door_weird.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="3D_Render/3D_Render_futuristic_character_outfit_scene.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="3D_Render/3D_Render_robot_gun_blue_sci_fi.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="3D_Render/3D_Render_Majora_s_Mask_majora_zelda_glowing_mask.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="3D_Render/3D_Render_retro_computer_macintosh_hello.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="3D_Render/3D_Render_black_cat_stairs_plants_sunlight.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="3D_Render/3D_Render_ruins_flowers_grass_nature.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="3D_Render/3D_Render_3d_blush_brown_hair_choker_couch_dress_drink.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="3D_Render/3D_Render_ancient_architecture_night_details.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="3D_Render/3D_Render_forest_knight_armor_light.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="3D_Render/3D_Render_elf_casting_magic_dark_fantasy.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -83,24 +84,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Abstract</h2>
   <p>
-    <img src="https://img.shields.io/badge/200%20files%20(3%20videos)-79c0ff?style=for-the-badge&logo=none" alt="Abstract">
+    <img src="https://img.shields.io/badge/197%20files-79c0ff?style=for-the-badge&logo=none" alt="Abstract">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Abstract/Abstract_red_black_splatter_chaotic.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_texture_red_blue_gradient.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Abstract/Abstract_cityscape_teal_crayon_cute.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Abstract/Abstract_gradient_wavy_blue_pink.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_monochrome_cyberpunk_mecha_broken.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Abstract/Abstract_clouds_figure_light_beams_heavenly.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Abstract/Abstract_neon_fluid_blue_red.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_texture_green_solid_background.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Abstract/Abstract_waves_black_white_flow.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Abstract/Abstract_fluid_monochrome_pattern_abstract.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_3d_cubes_blocks_geometric.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_pink_orange_blue_gradient.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_fractal_spiral_pattern_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_purple_blue_swirl_texture.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Abstract/Abstract_abstract_red_swirl_fluid.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Abstract/Abstract_flowers_glitch_black_background.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Abstract/Abstract_monochrome_drops_macro_minimalist.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Abstract/Abstract_underwater_yellow_green_creatures_patterns.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -135,24 +136,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/2602%20files%20(214%20videos)-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/2388%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Anime/Anime_pinkhair_wings_floating_city.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_miku_green_hair_vocaloid_thigh_highs.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_red_dark_action_magic.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Anime/Anime_sunset_couple_car_roadtrip.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_blue_butterflies_starry_dress.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_asuka_red_suit_mecha_sunset.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Anime/Anime_black_hair_green_bikini_beach_blue_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_star_wars_girl_stormtroopers_military.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_underwater_face_bubbles_blue.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Anime/Anime_fox_goggles_orange_striped.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_gray_hair_red_eyes_clocks_thigh_highs.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_piano_gothic_white_hair_purple.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Anime/Anime_brown_hair_bikini_sunglasses_beach_toenails.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_silver_hair_black_dress_red_eyes_dark.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Anime/Anime_room_cozy_lofi_chill.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Anime/Anime_pink_hair_cyberpunk_sci_fi_cute.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_violet_eyes_blonde_hair_jewelry.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_beach_summer_bikini_twintails.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_girl_street_spring_portrait.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_blue_archive_blush_bow_halo_headband_loli_long_hair.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -161,24 +162,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Cars</h2>
   <p>
-    <img src="https://img.shields.io/badge/51%20files%20(3%20videos)-e3b341?style=for-the-badge&logo=none" alt="Cars">
+    <img src="https://img.shields.io/badge/48%20files-e3b341?style=for-the-badge&logo=none" alt="Cars">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Cars/Cars_blonde_hair_car_cat_smile_dramz_fang_goddess_of_victory%3A_nikke_logo.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_barefoot_car_foxgirl_gray_hair_headband_long_hair_red_eyes.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cars/Cars_anime_girl_green_car_desert_sitting_on_hood.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cars/Cars_bugatti_night_supercar_city.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_ford_gt_racing_urban_sunset.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cars/Cars_anime_girl_black_sports_car_night_red_lights.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cars/Cars_lamborghini_sports_car_green_supercar.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_race_car_ford_gt_racing_track.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cars/Cars_gold_car_anime_girls_rural_road_rice_field.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cars/Cars_ford_gt_racecar_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_car_retro_red_illustration.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_ford_mustang_racing_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_lamborghini_green_supercar_purple.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_racing_car_night_street.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cars/Cars_red_car_testarossa_road_motion_blur.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cars/Cars_gas_station_night_car_sedan.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cars/Cars_animal_ears_anthropomorphism_aqua_eyes_azur_lane_blue_eyes_blue_hair_blush.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cars/Cars_aliasing_blue_archive_blue_eyes_boots_brown_hair_halo_hidis0086.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -187,24 +188,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Cyberpunk</h2>
   <p>
-    <img src="https://img.shields.io/badge/182%20files%20(15%20videos)-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
+    <img src="https://img.shields.io/badge/167%20files-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Cyberpunk/Cyberpunk_graffiti_katana_neon_pink.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_dog_neon_visor_jacket.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_cyberpunk_neon_character_urban.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_city_skyscrapers_falling_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_soldier_desert_ruins_dystopia.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_neon_futuristic_city_glow.webm" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_neon_alley_night_rain.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_city_neon_futuristic_architecture.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_alley_neon_fog_cat.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_neon_car_city_night.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_cityscape_aerial_view_futuristic_neon_lights.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_neon_glitch_palm_trees_text.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_mecha_industrial_complex_isometric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_city_fog_skyscrapers_dark.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_hooded_neon_glowing_gas_mask.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Cyberpunk/Cyberpunk_computer_error_screen_anime_girl_glitch.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cyberpunk/Cyberpunk_vehicle_motorbike_futuristic_minimal.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cyberpunk/Cyberpunk_street_urban_vending_neon.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cyberpunk/Cyberpunk_cityscape_glitch_neon_digital.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Cyberpunk/Cyberpunk_rain_urban_ruins_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -213,24 +214,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Dark</h2>
   <p>
-    <img src="https://img.shields.io/badge/236%20files%20(25%20videos)-565f89?style=for-the-badge&logo=none" alt="Dark">
+    <img src="https://img.shields.io/badge/211%20files-565f89?style=for-the-badge&logo=none" alt="Dark">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Dark/Dark_skull_cybernetics_weapon_red_accents.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Dark/Dark_skull_demon_horns_black_and_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Dark/Dark_skull_geometric_dark_metal.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Dark/Dark_red_moon_antenna_silhouette_fence.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Dark/Dark_dark%20ambient_ice_glass_blender_dark%20background_ice%20cubes.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Dark/Dark_flames_fire_red_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Dark/Dark_illustration_plague_doctor_figure.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Dark/Dark_tunnel_train_red_industrial.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Dark/Dark_girl_corridor_red_ribbon_monochrome.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Dark/Dark_abstract_creature_black_red_ink.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Dark/Dark_figure_particles_rings_scifi.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Dark/Dark_dark_king_crown_silhouette.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Dark/Dark_skeleton_neon_pink_purple.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Dark/Dark_sword_redhead_snow_armor.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Dark/Dark_sword_abandoned_dark_stone.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Dark/Dark_cauldron_rust_fire_ancient.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Dark/Dark_crowd_urban_shadow_figure.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Dark/Dark_crosswalk_street_night_city.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Dark/Dark_anime_girl_dark_hair.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Dark/Dark_moon_astronaut_red_mountains.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -239,24 +240,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Fantasy</h2>
   <p>
-    <img src="https://img.shields.io/badge/185%20files%20(21%20videos)-bc8cff?style=for-the-badge&logo=none" alt="Fantasy">
+    <img src="https://img.shields.io/badge/164%20files-bc8cff?style=for-the-badge&logo=none" alt="Fantasy">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Fantasy/Fantasy_steampunk_airship_architecture_ruins.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Fantasy/Fantasy_fantasy_magic_water_blue.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Fantasy/Fantasy_tinkerer_explosion_magic_steampunk.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Fantasy/Fantasy_ethereal_flute_ornate_pale.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Fantasy/Fantasy_armor_red_white_hair_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Fantasy/Fantasy_boy_valley_city_castle.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Fantasy/Fantasy_armor_blue_archive_blush_bow_dress_halo_igusa_haruka.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Fantasy/Fantasy_crane_bird_swamp_epic.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Fantasy/Fantasy_anime_girl_pyramid_obelisk.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Fantasy/Fantasy_castle_manor_rider_forest.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Fantasy/Fantasy_dark_female_fighters_swords_glowing.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Fantasy/Fantasy_fire_demon_hat_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Fantasy/Fantasy_anime_blue_witch_hat.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Fantasy/Fantasy_wall_stairs_leaves_railing_brunette_popsicle.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Fantasy/Fantasy_creatures_lily_pad_forest_magical.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Fantasy/Fantasy_fox_mushroom_forest_creature.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Fantasy/Fantasy_bed_black_hair_demon_dress_drink_horns_pantyhose.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Fantasy/Fantasy_fantasy_armor_knight_snow.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Fantasy/Fantasy_dragon_white_flowers_peaceful.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Fantasy/Fantasy_aida_noa_angel_bandaid_black_hair_bow_close_computer.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -265,24 +266,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Games</h2>
   <p>
-    <img src="https://img.shields.io/badge/132%20files%20(6%20videos)-62b788?style=for-the-badge&logo=none" alt="Games">
+    <img src="https://img.shields.io/badge/126%20files-62b788?style=for-the-badge&logo=none" alt="Games">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Games/Games_team_fortress_2_rocket_launcher_military.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Games/Games_legend_of_zelda_link_wind_waker_ocean.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Games/Games_videogame_indie_atmospheric_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Games/Games_cave_ruins_dark_blue_light.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Games/Games_3d_fantasy_action_fire.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Games/Games_sunset_city_superhero_comic.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Games/Games_tekken_dlc_icon_male.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Games/Games_team_fortress_2_character_medic_artwork.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Games/Games_roller_coaster_theme_park_isometric_green.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Games/Games_logo_halftone_black_and_white_gaming.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Games/Games_sniper_shooter_illustration_character.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Games/Games_hollow_knight_character_forest_glowing.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Games/Games_fantasy_purple_tails_digital_art.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Games/Games_torii_gate_sakura_shrine_samurai.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Games/Games_persona_4_anime_jrpg_game.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Games/Games_post_apocalyptic_rain_squad_combat.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Games/Games_grand_theft_auto_gta_ball_prison_orange.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Games/Games_fire_medieval_burning_castle.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Games/Games_pixel_art_creatures_rpg_characters.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Games/Games_red_dead_redemption_wilderness_horse_nature.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -291,24 +292,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Landscape</h2>
   <p>
-    <img src="https://img.shields.io/badge/638%20files%20(17%20videos)-7ee787?style=for-the-badge&logo=none" alt="Landscape">
+    <img src="https://img.shields.io/badge/621%20files-7ee787?style=for-the-badge&logo=none" alt="Landscape">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Landscape/Landscape_windmill_water_netherlands_pastoral.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Landscape/Landscape_blue_flowers_fantasy_valley.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Landscape/Landscape_sea_cliffs_storm_house.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Landscape/Landscape_forest_mist_fog_clouds.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Landscape/Landscape_mountains_green_valley_aerial.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Landscape/Landscape_sunset_chibi_samurai_orange_sky.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Landscape/Landscape_about_fg_angel_butterfly_cherry_blossoms_close_dress_feathers.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Landscape/Landscape_purple%20hair_skateboard_headphones_leaning_vending%20machine_sunlight.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Landscape/Landscape_mountains_meadow_flowers_sunset.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Landscape/Landscape_clouds_sunset_sky_horizon.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Landscape/Landscape_photography_wet%20road_snow_train_railway_street%20light.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Landscape/Landscape_mountain_pink_flowers_sky.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Landscape/Landscape_dark_foggy_forest_mountain.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Landscape/Landscape_nature_landscape_castle_architecture_ancient_medieval_2.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Landscape/Landscape_field_red_flowers_house_mountains.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Landscape/Landscape_forest_fog_monochrome_atmospheric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Landscape/Landscape_46_coffee_animal_animal_ears_bird_blonde_hair_blue_archive_blush.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Landscape/Landscape_sky_clouds_plants_trees_forest_mountains.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Landscape/Landscape_snow_winter_minimalist_tree.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Landscape/Landscape_photography_clouds_utility%20pole_blue_pylon_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -317,24 +318,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Manga</h2>
   <p>
-    <img src="https://img.shields.io/badge/73%20files%20(8%20videos)-ff9e64?style=for-the-badge&logo=none" alt="Manga">
+    <img src="https://img.shields.io/badge/65%20files-ff9e64?style=for-the-badge&logo=none" alt="Manga">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Manga/Manga_girl_manga_smoke_monochrome.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_manga_face_intense_monochrome.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Manga/Manga_naruto_sharingan_hood_red_eyes.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_samurai_black_and_white_ink_detailed.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_destruction_sketch_action_debris.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Manga/Manga_combat_dynamic_black_dress.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_cherry_blossom_street_anime_style_spring.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_falling_sketch_monochrome_road.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Manga/Manga_manga_monochrome_girl_apron.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_girl_blonde_monochrome_sketch.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_red_black_hands_blood.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Manga/Manga_green_hair_blood_bars_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Manga/Manga_berserk_starry_sky_moon_armor.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Manga/Manga_hallway_ceramic_jars_creepy.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Manga/Manga_doodle_sketch_chibi_girls.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Manga/Manga_vintage_duo_monochrome_lamp.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_ruins_scrap_anime_manga.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_tokyo_ghoul_flowers_black_and_white_ground.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_ink_swordsman_battle_samurai.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Manga/Manga_sketch_crowd_street_urban.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -343,24 +344,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Minimalist</h2>
   <p>
-    <img src="https://img.shields.io/badge/274%20files%20(7%20videos)-c0caf5?style=for-the-badge&logo=none" alt="Minimalist">
+    <img src="https://img.shields.io/badge/267%20files-c0caf5?style=for-the-badge&logo=none" alt="Minimalist">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Minimalist/Minimalist_minimalism_sunset_bauhaus_geometric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Minimalist/Minimalist_mountains_snow_line_art_flat.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Minimalist/Minimalist_mountains_lake_sunset_silhouette.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Minimalist/Minimalist_green_logo_gear_triangle.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Minimalist/Minimalist_pink_heart_kawaii_polka_dots.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Minimalist/Minimalist_upside_down_geometric_red_blue.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Minimalist/Minimalist_bunny_cute_chibi_pastel.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Minimalist/Minimalist_green_hills_sky_cloud.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Minimalist/Minimalist_cross_mountains_stars_minimalist.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Minimalist/Minimalist_explosion_orange_fire_vector_art_silhouette.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Minimalist/Minimalist_diagram_typography_geometric_black.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Minimalist/Minimalist_globe_neon_pink_dark_background_geometric.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Minimalist/Minimalist_sacred_geometry_white_black.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Minimalist/Minimalist_plant_suculent_pot_minimal.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Minimalist/Minimalist_city_inverted_sky_abstract.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Minimalist/Minimalist_solar_system_planets_diagram_space.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Minimalist/Minimalist_plants_pot_wall_minimal.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Minimalist/Minimalist_coffee_typography_illustration_retro.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Minimalist/Minimalist_hourglass_clock_geometric_time.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Minimalist/Minimalist_lightbulb_boxes_person_black_and_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -369,24 +370,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Monochrome</h2>
   <p>
-    <img src="https://img.shields.io/badge/117%20files%20(10%20videos)-8b949e?style=for-the-badge&logo=none" alt="Monochrome">
+    <img src="https://img.shields.io/badge/107%20files-8b949e?style=for-the-badge&logo=none" alt="Monochrome">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Monochrome/Monochrome_girl_silhouette_minimalist_sketch.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Monochrome/Monochrome_girl_moon_night_railing.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Monochrome/Monochrome_monochrome_samurai_black_white_sword.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Monochrome/Monochrome_mountains_black_and_white_snow_peaks.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Monochrome/Monochrome_logo_black_and_white_texture_vintage.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Monochrome/Monochrome_dark_green_portrait_horror.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Monochrome/Monochrome_silhouette_dotted_halftone_woman.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Monochrome/Monochrome_lions_bible_thermal_purple.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Monochrome/Monochrome_space_blackandwhite_silhouette_cosmic.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Monochrome/Monochrome_pipes_monochrome_whole%20body_short%20hair_open%20mouth_short%20sleeves.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Monochrome/Monochrome_red_shoes_cage_smoke_fur.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Monochrome/Monochrome_cat_comic_panels_manga_black_cat.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Monochrome/Monochrome_sketch_white_hair_horns_red_pink.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Monochrome/Monochrome_cityscape_dense_urban_billboards.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Monochrome/Monochrome_silhouette_white_background_monochrome_ink.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Monochrome/Monochrome_head_abstract_line_art_white.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Monochrome/Monochrome_lightbulb_dark_texture_still_life.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Monochrome/Monochrome_blueprint_star_map_diagram_constellation.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Monochrome/Monochrome_man_structure_desert_surreal.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Monochrome/Monochrome_mountains_lake_snow_landscape.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -395,24 +396,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Nature</h2>
   <p>
-    <img src="https://img.shields.io/badge/291%20files%20(8%20videos)-3fb950?style=for-the-badge&logo=none" alt="Nature">
+    <img src="https://img.shields.io/badge/283%20files-3fb950?style=for-the-badge&logo=none" alt="Nature">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Nature/Nature_forest_dark_path_trees.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Nature/Nature_logs_texture_wood_aerial.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Nature/Nature_wildflowers_meadow_mountains_snow.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Nature/Nature_forest_giant_tree_magical_mushrooms.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Nature/Nature_night_sky_crescent_moon_stars_dark_background.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Nature/Nature_sunset_orange_silhouette_grass.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Nature/Nature_bamboo_forest_dark_green.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Nature/Nature_forest_reflection_lake_mist.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Nature/Nature_sakura_pink_cherry_blossom.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Nature/Nature_ruins_water_decay_industrial.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Nature/Nature_leaves_floral_pattern_plants.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Nature/Nature_mountains_flowers_cloudy_sky_green.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Nature/Nature_stones_pebbles_colors_outdoor.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Nature/Nature_succulent_ground_forest_green.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Nature/Nature_forest_night_blue_reflection.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Nature/Nature_hummingbird_flowers_vines_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Nature/Nature_mountain_clouds_rock_blue.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Nature/Nature_ocean_wave_blue_dark.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Nature/Nature_berries_leaves_macro_plant.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Nature/Nature_foggy_forest_mountain_misty.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -443,24 +444,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Other</h2>
   <p>
-    <img src="https://img.shields.io/badge/180%20files%20(6%20videos)-6e7681?style=for-the-badge&logo=none" alt="Other">
+    <img src="https://img.shields.io/badge/174%20files-6e7681?style=for-the-badge&logo=none" alt="Other">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Other/Other_whale_clouds_road_sunset.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Other/Other_shark_blue_geometric_text.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Other/Other_ferry_ocean_sunset_travel.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Other/Other_eco_friendly_green_earth_sustainability_blue_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Other/Other_geometry_minimalist_circle_square.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Other/Other_crowd_portrait_king_collage.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Other/Other_hand_painting_brushstroke_impasto.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Other/Other_digital_art_characters_night_urban.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Other/Other_theboys_red_laser_patriotic_comic.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Other/Other_bird_dreamlike_pale_face.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Other/Other_cartoon_crowd_retro_colorful.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Other/Other_brazil_flag_green_yellow.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Other/Other_liminal_space_empty_beige_hallway.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Other/Other_shipwreck_clouds_sunset_sea.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Other/Other_window_blue_light_logo.webm" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Other/Other_snail_cat_illustration_green.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Other/Other_brutalism_architecture_perspective_red_light.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Other/Other_black_and_white_kaiju_simple_background_cartoon_dynamic.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Other/Other_two_face_harvey_dent_dc_comic.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Other/Other_sumikko_gurashi_kawaii_pastel_characters.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -469,12 +470,11 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Pastel</h2>
   <p>
-    <img src="https://img.shields.io/badge/16%20files%20(1%20videos)-f2cc60?style=for-the-badge&logo=none" alt="Pastel">
+    <img src="https://img.shields.io/badge/15%20files-f2cc60?style=for-the-badge&logo=none" alt="Pastel">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Pastel/Pastel_cat_bunny_cute_pink.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pastel/Pastel_pink_ocean_geometric_surreal.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pastel/Pastel_sheep_forest_ruins_anime.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Pastel/Pastel_blue_hair_ocean_anime.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pastel/Pastel_pastel_landscape_fish_rocks.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pastel/Pastel_purple_mountains_train_stars.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
@@ -487,6 +487,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
     <img src="Pastel/Pastel_pastel_portrait_cyberpunk_fashion.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pastel/Pastel_pink_hair_lingerie_white_lace.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pastel/Pastel_city_moon_stars_pastel.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Pastel/Pastel_pink_eyes_frills_lace_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -495,24 +496,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Photography</h2>
   <p>
-    <img src="https://img.shields.io/badge/380%20files%20(13%20videos)-58a6ff?style=for-the-badge&logo=none" alt="Photography">
+    <img src="https://img.shields.io/badge/367%20files-58a6ff?style=for-the-badge&logo=none" alt="Photography">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Photography/Photography_brutalist_concrete_modular_geometric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Photography/Photography_flower_daisy_macro_green.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Photography/Photography_aquarium_interior_blue_modern.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Photography/Photography_flowers_pink_mountain_landscape.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Photography/Photography_timber_house_yellow_tree_autumn_architecture.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Photography/Photography_typography_portrait_texture_abstract.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Photography/Photography_cherry_blossoms_sakura_spring_soft.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Photography/Photography_japan_lanterns_alley_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Photography/Photography_soccer_ball_stadium_close_up.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Photography/Photography_abstract_texture_gravel_golden.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Photography/Photography_interior_minimalist_sofa_plant.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Photography/Photography_realistic_blonde_graffiti_hoodie.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Photography/Photography_car_rain_night_drift.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Photography/Photography_motorcycle_showroom_minimalist_studio_lighting.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Photography/Photography_red_flowers_girl_forest.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Photography/Photography_flowers_white_dark_closeup.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Photography/Photography_motorcycle_racing_road_speed.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Photography/Photography_mars_rover_desert_exploration.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Photography/Photography_skyline_city_river_clouds.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Photography/Photography_trees_moss_avenue_nature.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -521,24 +522,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Pixel_Art</h2>
   <p>
-    <img src="https://img.shields.io/badge/112%20files%20(25%20videos)-e0af68?style=for-the-badge&logo=none" alt="Pixel_Art">
+    <img src="https://img.shields.io/badge/87%20files-e0af68?style=for-the-badge&logo=none" alt="Pixel_Art">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Pixel_Art/Pixel_Art_pixel_anime_eyes_space.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pixel_Art/Pixel_Art_pixel_fighting_action_retro.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pixel_Art/Pixel_Art_rain_cars_traffic_dark.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Pixel_Art/Pixel_Art_pac_man_ghosts_retro_arcade.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pixel_Art/Pixel_Art_pixel_art_room_retro_computer.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pixel_Art/Pixel_Art_snow_night_neon_retro.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Pixel_Art/Pixel_Art_Pac_Man_pacman_ghosts_retro_games.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pixel_Art/Pixel_Art_isometric_room_retro_interior.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pixel_Art/Pixel_Art_sunset_sun_sky_silhouette.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Pixel_Art/Pixel_Art_forest_red_silhouette_atmospheric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pixel_Art/Pixel_Art_dungeon_map_retro_gaming.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pixel_Art/Pixel_Art_bottle_water_reflection_purple.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Pixel_Art/Pixel_Art_isometric_retro_map_game.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Pixel_Art/Pixel_Art_city_night_pixel_art_lights.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Pixel_Art/Pixel_Art_sunset_pixel_orange_lake.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Pixel_Art/Pixel_Art_Sonic_fire_retro_flame_black_background.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Pixel_Art/Pixel_Art_isometric_room_desk_plants.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Pixel_Art/Pixel_Art_ascii_art_black_and_white_character_pixel.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Pixel_Art/Pixel_Art_forest_night_house_blue.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Pixel_Art/Pixel_Art_city_top_down_isometric_colorful.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -547,18 +548,15 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Portrait</h2>
   <p>
-    <img src="https://img.shields.io/badge/9%20files%20(3%20videos)-f778ba?style=for-the-badge&logo=none" alt="Portrait">
+    <img src="https://img.shields.io/badge/6%20files-f778ba?style=for-the-badge&logo=none" alt="Portrait">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Portrait/Portrait_elven_woman_ornate_serene.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Portrait/Portrait_white_dress_high_heels_soft_lighting_female.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Portrait/Portrait_hat_forest_green_traditional.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Portrait/Portrait_2B_nier_automata_white_hair_cosplay_fantasy.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Portrait/Portrait_green_uniform_white_twin.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Portrait/Portrait_redhead_halo_ocean_braid.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Portrait/Portrait_of_Rivia_witcher_fantasy_white_hair_scar.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Portrait/Portrait_city_night_pink_purple.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Portrait/Portrait_pink_hair_eyes_soft.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
   </div>
 </div>
 
@@ -567,24 +565,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Retro</h2>
   <p>
-    <img src="https://img.shields.io/badge/134%20files%20(10%20videos)-d29922?style=for-the-badge&logo=none" alt="Retro">
+    <img src="https://img.shields.io/badge/124%20files-d29922?style=for-the-badge&logo=none" alt="Retro">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Retro/Retro_motel_neon_sign_dusk.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Retro/Retro_cassette_sunset_pink_powerlines.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Retro/Retro_car_jdm_anime_girl_purple.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Retro/Retro_atari_logo_rainbow_retro.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Retro/Retro_girl_retro_ui_error.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Retro/Retro_synthwave_pixel_art_sunset_city.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Retro/Retro_car_red_wireframe_anime.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Retro/Retro_grid_synthwave_abstract_surreal.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Retro/Retro_city_rain_car_pink.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Retro/Retro_car_interior_dashboard_retro.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Retro/Retro_typewriter_vintage_keys_mechanical.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Retro/Retro_80s_retro_synthwave_road.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Retro/Retro_neon_retro_glitch_purple.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Retro/Retro_mecha_retro_sci_fi_city.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Retro/Retro_beach_vaporwave_palm_80s.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Retro/Retro_synthwave_text_neon_triangle.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Retro/Retro_sunset_road_palms_synthwave.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Retro/Retro_windows95_logo_clouds_palms.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Retro/Retro_city_tower_rain_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Retro/Retro_robot_car_gas_station_retro.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 
@@ -619,24 +617,50 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Space</h2>
   <p>
-    <img src="https://img.shields.io/badge/146%20files%20(7%20videos)-7aa2f7?style=for-the-badge&logo=none" alt="Space">
+    <img src="https://img.shields.io/badge/139%20files-7aa2f7?style=for-the-badge&logo=none" alt="Space">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Space/Space_stars_night_sky_castle.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Space/Space_nebula_stars_cosmic_red.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Space/Space_planet_silhouette_cosmos_horizon.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Space/Space_close_dress_elbow_gloves_gloves_long_hair_orange_eyes_pink_hair.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Space/Space_planet_galaxy_monochrome_stars.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Space/Space_purple_nebula_arch_reflection.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Space/Space_planet_space_clouds_cyan.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Space/Space_planets_saturn_minimalist_white.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Space/Space_night_stars_shooting_star_woman.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Space/Space_spaceship_minimal_dark_star.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Space/Space_stars_night_sky_galaxy_buildings.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Space/Space_starship_black_background_minimalist_space.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Space/Space_planet_silhouette_starry_sky_comet.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Space/Space_planet_sunrise_horizon_atmosphere.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Space/Space_sci_fi_ruins_sky_deer.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <img src="Space/Space_satellite_orbit_earth_space.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Space/Space_nebula_stars_cosmos_purple.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Space/Space_astronaut_alien_fog_space_station.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Space/Space_blue_glowing_comet_stars.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Space/Space_earth_space_station_orbit_window.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+  </div>
+</div>
+
+---
+
+<div align="center">
+  <h2>Videos</h2>
+  <p>
+    <img src="https://img.shields.io/badge/413%20files%20(413%20videos)-7aa2f7?style=for-the-badge&logo=none" alt="Videos">
+  </p>
+  <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
+    <video src="Videos/Anime_cat_girl_red_eyes_bandages_anime.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_underwater_face_bubbles_blue.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_redhead_water_swimsuit_beach.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Portrait_redhead_halo_ocean_braid.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_girl_phone_bus_window.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_white_hair_japanese_garden_autumn_red_leaves.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_girl_pink_hair_wings_white.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Landscape_mountain_pink_flowers_sky.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_bus_stop_sunset_sea_vending_machine.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_eyepatch_katana_black_hair.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_girl_computer_server_room_chibi.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_underwater_blue_hair_girl.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_onsen_snow_night_resort.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_dark_hair_glasses_girl_peace_sign.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Videos/Anime_girl_room_fan_books.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
   </div>
 </div>
 
@@ -645,15 +669,13 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Voxel</h2>
   <p>
-    <img src="https://img.shields.io/badge/14%20files%20(2%20videos)-9e6a03?style=for-the-badge&logo=none" alt="Voxel">
+    <img src="https://img.shields.io/badge/12%20files-9e6a03?style=for-the-badge&logo=none" alt="Voxel">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Voxel/Voxel_blocks_landscape_pink_trees_river.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Voxel/Voxel_tractor_yellow_blue_voxel.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Voxel/Voxel_fire_grass_summer_minecraft.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Voxel/Voxel_isometric_night_city_truck.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Voxel/Voxel_retro_computer_flower_portrait.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Voxel/Voxel_landscape_water_fog_trees.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Voxel/Voxel_voxel_night_railway_pixelated.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Voxel/Voxel_voxel_forest_blocky_colorful.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Voxel/Voxel_voxel_isometric_penguin_cat.gif" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
@@ -670,24 +692,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Watercolor</h2>
   <p>
-    <img src="https://img.shields.io/badge/25%20files%20(3%20videos)-56d4dd?style=for-the-badge&logo=none" alt="Watercolor">
+    <img src="https://img.shields.io/badge/22%20files-56d4dd?style=for-the-badge&logo=none" alt="Watercolor">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Watercolor/Watercolor_cherry_blossom_watercolor_japanese_floral.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_flowers_painting_soft_pink.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Watercolor/Watercolor_lotus_lake_boat_traditional.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Watercolor/Watercolor_painting_western_desert_dramatic.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_landscape_river_mountains_watercolor.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Watercolor/Watercolor_chinese_watercolor_white_blue.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Watercolor/Watercolor_girl_transparent_floating_artistic.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_painting_car_flowers_road.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Watercolor/Watercolor_flowers_garden_bikini_realistic.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Watercolor/Watercolor_mansion_garden_green_flowers.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_oil%20painting_hindu%20architecture_picture%20frames_walking_abstract_steps.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_town_village_watercolor_architecture.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_floral_pattern_pink_flowers.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_garden_flowers_gardener_house.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_branch_flowers_bird_delicate.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Watercolor/Watercolor_desert_houses_minimalist_beige.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Watercolor/Watercolor_umbrella_street_person_rainy.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Watercolor/Watercolor_oil%20painting_standing_sitting_muscles_table_arms%20crossed.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
 </div>
 

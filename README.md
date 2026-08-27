@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/6200%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/6199%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/25%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
@@ -31,7 +31,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [Animals](#animals) — 51 files
 - [Anime](#anime) — 2602 files
 - [Cars](#cars) — 51 files
-- [Cyberpunk](#cyberpunk) — 183 files
+- [Cyberpunk](#cyberpunk) — 182 files
 - [Dark](#dark) — 236 files
 - [Fantasy](#fantasy) — 185 files
 - [Games](#games) — 132 files
@@ -187,24 +187,24 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Cyberpunk</h2>
   <p>
-    <img src="https://img.shields.io/badge/183%20files%20(16%20videos)-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
+    <img src="https://img.shields.io/badge/182%20files%20(15%20videos)-7dcfff?style=for-the-badge&logo=none" alt="Cyberpunk">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Cyberpunk/Cyberpunk_graffiti_katana_neon_pink.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_dog_neon_visor_jacket.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_code_hacker_face_monochrome.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Cyberpunk/Cyberpunk_cyberpunk_neon_character_urban.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_city_skyscrapers_falling_sky.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_soldier_desert_ruins_dystopia.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_urban_anime_girl_stairs.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Cyberpunk/Cyberpunk_neon_futuristic_city_glow.webm" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_neon_alley_night_rain.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_city_neon_futuristic_architecture.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <video src="Cyberpunk/Cyberpunk_alley_neon_fog_cat.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_neon_car_city_night.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_cityscape_aerial_view_futuristic_neon_lights.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_neon_futuristic_city_glow.webm" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Cyberpunk/Cyberpunk_neon_glitch_palm_trees_text.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
     <img src="Cyberpunk/Cyberpunk_mecha_industrial_complex_isometric.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Cyberpunk/Cyberpunk_city_fog_skyscrapers_dark.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <video src="Cyberpunk/Cyberpunk_cyberpunk_neon_character_urban.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
+    <video src="Cyberpunk/Cyberpunk_hooded_neon_glowing_gas_mask.mp4" height="180" controls style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;background:#000;"></video>
   </div>
 </div>
 

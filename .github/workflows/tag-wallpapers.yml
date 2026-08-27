@@ -38,6 +38,12 @@ jobs:
         run: |
           pip install --quiet gradio_client pillow
 
+      - name: Classify new wallpapers from Por organizar
+        run: python3 classify_new.py
+
+      - name: Rebuild index (new files + thumbs)
+        run: python3 generate_gallery_index.py
+
       - name: Stage 1 — general tags (DeepDanbooru, fast)
         run: python3 tag_wallpapers_online.py --stage general --workers 4
 
@@ -51,10 +57,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/vision_tags.json docs/index.json
+          git add -A
           if git diff --cached --quiet; then
-            echo "No tag changes — nothing to commit."
+            echo "No changes — nothing to commit."
           else
-            git commit -m "Update vision tags (automated pipeline)"
+            git commit -m "Classify and tag wallpapers (automated pipeline)"
             git push
           fi

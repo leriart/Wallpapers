@@ -104,7 +104,7 @@ def main():
     thumbs_fail = 0
 
     for folder in sorted(REPO_ROOT.iterdir()):
-        if not folder.is_dir() or folder.name.startswith(".") or folder.name in ("docs", "Por organizar"):
+        if not folder.is_dir() or folder.name.startswith((".", "_")) or folder.name in ("docs", "Por organizar"):
             continue
         files = []
         for f in sorted(folder.iterdir()):

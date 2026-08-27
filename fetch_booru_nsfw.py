@@ -219,14 +219,26 @@ def main():
             ext = "." + url.rsplit(".", 1)[-1].lower()
             if ext not in ALLOWED_EXT:
                 continue
+            # fast skip: the API reports the file hash — no need to download
+            api_md5 = p.get("md5") or p.get("hash")
+            if api_md5 and api_md5 in existing_md5:
+                print(f"  ⏭  id {p['id']}: duplicado (md5 reportado por API)", flush=True)
+                continue
             # download to temp to check md5 + avoid partial files on disk
             tmp = OUT_DIR / f".tmp_{p['id']}{ext}"
-            try:
-                req = urllib.request.Request(url, headers={"User-Agent": UA})
-                with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
-                    f.write(r.read())
-            except Exception as e:
-                print(f"  ✗ id {p['id']}: {e}", flush=True)
+            ok = False
+            for attempt in range(1, 4):
+                try:
+                    req = urllib.request.Request(url, headers={"User-Agent": UA})
+                    with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
+                        f.write(r.read())
+                    ok = True
+                    break
+                except Exception as e:
+                    print(f"  ⚠ id {p['id']} intento {attempt}/3: {e}", flush=True)
+                    time.sleep(5 * attempt)
+            if not ok:
+                print(f"  ✗ id {p['id']}: no se pudo descargar", flush=True)
                 tmp.unlink(missing_ok=True)
                 continue
             h = md5_of(tmp)

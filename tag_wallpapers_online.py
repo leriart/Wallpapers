@@ -105,7 +105,7 @@ def stage_general(args, data, results):
     for c in data["categories"]:
         for f in c["files"]:
             key = f"{c['name']}/{f['name']}"
-            if "tags" in results.get(key, {}):
+            if "tags" in results.get(key, {}) and "rating" in results.get(key, {}):
                 continue
             tp = REPO_ROOT / "docs" / f["thumb"]
             if tp.exists():
@@ -127,6 +127,7 @@ def stage_general(args, data, results):
             try:
                 out = client.predict(handle_file(str(tp)), GENERAL_TH, api_name="/predict")
                 j = out[1] or {}
+                rating = next((t for t in j if t.startswith("rating:")), "rating:safe").replace("rating:", "")
                 tags = []
                 for label, score in j.items():
                     if label.startswith("rating:"):
@@ -137,6 +138,7 @@ def stage_general(args, data, results):
                 with lock:
                     entry = results.setdefault(key, {"series": [], "characters": [], "tags": []})
                     entry["tags"] = sorted(set(entry.get("tags", [])) | set(tags))
+                    entry["rating"] = rating
                     done[0] += 1
                     if done[0] % CHECKPOINT_EVERY == 0:
                         save_state(results)

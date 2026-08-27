@@ -94,6 +94,62 @@ function updateFilterBadge() {
   filterBadge.classList.toggle("hidden", n === 0);
 }
 
+nsfwToggle.addEventListener("change", () => {
+  showNSFW = nsfwToggle.checked;
+  try { localStorage.setItem("wallpapers:nsfw", showNSFW ? "1" : "0"); } catch (_) {}
+  if (!showNSFW) closeLightbox();
+  refreshStats();
+  buildCategoryDropdown();
+  render();
+  toast(showNSFW ? "Showing NSFW wallpapers" : "NSFW wallpapers hidden");
+});
+
+function catalogCounts() {
+  let total = 0, videos = 0;
+  const cats = new Set();
+  for (const c of DATA.categories) {
+    for (const f of c.files) {
+      if (!showNSFW && f.nsfw) continue;
+      total++;
+      cats.add(c.name);
+      if (f.kind === "video") videos++;
+    }
+  }
+  return { total, videos, cats: cats.size };
+}
+
+function buildCategoryDropdown() {
+  categoryEl.innerHTML = '<option value="all">All categories</option>' +
+    DATA.categories
+      .filter((c) => showNSFW || c.name !== "NSFW")
+      .map((c) => `<option value="${esc(c.name)}">${esc(c.name)} &middot; ${c.files.length}</option>`).join("");
+}
+
+function buildSeriesDropdown() {
+  const seriesCount = new Map();
+  for (const c of DATA.categories) {
+    for (const f of c.files) {
+      if (!showNSFW && f.nsfw) continue;
+      for (const s of (f.tags && f.tags.series) || []) seriesCount.set(s, (seriesCount.get(s) || 0) + 1);
+    }
+  }
+  const cur = seriesEl.value;
+  seriesEl.innerHTML = '<option value="all">All series</option>' +
+    [...seriesCount.entries()].sort((a, b) => b[1] - a[1])
+      .map(([s, n]) => `<option value="${esc(s)}">${esc(s)} &middot; ${n}</option>`).join("");
+  if (cur && seriesCount.has(cur)) seriesEl.value = cur;
+}
+
+function refreshStats() {
+  const { total, videos, cats } = catalogCounts();
+  $("stats").textContent =
+    `${total.toLocaleString()} ${plural(total, "wallpaper", "wallpapers")} · ` +
+    `${cats} ${plural(cats, "category", "categories")} · ` +
+    `${videos} ${plural(videos, "video", "videos")}`;
+  buildSeriesDropdown();
+  updateFilterBadge();
+}
+
 function toggleFilters(force) {
   const willShow = force !== undefined ? force : filterPanel.classList.contains("hidden");
   filterPanel.classList.toggle("hidden", !willShow);
@@ -135,12 +191,6 @@ async function loadIndex() {
   DATA = await res.json();
 
   const cats = DATA.categories;
-  const total = cats.reduce((a, c) => a + c.files.length, 0);
-  const videos = cats.reduce((a, c) => a + c.files.filter((f) => f.kind === "video").length, 0);
-  $("stats").textContent =
-    `${total.toLocaleString()} ${plural(total, "wallpaper", "wallpapers")} · ` +
-    `${cats.length} ${plural(cats.length, "category", "categories")} · ` +
-    `${videos} ${plural(videos, "video", "videos")}`;
 
   // Precompute a normalized search haystack per file
   for (const c of cats) {
@@ -152,19 +202,8 @@ async function loadIndex() {
     }
   }
 
-  categoryEl.innerHTML = '<option value="all">All categories</option>' +
-    cats.map((c) => `<option value="${esc(c.name)}">${esc(c.name)} &middot; ${c.files.length}</option>`).join("");
-
-  // Series dropdown with counts (only series present in the catalog)
-  const seriesCount = new Map();
-  for (const c of cats) {
-    for (const f of c.files) {
-      for (const s of (f.tags && f.tags.series) || []) seriesCount.set(s, (seriesCount.get(s) || 0) + 1);
-    }
-  }
-  seriesEl.innerHTML = '<option value="all">All series</option>' +
-    [...seriesCount.entries()].sort((a, b) => b[1] - a[1])
-      .map(([s, n]) => `<option value="${esc(s)}">${esc(s)} &middot; ${n}</option>`).join("");
+  refreshStats();
+  buildCategoryDropdown();
 
   render();
 }
@@ -182,6 +221,7 @@ function visibleFiles() {
     if (cat !== "all" && c.name !== cat) continue;
     for (const f of c.files) {
       if (kind !== "all" && f.kind !== kind) continue;
+      if (!showNSFW && f.nsfw) continue;
       if (series !== "all" && !((f.tags && f.tags.series) || []).includes(series)) continue;
       if (qTokens.length) {
         if (!qTokens.every((tok) => f._search.includes(tok))) continue;
@@ -334,6 +374,9 @@ function render() {
         ? `<video src="${RAW}/${cat}/${encodeURIComponent(file.name)}" poster="${esc(file.thumb)}" preload="none" muted loop></video>`
         : `<img loading="lazy" src="${esc(file.thumb)}" alt="${esc(file.name)}">`;
 
+      const flag = (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
+        (file.nsfw ? '<span class="nsfw-flag">NSFW</span>' : "");
+
       const t = file.tags || {};
       const chips = [];
       for (const s of t.series || []) chips.push(`<span class="chip chip-series">${esc(s)}</span>`);
@@ -341,7 +384,7 @@ function render() {
       const chipRow = chips.length ? `<div class="chips">${chips.join("")}</div>` : "";
 
       card.innerHTML = media +
-        (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
+        flag +
         `<div class="meta">` +
           `<span class="fname" title="${esc(file.name)}">${esc(file.name)}</span>` +
           `<span class="meta-right">` +

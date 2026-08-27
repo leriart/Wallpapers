@@ -381,6 +381,78 @@ select:focus { border-color: var(--accent); }
   pointer-events: none;
 }
 
+.nsfw-flag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(10, 13, 19, 0.8);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(240, 166, 202, 0.55);
+  border-radius: 20px;
+  padding: 3px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--pink);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* NSFW toggle (advanced options in the filters panel) */
+.nsfw-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  touch-action: manipulation;
+}
+
+.nsfw-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+
+.nsfw-toggle .switch {
+  width: 34px;
+  height: 19px;
+  border-radius: 20px;
+  background: var(--panel-2);
+  border: 1px solid var(--border-strong);
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+  flex: none;
+}
+
+.nsfw-toggle .switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.nsfw-toggle input:checked + .switch {
+  background: rgba(240, 166, 202, 0.25);
+  border-color: var(--pink);
+}
+
+.nsfw-toggle input:checked + .switch::after {
+  transform: translateX(15px);
+  background: var(--pink);
+}
+
+.nsfw-toggle:active { border-color: var(--border-strong); }
+
 /* Select button: sits in the meta bar, next to the filename.
    Always visible: shows a plus icon when unselected, check when selected. */
 .select-btn {

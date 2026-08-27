@@ -50,7 +50,7 @@ BADGE_COLORS = {
 def discover_categories(root: Path):
     categories = []
     for folder in sorted(root.iterdir()):
-        if not folder.is_dir() or folder.name.startswith(".") or folder.name == "docs":
+        if not folder.is_dir() or folder.name.startswith(".") or folder.name in ("docs", "NSFW"):
             continue
         files = [
             f.name for f in folder.iterdir()
@@ -93,6 +93,8 @@ def discover_categories_from_index(index_path: Path):
     data = json.loads(index_path.read_text(encoding="utf-8"))
     categories = []
     for c in data.get("categories", []):
+        if c.get("name") == "NSFW" or any(f.get("nsfw") for f in c.get("files", [])[:1]):
+            continue
         files = [f["name"] for f in c["files"]]
         image_files = [f["name"] for f in c["files"] if f["kind"] == "image"]
         video_files = [f["name"] for f in c["files"] if f["kind"] == "video"]

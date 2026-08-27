@@ -130,6 +130,8 @@ def main():
                 "thumb": thumb_rel,
                 "tags": tag_wallpapers(folder.name, f.name),
             })
+            if folder.name == "NSFW":
+                files[-1]["nsfw"] = True
         files.sort(key=lambda x: x["name"].lower())
         categories.append({"name": folder.name, "files": files})
 

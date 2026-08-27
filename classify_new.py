@@ -122,8 +122,11 @@ def make_thumb(src: Path, tmp: Path) -> Path | None:
         return None
 
 
-def classify_tags(tags: set) -> str:
-    """Pick a category from the tag set. Priority-ordered, humans → Anime."""
+def classify_tags(tags: set, rating: str = "rating:safe") -> str:
+    """Pick a category from the tag set. Priority-ordered, humans → Anime.
+    Explicit/questionable/sensitive ratings go to the hidden NSFW folder."""
+    if rating in ("rating:questionable", "rating:explicit", "rating:sensitive"):
+        return "NSFW"
     if tags & HUMAN_TAGS:
         if tags & PHOTO_TAGS:
             return "Photography"
@@ -180,24 +183,25 @@ def main():
                 try:
                     out = client.predict(handle_file(str(thumb)), THRESHOLD, api_name="/predict")
                     j = out[1] or {}
+                    rating = next((t for t in j if t.startswith("rating:")), "rating:safe")
                     tags = [t for t in j if not t.startswith("rating:")]
-                    results[p.name] = ("TAGS", tags[:MAX_TAGS], tags)
+                    results[p.name] = ("TAGS", tags[:MAX_TAGS], tags, rating)
                     return
                 except Exception:
                     time.sleep(6 * attempt)
-            results[p.name] = ("ERROR", "falló la API", "")
+            results[p.name] = ("ERROR", "falló la API", "", "")
 
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
         for _ in as_completed([ex.submit(work, p) for p in files]):
             pass
 
     for p in sorted(files, key=lambda x: x.name):
-        status, detail, tags = results.get(p.name, ("ERROR", "sin resultado", ""))
+        status, detail, tags, rating = results.get(p.name, ("ERROR", "sin resultado", "", ""))
         if status == "ERROR":
             report.append((p, None, None, f"ERROR: {detail}"))
             continue
         tagset = set(tags)
-        cat = classify_tags(tagset)
+        cat = classify_tags(tagset, rating)
         h = md5_of(p)
         if h in existing_hashes:
             report.append((p, None, None, "DUPLICADO (ya existe en el repo)"))

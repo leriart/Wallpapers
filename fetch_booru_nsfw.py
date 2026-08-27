@@ -35,7 +35,7 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 
 SQUARE_RATIO = (0.9, 1.1)
 PANORAMIC_MIN = 1.78
-RECENT_DAYS = 180
+RECENT_DAYS = 365
 ALLOWED_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 
 # Content that must never be downloaded
@@ -62,7 +62,7 @@ SOURCES = {
         "url": "https://yande.re/post.json",
         "params": lambda page: {"tags": "uncensored", "limit": 100, "page": page},
         "recent": True,
-        "pages": 4,
+        "pages": 8,
     },
     "xbooru": {
         "url": "https://xbooru.com/index.php",
@@ -70,7 +70,15 @@ SOURCES = {
                                 "tags": "uncensored", "limit": 100,
                                 "pid": page - 1, "json": 1},
         "recent": False,
-        "pages": 4,
+        "pages": 6,
+    },
+    "tbib": {
+        "url": "https://tbib.org/index.php",
+        "params": lambda page: {"page": "dapi", "s": "post", "q": "index",
+                                "tags": "uncensored", "limit": 100,
+                                "pid": page - 1, "json": 1},
+        "recent": False,
+        "pages": 6,
     },
 }
 

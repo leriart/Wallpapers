@@ -843,7 +843,7 @@ WEAK_CHARACTER_ALIASES = {
     "noi", "shin", "hina", "iori", "ako", "rio", "noa", "saya", "hime",
     "key", "sana", "ling", "ran", "chen", "aya", "alice", "dusk",
     "luna", "star", "sunny", "hood", "red_hood", "misty", "snow_white",
-    "law", "robin", "tails", "vector",
+    "law", "robin", "tails", "vector", "panda",
 }
 
 # ---------------------------------------------------------------------------

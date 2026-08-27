@@ -17,15 +17,15 @@ from pathlib import Path
 from wallpaper_tags import tag_wallpapers
 
 
-CLIP_TAGS_FILE = "docs/clip_tags.json"
+CLIP_TAGS_FILE = "docs/vision_tags.json"
 
 
 def _merge_clip_tags(categories):
-    """Merge visual-recognition tags (docs/clip_tags.json) into the index.
+    """Merge visual-recognition tags (docs/vision_tags.json) into the index.
 
     The file maps "cat/name" -> {"series": [...], "characters": [...]}.
-    Produced by tag_wallpapers_clip.py; merged here so regenerating the
-    index never drops the vision-derived tags.
+    Produced by tag_wallpapers_gemini.py (free Google Gemini API pass);
+    merged here so regenerating the index never drops the vision tags.
     """
     p = REPO_ROOT / CLIP_TAGS_FILE
     if not p.exists():

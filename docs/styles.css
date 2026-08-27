@@ -26,7 +26,7 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-html { color-scheme: dark; }
+html { color-scheme: dark; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -240,7 +240,11 @@ select {
   cursor: pointer;
   outline: none;
   transition: border-color 0.15s;
+  touch-action: manipulation;
 }
+
+.filter-panel select { flex: 1 1 130px; min-width: 0; }
+.filter-panel select:first-of-type { flex-basis: 170px; }
 
 select:hover { border-color: var(--border-strong); }
 select:focus { border-color: var(--accent); }
@@ -276,18 +280,47 @@ select:focus { border-color: var(--accent); }
   touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
-}
-
-.card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  -webkit-touch-callout: none;
+  /* keep huge grids cheap to scroll (esp. iPhone) */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 190px;
 }
 
 .card.selected {
   border-color: var(--pink);
   box-shadow: 0 0 0 2px rgba(240, 166, 202, 0.35), var(--shadow);
 }
+
+/* Tag chips (series / characters) on cards */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0 9px 8px;
+}
+
+.chip {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 8px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip-series {
+  color: var(--accent);
+  border-color: rgba(110, 168, 254, 0.35);
+  background: var(--accent-soft);
+}
+
+.card.selected .chip-series { color: var(--pink); border-color: rgba(240, 166, 202, 0.4); background: rgba(240, 166, 202, 0.12); }
 
 .card video, .card img {
   width: 100%;
@@ -296,6 +329,7 @@ select:focus { border-color: var(--accent); }
   display: block;
   background: #080b10;
   pointer-events: none; /* let taps reach the card handlers */
+  -webkit-touch-callout: none;
 }
 
 .card .meta {
@@ -427,6 +461,8 @@ select:focus { border-color: var(--accent); }
   font-size: 14px;
 }
 
+.empty button { margin-top: 10px; }
+
 /* ---------- Lightbox ---------- */
 
 .lightbox {
@@ -480,6 +516,56 @@ select:focus { border-color: var(--accent); }
 
 .lb-close:hover { color: var(--text); border-color: var(--border-strong); }
 .lb-close svg { width: 16px; height: 16px; }
+
+/* Prev / next navigation */
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(16, 20, 29, 0.9);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lb-nav:hover { color: var(--text); border-color: var(--border-strong); background: var(--panel-2); }
+.lb-nav:active { transform: translateY(-50%) scale(0.92); }
+.lb-nav svg { width: 18px; height: 18px; }
+.lb-prev { left: -14px; }
+.lb-next { right: -14px; }
+.lb-nav.hidden { display: none; }
+
+@media (max-width: 700px) {
+  .lb-prev { left: 4px; }
+  .lb-next { right: 4px; }
+}
+
+.lb-count {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  align-self: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-tags {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-faint);
+  font-size: 11px;
+  line-height: 1.45;
+  word-break: break-word;
+}
 
 .lb-footer {
   margin-top: 12px;
@@ -541,7 +627,6 @@ select:focus { border-color: var(--accent); }
 @media (min-width: 768px) {
   .grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; padding: 20px 20px 60px; }
   .topbar-inner { padding: 14px 24px; }
-  .filter-panel { flex-wrap: nowrap; }
   #search { width: 250px; }
 }
 
@@ -564,6 +649,11 @@ select:focus { border-color: var(--accent); }
 
 /* ---------- Desktop niceties (hover capable) ---------- */
 @media (hover: hover) {
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
   .card:hover .select-btn { border-color: var(--pink); color: var(--pink); }
   .card.selected .select-btn { border-color: var(--pink); color: #0b0e14; }
 }
@@ -588,4 +678,8 @@ select:focus { border-color: var(--accent); }
     color: #0b0e14;
   }
   .card.selected .select-btn .check { font-size: 17px; }
+  /* no sticky hover after tap on touch devices */
+  .card:active { border-color: var(--border-strong); }
+  .lb-nav { width: 38px; height: 38px; }
+  .chips { padding-bottom: 9px; }
 }

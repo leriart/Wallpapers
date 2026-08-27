@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Curated collection of wallpapers organized by category — browse, preview and download.">
+<meta name="theme-color" content="#0b0e14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Curated collection of wallpapers organized by category — browse, search by character or series, preview and download.">
 <title>Wallpapers — Gallery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +26,15 @@
     </div>
 
     <div class="topbar-actions">
-      <button id="filter-toggle" class="btn filter-toggle" aria-expanded="false" aria-controls="filter-panel">
+      <button id="filter-toggle" type="button" class="btn filter-toggle" aria-expanded="false" aria-controls="filter-panel">
         <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 5h14M6 10h8M9 15h2"></path>
         </svg>
         <span>Filters</span>
         <span id="filter-badge" class="filter-badge hidden">0</span>
       </button>
-      <button id="select-none" class="btn ghost" title="Clear selection">Clear</button>
-      <button id="download-selected" class="btn primary" title="Download selected files">
+      <button id="select-none" type="button" class="btn ghost" title="Clear selection">Clear</button>
+      <button id="download-selected" type="button" class="btn primary" title="Download selected files">
         <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5"></path>
           <path d="M4 15.5h12"></path>
@@ -47,14 +50,25 @@
           <circle cx="9" cy="9" r="5.5"></circle>
           <path d="M13.2 13.2 17 17"></path>
         </svg>
-        <input id="search" type="search" placeholder="Search by name or tag…" autocomplete="off" spellcheck="false">
+        <input id="search" type="search" placeholder="Search name, character, series, tag…" autocomplete="off" spellcheck="false" enterkeyhint="search">
       </div>
       <select id="category" aria-label="Category"></select>
+      <select id="series" aria-label="Series">
+        <option value="all">All series</option>
+      </select>
       <select id="kind" aria-label="Media type">
         <option value="all">All media</option>
         <option value="image">Images</option>
         <option value="video">Videos</option>
       </select>
+      <select id="sort" aria-label="Sort order">
+        <option value="default">Sort: default</option>
+        <option value="name">Sort: name A–Z</option>
+        <option value="size-desc">Sort: largest</option>
+        <option value="size-asc">Sort: smallest</option>
+        <option value="random">Sort: shuffle</option>
+      </select>
+      <button id="clear-filters" type="button" class="btn ghost">Clear filters</button>
     </div>
   </div>
 </header>
@@ -63,14 +77,21 @@
 
 <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Wallpaper preview">
   <div class="lightbox-inner">
-    <button id="lb-close" class="lb-close" aria-label="Close preview">
+    <button id="lb-close" type="button" class="lb-close" aria-label="Close preview">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"></path></svg>
+    </button>
+    <button id="lb-prev" type="button" class="lb-nav lb-prev hidden" aria-label="Previous wallpaper">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 4-6 6 6 6"></path></svg>
+    </button>
+    <button id="lb-next" type="button" class="lb-nav lb-next hidden" aria-label="Next wallpaper">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 4 6 6-6 6"></path></svg>
     </button>
     <div id="lb-media"></div>
     <div class="lb-footer">
       <div id="lb-info" class="lb-info"></div>
       <div class="lb-actions">
-        <button id="lb-select" class="btn ghost">Select</button>
+        <span id="lb-count" class="lb-count"></span>
+        <button id="lb-select" type="button" class="btn ghost">Select</button>
         <a id="lb-download" class="btn primary" download>
           <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5"></path>

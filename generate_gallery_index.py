@@ -14,6 +14,37 @@ import subprocess
 import sys
 from pathlib import Path
 
+from wallpaper_tags import tag_wallpapers
+
+
+CLIP_TAGS_FILE = "docs/clip_tags.json"
+
+
+def _merge_clip_tags(categories):
+    """Merge visual-recognition tags (docs/clip_tags.json) into the index.
+
+    The file maps "cat/name" -> {"series": [...], "characters": [...]}.
+    Produced by tag_wallpapers_clip.py; merged here so regenerating the
+    index never drops the vision-derived tags.
+    """
+    p = REPO_ROOT / CLIP_TAGS_FILE
+    if not p.exists():
+        return
+    try:
+        clip = json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    for c in categories:
+        for f in c["files"]:
+            extra = clip.get(f"{c['name']}/{f['name']}")
+            if not extra:
+                continue
+            t = f.setdefault("tags", {"series": [], "characters": [], "tags": []})
+            for key in ("series", "characters"):
+                cur = set(t.get(key, []))
+                cur.update(extra.get(key, []))
+                t[key] = sorted(cur)
+
 REPO_ROOT = Path(__file__).resolve().parent
 OUT = REPO_ROOT / "docs" / "index.json"
 THUMBS_DIR = REPO_ROOT / "docs" / "thumbs"
@@ -97,11 +128,13 @@ def main():
                 "kind": kind,
                 "size": f.stat().st_size,
                 "thumb": thumb_rel,
+                "tags": tag_wallpapers(folder.name, f.name),
             })
         files.sort(key=lambda x: x["name"].lower())
         categories.append({"name": folder.name, "files": files})
 
     OUT.parent.mkdir(exist_ok=True)
+    _merge_clip_tags(categories)
     OUT.write_text(json.dumps({
         "repo": "leriart/Wallpapers",
         "branch": "main",

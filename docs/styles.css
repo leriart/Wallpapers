@@ -26,6 +26,20 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
+/* Screen-reader-only live region (keeps a11y without hammering the grid) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 html { color-scheme: dark; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
@@ -219,6 +233,7 @@ body {
   font-size: 14px;
   outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
+  touch-action: manipulation;
 }
 
 #search::placeholder { color: var(--text-faint); }
@@ -584,6 +599,7 @@ select:focus { border-color: var(--accent); }
   justify-content: center;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
+  touch-action: manipulation;
 }
 
 .lb-close:hover { color: var(--text); border-color: var(--border-strong); }
@@ -730,10 +746,38 @@ select:focus { border-color: var(--accent); }
   .card.selected .select-btn { border-color: var(--pink); color: #0b0e14; }
 }
 
-/* ---------- Touch: bigger targets, no hover-play ---------- */
+/* ---------- Touch: bigger targets, no hover-play, no heavy filters ---------- */
 @media (hover: none) {
   .btn { padding: 11px 15px; }
   .card video, .card img { min-height: 100px; }
+
+  /* iOS perf: blur on a sticky bar / overlay re-composites every frame */
+  .topbar {
+    background: rgba(11, 14, 20, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .lightbox {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .kind-flag, .nsfw-flag {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(10, 13, 19, 0.92);
+  }
+
+  /* iOS: content-visibility + contain-intrinsic-size can eat taps on old
+     Safaris; plain rendering is cheaper to keep interactive there */
+  .card {
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+  }
+
+  /* Bigger lightbox targets (Apple HIG: 44px) */
+  .lb-close, .lb-nav { width: 44px; height: 44px; }
+  .lb-close { top: -50px; }
+
   .select-btn {
     width: 34px;
     height: 34px;
@@ -752,6 +796,5 @@ select:focus { border-color: var(--accent); }
   .card.selected .select-btn .check { font-size: 17px; }
   /* no sticky hover after tap on touch devices */
   .card:active { border-color: var(--border-strong); }
-  .lb-nav { width: 38px; height: 38px; }
   .chips { padding-bottom: 9px; }
 }

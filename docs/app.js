@@ -35,8 +35,14 @@ let viewList = [];                 // current filtered+sorted [{cat,file}]
 let viewIndex = -1;                // lightbox position in viewList
 let renderToken = 0;               // invalidates in-flight chunked renders
 let lastLongPressAt = 0;           // iOS: suppress click after long-press
-const CHUNK = 140;                 // cards per animation frame
-const MAX_ANIMATED = 60;           // only first N cards get entrance animation
+
+// Touch devices: disable hover-play of videos (no hover state)
+const IS_TOUCH = window.matchMedia("(hover: none)").matches || ("ontouchstart" in window);
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+const CHUNK = IS_TOUCH ? 100 : 140; // cards per animation frame
+const MAX_ANIMATED = 60;            // only first N cards get entrance animation
 
 const $ = (id) => document.getElementById(id);
 const grid = $("grid");
@@ -59,14 +65,26 @@ try { showNSFW = localStorage.getItem("wallpapers:nsfw") === "1"; } catch (_) {}
 if (nsfwToggle) nsfwToggle.checked = showNSFW;
 const wire = (el, evt, fn) => { if (el) el.addEventListener(evt, fn); };
 
-// Touch devices: disable hover-play of videos (no hover state)
-const IS_TOUCH = window.matchMedia("(hover: none)").matches || ("ontouchstart" in window);
-const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+// Screen-reader summary: updated once per render (NOT per chunk, which
+// made iOS Safari recompute the a11y tree ~60x per render and feel laggy).
+const liveRegion = $("live-region");
 
 /* ---------- helpers ---------- */
 
-const norm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+// normalize() + NFD is the single most expensive op on load: it ran once
+// per file (~8k × ~300 chars) and froze the main thread for seconds on
+// iPhone. Cache results and skip the NFD pass for pure-ASCII strings (the
+// vast majority of tags/names).
+const normCache = new Map();
+function norm(s) {
+  let v = normCache.get(s);
+  if (v !== undefined) return v;
+  v = String(s).toLowerCase();
+  if (/[^\x00-\x7F]/.test(v)) v = v.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  if (normCache.size > 200000) normCache.clear();
+  normCache.set(s, v);
+  return v;
+}
 
 function fmtSize(bytes) {
   if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + " MB";
@@ -242,7 +260,7 @@ async function loadIndex() {
 function afterLoad() {
   const cats = DATA.categories;
 
-  // Precompute a normalized search haystack per file
+  // Precompute a normalized search haystack per file (fast: ASCII fast-path)
   for (const c of cats) {
     for (const f of c.files) {
       const t = f.tags || {};
@@ -390,6 +408,8 @@ function render() {
   const items = visibleFiles();
   viewList = items;
   updateCount();
+  if (liveRegion) liveRegion.textContent =
+    `Showing ${items.length.toLocaleString()} wallpapers`;
 
   if (!items.length) {
     grid.innerHTML = `<div class="empty">

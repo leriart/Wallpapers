@@ -128,8 +128,8 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--top-rated", action="store_true",
                     help="best-rated all-time (order:score) instead of recent")
-    ap.add_argument("--min-ratio", type=float, default=1.78,
-                    help="minimum width/height (1.78 = 16:9; 1.0 = any landscape; 0 = all)")
+    ap.add_argument("--min-ratio", type=float, default=0,
+                    help="minimum width/height (0 = all orientations incl. phone; 1.78 = 16:9+)")
     ap.add_argument("--total", type=int, default=0, help="global cap after merging sources")
     args = ap.parse_args()
 

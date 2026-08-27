@@ -43,6 +43,7 @@ const grid = $("grid");
 const searchEl = $("search");
 const categoryEl = $("category");
 const kindEl = $("kind");
+const aspectEl = $("aspect");
 const seriesEl = $("series");
 const sortEl = $("sort");
 const filterToggle = $("filter-toggle");
@@ -101,6 +102,7 @@ function filterCount() {
   if (categoryEl.value !== "all") n++;
   if (kindEl.value !== "all") n++;
   if (seriesEl.value !== "all") n++;
+  if (aspectEl && aspectEl.value !== "all") n++;
   return n;
 }
 
@@ -192,6 +194,7 @@ function clearFilters() {
   categoryEl.value = "all";
   kindEl.value = "all";
   seriesEl.value = "all";
+  if (aspectEl) aspectEl.value = "all";
   sortEl.value = "default";
   updateFilterBadge();
   render();
@@ -262,12 +265,14 @@ function visibleFiles() {
   const cat = categoryEl.value;
   const kind = kindEl.value;
   const series = seriesEl.value;
+  const aspect = aspectEl ? aspectEl.value : "all";
   const out = [];
   for (const c of DATA.categories) {
     if (cat !== "all" && c.name !== cat) continue;
     for (const f of c.files) {
       if (kind !== "all" && f.kind !== kind) continue;
       if (!showNSFW && f.nsfw) continue;
+      if (aspect !== "all" && f.aspect !== aspect) continue;
       if (series !== "all" && !((f.tags && f.tags.series) || []).includes(series)) continue;
       if (qTokens.length) {
         if (!qTokens.every((tok) => f._search.includes(tok))) continue;
@@ -690,6 +695,7 @@ wire(searchEl, "input", () => {
 });
 wire(categoryEl, "change", () => { render(); updateFilterBadge(); });
 wire(kindEl, "change", () => { render(); updateFilterBadge(); });
+wire(aspectEl, "change", () => { render(); updateFilterBadge(); });
 wire(seriesEl, "change", () => { render(); updateFilterBadge(); });
 wire(sortEl, "change", render);
 wire($("select-none"), "click", clearSelection);

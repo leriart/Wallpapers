@@ -97,6 +97,27 @@ def make_thumb(src: Path, dst: Path, is_video: bool) -> bool:
         return False
 
 
+def aspect_of(thumb_path: Path) -> str:
+    """Bucket a wallpaper by aspect ratio, read from its 480px thumb
+    (the thumb preserves the source orientation)."""
+    try:
+        from PIL import Image
+        with Image.open(thumb_path) as im:
+            w, h = im.size
+        if not w or not h:
+            return "unknown"
+        r = w / h
+        if r < 0.9:
+            return "portrait"
+        if r <= 1.1:
+            return "square"
+        if r < 1.9:
+            return "landscape"
+        return "ultrawide"
+    except Exception:
+        return "unknown"
+
+
 def main():
     categories = []
     total_media = 0
@@ -123,11 +144,13 @@ def main():
                 thumbs_ok += 1
             else:
                 thumbs_fail += 1
+            thumb_path = REPO_ROOT / "docs" / thumb_rel
             files.append({
                 "name": f.name,
                 "kind": kind,
                 "size": f.stat().st_size,
                 "thumb": thumb_rel,
+                "aspect": aspect_of(thumb_path),
                 "tags": tag_wallpapers(folder.name, f.name),
             })
             if folder.name == "NSFW":

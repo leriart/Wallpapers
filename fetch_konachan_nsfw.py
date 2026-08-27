@@ -32,7 +32,7 @@ API = "https://konachan.com/post.json"
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 
 SQUARE_RATIO = (0.9, 1.1)    # near 1:1
-PANORAMIC_MIN = 1.78         # 16:9 and wider (portrait excluded)
+PANORAMIC_MIN = 0             # 0 = all orientations (phone wallpapers included)
 EXCLUDE_TAGS = {
     "male", "1boy", "2boys", "3boys", "multiple_boys", "furry", "yaoi",
     "shotacon", "shota", "loli", "lolicon", "trap", "crossdressing", "feral",

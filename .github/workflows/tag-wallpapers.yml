@@ -9,6 +9,8 @@ on:
   workflow_dispatch:        # manual "Run workflow" button in the Actions tab
   schedule:
     - cron: "0 6 * * 1"     # every Monday 06:00 UTC, catches new wallpapers
+  push:
+    branches: [main]        # auto-run when wallpapers are pushed (resumable)
 
 permissions:
   contents: write

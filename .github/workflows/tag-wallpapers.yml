@@ -1,0 +1,58 @@
+name: Tag wallpapers (vision)
+
+# Runs the keyless vision-tagging pipeline on GitHub's free runners:
+#   general tags (DeepDanbooru Space) + characters/series (wd-tagger Space),
+#   then regenerates the index and pushes results back so GitHub Pages
+#   auto-updates. No API keys, no secrets, no local machine needed.
+
+on:
+  workflow_dispatch:        # manual "Run workflow" button in the Actions tab
+  schedule:
+    - cron: "0 6 * * 1"     # every Monday 06:00 UTC, catches new wallpapers
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tag-wallpapers
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1500   # general ~2h + chars ~8-12h (slow public Space)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: |
+          pip install --quiet gradio_client pillow
+
+      - name: Stage 1 — general tags (DeepDanbooru, fast)
+        run: python3 tag_wallpapers_online.py --stage general --workers 4
+
+      - name: Stage 2 — characters & series (wd-tagger, slow)
+        run: python3 tag_wallpapers_online.py --stage chars --workers 3
+
+      - name: Regenerate index (merges vision tags)
+        run: python3 generate_gallery_index.py
+
+      - name: Commit & push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/vision_tags.json docs/index.json
+          if git diff --cached --quiet; then
+            echo "No tag changes — nothing to commit."
+          else
+            git commit -m "Update vision tags (automated pipeline)"
+            git push
+          fi

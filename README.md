@@ -3,7 +3,7 @@
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
     <img src="https://img.shields.io/badge/5780%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
-    <img src="https://img.shields.io/badge/25%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
+    <img src="https://img.shields.io/badge/26%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
 
@@ -51,6 +51,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [Space](#space) — 146 files
 - [Voxel](#voxel) — 14 files
 - [Watercolor](#watercolor) — 25 files
+- [__pycache__](#--pycache--) — 0 files
 
 ---
 
@@ -689,6 +690,15 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
     <img src="Watercolor/Watercolor_garden_flowers_gardener_house.jpeg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Watercolor/Watercolor_branch_flowers_bird_delicate.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>
+</div>
+
+---
+
+<div align="center">
+  <h2>__pycache__</h2>
+  <p>
+    <img src="https://img.shields.io/badge/0%20files-7aa2f7?style=for-the-badge&logo=none" alt="__pycache__">
+  </p>
 </div>
 
 ---

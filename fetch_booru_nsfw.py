@@ -60,25 +60,37 @@ AI_TAGS = {
 SOURCES = {
     "yandere": {
         "url": "https://yande.re/post.json",
-        "params": lambda page: {"tags": "uncensored", "limit": 100, "page": page},
+        "params": lambda page, top: {"tags": "uncensored order:score" if top else "uncensored",
+                                   "limit": 100, "page": page},
         "recent": True,
-        "pages": 8,
+        "pages": 6,
+        "top_pages": 14,
+    },
+    "konachan": {
+        "url": "https://konachan.com/post.json",
+        "params": lambda page, top: {"tags": "uncensored order:score" if top else "uncensored",
+                                     "limit": 100, "page": page},
+        "recent": True,
+        "pages": 4,
+        "top_pages": 12,
     },
     "xbooru": {
         "url": "https://xbooru.com/index.php",
-        "params": lambda page: {"page": "dapi", "s": "post", "q": "index",
-                                "tags": "uncensored", "limit": 100,
-                                "pid": page - 1, "json": 1},
+        "params": lambda page, top: {"page": "dapi", "s": "post", "q": "index",
+                                    "tags": "uncensored", "limit": 100,
+                                    "pid": page - 1, "json": 1},
         "recent": False,
-        "pages": 6,
+        "pages": 4,
+        "top_pages": 6,
     },
     "tbib": {
         "url": "https://tbib.org/index.php",
-        "params": lambda page: {"page": "dapi", "s": "post", "q": "index",
-                                "tags": "uncensored", "limit": 100,
-                                "pid": page - 1, "json": 1},
+        "params": lambda page, top: {"page": "dapi", "s": "post", "q": "index",
+                                    "tags": "uncensored", "limit": 100,
+                                    "pid": page - 1, "json": 1},
         "recent": False,
-        "pages": 6,
+        "pages": 4,
+        "top_pages": 6,
     },
 }
 
@@ -114,34 +126,42 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--per-source", type=int, default=10)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--top-rated", action="store_true",
+                    help="best-rated all-time (order:score) instead of recent")
+    ap.add_argument("--min-ratio", type=float, default=1.78,
+                    help="minimum width/height (1.78 = 16:9; 1.0 = any landscape; 0 = all)")
+    ap.add_argument("--total", type=int, default=0, help="global cap after merging sources")
     args = ap.parse_args()
 
     existing_md5 = {md5_of(p) for p in OUT_DIR.iterdir()
                     if p.is_file() and p.suffix.lower() in ALLOWED_EXT}
     print(f"NSFW/ ya tiene {len(existing_md5)} archivos (dedupe por md5)")
+    print(f"modo: {'TOP-RATED (order:score)' if args.top_rated else 'recientes'} | min-ratio: {args.min_ratio}")
 
+    all_cands = []
     cutoff = time.time() - RECENT_DAYS * 86400
     seen_ids = set()
 
     for name, src in SOURCES.items():
         print(f"\n=== {name} ===", flush=True)
         posts = []
-        for page in range(1, src["pages"] + 1):
+        pages = src["top_pages"] if args.top_rated else src["pages"]
+        for page in range(1, pages + 1):
             try:
-                batch = api_get(src["url"], src["params"](page))
+                batch = api_get(src["url"], src["params"](page, args.top_rated))
             except Exception as e:
                 print(f"  página {page}: error {e}", flush=True)
                 break
             if not batch:
                 break
-            if src["recent"]:
+            if src["recent"] and not args.top_rated:
                 batch = [p for p in batch if p.get("created_at", 0) >= cutoff]
             fresh = [p for p in batch if p["id"] not in seen_ids]
             for p in fresh:
                 seen_ids.add(p["id"])
             posts.extend(fresh)
             print(f"  página {page}: +{len(fresh)} (total {len(posts)})", flush=True)
-            if len(fresh) < 95:
+            if len(fresh) < 95 and not args.top_rated:
                 break
             time.sleep(1.2)
 
@@ -159,7 +179,7 @@ def main():
             r = w / h
             if SQUARE_RATIO[0] <= r <= SQUARE_RATIO[1]:
                 shape = "square"
-            elif r >= PANORAMIC_MIN:
+            elif r >= args.min_ratio:
                 shape = "panoramic"
             else:
                 continue
@@ -174,11 +194,25 @@ def main():
         for score, shape, p in cands[:args.per_source]:
             print(f"    [{shape:9}] score {score:4} {p['width']}x{p['height']}  "
                   f"tags: {' '.join(html.unescape(p['tags']).split()[:8])}")
+        all_cands.extend(cands[:args.per_source])
 
-        if args.dry_run:
+    # merge sources: dedupe by post id, sort by score, cap
+    seen_posts = set()
+    merged = []
+    for score, shape, p in all_cands:
+        if p["id"] in seen_posts:
             continue
+        seen_posts.add(p["id"])
+        merged.append((score, shape, p))
+    merged.sort(key=lambda x: -x[0])
+    if args.total:
+        merged = merged[:args.total]
+    print(f"\ntotal tras unir fuentes: {len(merged)} (objetivo: {args.total or 'sin límite'})")
 
-        for score, shape, p in cands[:args.per_source]:
+    if args.dry_run:
+        return
+
+    for score, shape, p in merged:
             url = p.get("file_url")
             if not url:
                 continue

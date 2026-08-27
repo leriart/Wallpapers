@@ -2,8 +2,8 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/5780%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
-    <img src="https://img.shields.io/badge/27%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
+    <img src="https://img.shields.io/badge/5789%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/26%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
 
@@ -45,14 +45,13 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [Pastel](#pastel) — 16 files
 - [Photography](#photography) — 377 files
 - [Pixel_Art](#pixel-art) — 112 files
-- [Por organizar](#por-organizar) — 0 files
 - [Portrait](#portrait) — 9 files
 - [Retro](#retro) — 134 files
 - [Sci_Fi](#sci-fi) — 50 files
 - [Space](#space) — 146 files
 - [Voxel](#voxel) — 14 files
 - [Watercolor](#watercolor) — 25 files
-- [__pycache__](#--pycache--) — 0 files
+- [__pycache__](#--pycache--) — 9 files
 
 ---
 
@@ -547,15 +546,6 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 ---
 
 <div align="center">
-  <h2>Por organizar</h2>
-  <p>
-    <img src="https://img.shields.io/badge/0%20files-7aa2f7?style=for-the-badge&logo=none" alt="Por organizar">
-  </p>
-</div>
-
----
-
-<div align="center">
   <h2>Portrait</h2>
   <p>
     <img src="https://img.shields.io/badge/9%20files%20(3%20videos)-f778ba?style=for-the-badge&logo=none" alt="Portrait">
@@ -707,7 +697,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>__pycache__</h2>
   <p>
-    <img src="https://img.shields.io/badge/0%20files-7aa2f7?style=for-the-badge&logo=none" alt="__pycache__">
+    <img src="https://img.shields.io/badge/9%20files-7aa2f7?style=for-the-badge&logo=none" alt="__pycache__">
   </p>
 </div>
 

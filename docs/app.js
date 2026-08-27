@@ -185,11 +185,34 @@ clearBtn.addEventListener("click", clearFilters);
 /* ---------- Load ---------- */
 
 async function loadIndex() {
-  showSkeleton(18);
-  const res = await fetch("index.json", { cache: "no-cache" });
-  if (!res.ok) throw new Error("index.json HTTP " + res.status);
-  DATA = await res.json();
+  // 1) cached catalog → render instantly (no "Loading catalog…" wait)
+  let cached = null;
+  try {
+    const raw = localStorage.getItem("catalog:v2");
+    if (raw) cached = JSON.parse(raw);
+  } catch (_) {}
+  if (cached && cached.categories) {
+    DATA = cached;
+    afterLoad();
+  } else {
+    showSkeleton(18);
+  }
 
+  // 2) fresh catalog in the background, then re-render + refresh cache
+  try {
+    const res = await fetch("index.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("index.json HTTP " + res.status);
+    DATA = await res.json();
+    try { localStorage.setItem("catalog:v2", JSON.stringify(DATA)); } catch (_) {}
+    afterLoad();
+  } catch (err) {
+    if (!cached) {
+      grid.innerHTML = `<div class="empty">Failed to load catalog: ${esc(String(err))}</div>`;
+    }
+  }
+}
+
+function afterLoad() {
   const cats = DATA.categories;
 
   // Precompute a normalized search haystack per file
@@ -204,7 +227,6 @@ async function loadIndex() {
 
   refreshStats();
   buildCategoryDropdown();
-
   render();
 }
 

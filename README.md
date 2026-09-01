@@ -2,7 +2,7 @@
   <h1>WALLPAPERS</h1>
   <p>A curated collection of wallpapers organized by category.</p>
   <p>
-    <img src="https://img.shields.io/badge/6152%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
+    <img src="https://img.shields.io/badge/6153%20files-7aa2f7?style=for-the-badge&logo=none" alt="Total">
     <img src="https://img.shields.io/badge/26%20categories-bb9af7?style=for-the-badge&logo=none" alt="Categories">
   </p>
 </div>
@@ -29,7 +29,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 - [3D_Render](#3d-render) — 84 files
 - [Abstract](#abstract) — 197 files
 - [Animals](#animals) — 51 files
-- [Anime](#anime) — 2357 files
+- [Anime](#anime) — 2358 files
 - [Cars](#cars) — 47 files
 - [Cyberpunk](#cyberpunk) — 166 files
 - [Dark](#dark) — 210 files
@@ -136,7 +136,7 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
 <div align="center">
   <h2>Anime</h2>
   <p>
-    <img src="https://img.shields.io/badge/2357%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
+    <img src="https://img.shields.io/badge/2358%20files-f7768e?style=for-the-badge&logo=none" alt="Anime">
   </p>
   <div style="overflow-x:auto;overflow-y:hidden;white-space:nowrap;scroll-snap-type:x mandatory;scroll-behavior:smooth;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px;max-width:960px;margin:0 auto;">
     <img src="Anime/Anime_anime_black_dress_white_thigh_highs_muscle.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
@@ -148,10 +148,10 @@ This collection is organized thanks to <strong>Wanalizer</strong>, an intelligen
     <img src="Anime/Anime_brown_hair_brown_eyes_pleated_skirt_thigh_highs.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_sunglasses_bikini_blue_hair_sky.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_ocean_sky_clouds_veranda.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_sky_clouds_moon_night.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_pink_hair_sparkles_bokeh_glasses.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_creeper_explosives_green_hoodie_game.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_violet_eyes_blonde_hair_jewelry.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
-    <img src="Anime/Anime_helmet_crossbones_white_black.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_redhead_grey_cardigan_blush.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
+    <img src="Anime/Anime_heterochromia_scar_bishounen_blue_hair.png" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_bikini_beach_nekomimi_summer.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
     <img src="Anime/Anime_animal_ears_white_hair_dress_tail_indoors.jpg" height="180" style="scroll-snap-align:start;margin-right:8px;border-radius:4px;display:inline-block;">
   </div>

@@ -30,11 +30,15 @@ const BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
 
 let DATA = null;
-let selected = new Set();          // "cat/name"
+let selected = new Set();          // "cat/name" — files queued for download
+let favorites = new Set();         // "cat/name" — bookmarked wallpapers (localStorage)
+let recent = [];                   // [key, key, ...] — recently viewed (localStorage, capped)
 let viewList = [];                 // current filtered+sorted [{cat,file}]
 let viewIndex = -1;                // lightbox position in viewList
 let renderToken = 0;               // invalidates in-flight chunked renders
 let lastLongPressAt = 0;           // iOS: suppress click after long-press
+let lbMuted = true;                // lightbox videos muted by default (autoplay rules)
+let lbLoop = true;                 // lightbox videos loop by default
 
 // Touch devices: disable hover-play of videos (no hover state)
 const IS_TOUCH = window.matchMedia("(hover: none)").matches || ("ontouchstart" in window);
@@ -70,6 +74,28 @@ const wire = (el, evt, fn) => { if (el) el.addEventListener(evt, fn); };
 const liveRegion = $("live-region");
 
 /* ---------- helpers ---------- */
+
+// resolve the repo-relative path of a file (videos live in <stem>/ subdirs)
+function fileRel(cat, file) {
+  return file.path || `${cat}/${file.name}`;
+}
+
+function fileURL(cat, file) {
+  return `${RAW}/${fileRel(cat, file)}`.replace(/([^:])\/+/g, "$1/");
+}
+
+function setProgress(loaded, total) {
+  const bar = $("progress-bar");
+  if (!bar) return;
+  if (!total) { bar.classList.add("hidden"); return; }
+  bar.classList.remove("hidden");
+  bar.firstElementChild.style.width = Math.min(100, (loaded / total) * 100) + "%";
+}
+
+function hideProgress() {
+  const bar = $("progress-bar");
+  if (bar) bar.classList.add("hidden");
+}
 
 // normalize() + NFD is the single most expensive op on load: it ran once
 // per file (~8k × ~300 chars) and froze the main thread for seconds on
@@ -121,6 +147,7 @@ function filterCount() {
   if (kindEl.value !== "all") n++;
   if (seriesEl.value !== "all") n++;
   if (aspectEl && aspectEl.value !== "all") n++;
+  if (isFavOnly()) n++;
   return n;
 }
 
@@ -284,13 +311,16 @@ function visibleFiles() {
   const kind = kindEl.value;
   const series = seriesEl.value;
   const aspect = aspectEl ? aspectEl.value : "all";
+  const favOnly = isFavOnly();
   const out = [];
   for (const c of DATA.categories) {
     if (cat !== "all" && c.name !== cat) continue;
     for (const f of c.files) {
+      const key = `${c.name}/${f.name}`;
       if (kind !== "all" && f.kind !== kind) continue;
       if (!showNSFW && f.nsfw) continue;
       if (aspect !== "all" && f.aspect !== aspect) continue;
+      if (favOnly && !favorites.has(key)) continue;
       if (series !== "all" && !((f.tags && f.tags.series) || []).includes(series)) continue;
       if (qTokens.length) {
         if (!qTokens.every((tok) => f._search.includes(tok))) continue;
@@ -307,8 +337,30 @@ function visibleFiles() {
       const j = Math.floor(Math.random() * (i + 1));
       [out[i], out[j]] = [out[j], out[i]];
     }
+  } else if (sort === "favorites") {
+    // bubble favorited items to the top while keeping stable order
+    out.sort((a, b) => {
+      const af = favorites.has(`${a.cat}/${a.file.name}`) ? 0 : 1;
+      const bf = favorites.has(`${b.cat}/${b.file.name}`) ? 0 : 1;
+      return af - bf;
+    });
   }
   return out;
+}
+
+/* Chip click → set series/character filter; clicking again clears it. */
+function applyChipFilter(kind, value) {
+  const dropdown = kind === "series" ? seriesEl : null;
+  if (!dropdown) return;
+  if (dropdown.value === value) {
+    dropdown.value = "all";
+  } else {
+    dropdown.value = value;
+  }
+  // ensure filter panel is open so the user sees the change
+  toggleFilters(true);
+  render();
+  toast(dropdown.value === "all" ? `Cleared ${kind} filter` : `Filtering by ${kind}: ${value}`);
 }
 
 /* ---------- Selection ---------- */
@@ -334,6 +386,165 @@ function clearSelection() {
   render();
 }
 
+/* ---------- Favorites (bookmarks, separate from download selection) ---------- */
+
+function loadFavorites() {
+  try {
+    const raw = localStorage.getItem("wallpapers:favorites");
+    if (raw) favorites = new Set(JSON.parse(raw));
+  } catch (_) {}
+}
+
+function saveFavorites() {
+  try { localStorage.setItem("wallpapers:favorites", JSON.stringify([...favorites])); } catch (_) {}
+}
+
+function toggleFavorite(cat, file) {
+  const key = `${cat}/${file.name}`;
+  if (favorites.has(key)) favorites.delete(key); else favorites.add(key);
+  saveFavorites();
+  // update the card (if visible) and the lightbox button
+  const card = grid.querySelector(`.card[data-key="${CSS.escape(key)}"]`);
+  if (card) {
+    card.classList.toggle("fav", favorites.has(key));
+    const b = card.querySelector(".fav-btn");
+    if (b) {
+      b.classList.toggle("active", favorites.has(key));
+      b.setAttribute("aria-pressed", String(favorites.has(key)));
+      b.title = favorites.has(key) ? "Remove from favorites" : "Add to favorites";
+    }
+  }
+  syncLightboxFav();
+  updateFavCount();
+  renderFavoritesRow();
+  // if we're filtering "favorites only", re-render the grid so the change is visible
+  if (isFavOnly()) render();
+}
+
+function updateFavCount() {
+  const c = $("fav-count");
+  if (c) c.textContent = favorites.size;
+  const b = $("favorites-toggle");
+  if (b) b.classList.toggle("active", favorites.size > 0);
+}
+
+function isFavOnly() {
+  return $("fav-only") && $("fav-only").checked;
+}
+
+function syncLightboxFav() {
+  const b = $("lb-fav");
+  if (!b) return;
+  const sel = b._sel || "";
+  const on = favorites.has(sel);
+  b.classList.toggle("active", on);
+  b.setAttribute("aria-pressed", String(on));
+  b.title = on ? "Remove from favorites" : "Add to favorites";
+}
+
+function clearFavorites() {
+  if (!favorites.size) return;
+  favorites.clear();
+  saveFavorites();
+  render();
+}
+
+/* ---------- Recently viewed ---------- */
+
+const RECENT_MAX = 24;
+function loadRecent() {
+  try {
+    const raw = localStorage.getItem("wallpapers:recent");
+    if (raw) recent = JSON.parse(raw).filter(Boolean);
+  } catch (_) {}
+}
+
+function saveRecent() {
+  try { localStorage.setItem("wallpapers:recent", JSON.stringify(recent)); } catch (_) {}
+}
+
+function pushRecent(cat, file) {
+  const key = `${cat}/${file.name}`;
+  recent = [key, ...recent.filter((k) => k !== key)].slice(0, RECENT_MAX);
+  saveRecent();
+  renderRecentRow();
+}
+
+function renderRecentRow() {
+  const wrap = $("recent-row");
+  if (!wrap) return;
+  if (!recent.length) { wrap.classList.add("hidden"); wrap.innerHTML = ""; return; }
+  const cells = [];
+  for (const key of recent.slice(0, 12)) {
+    const idx = key.indexOf("/");
+    const cat = key.slice(0, idx);
+    const name = key.slice(idx + 1);
+    const c = DATA && DATA.categories.find((x) => x.name === cat);
+    const f = c && c.files.find((x) => x.name === name);
+    if (!f) continue;
+    cells.push(`<button class="recent-tile" data-key="${esc(key)}" title="${esc(name)}">
+      <img loading="lazy" src="${esc(f.thumb)}" alt="">
+    </button>`);
+  }
+  if (!cells.length) { wrap.classList.add("hidden"); return; }
+  wrap.classList.remove("hidden");
+  wrap.innerHTML = `<div class="recent-head">
+      <span>Recently viewed</span>
+      <button class="btn ghost" id="recent-clear" type="button">Clear</button>
+    </div><div class="recent-tiles">${cells.join("")}</div>`;
+  wrap.querySelectorAll(".recent-tile").forEach((b) => {
+    b.addEventListener("click", () => {
+      const key = b.dataset.key;
+      const idx = key.indexOf("/");
+      const cat = key.slice(0, idx);
+      const name = key.slice(idx + 1);
+      const c = DATA.categories.find((x) => x.name === cat);
+      const f = c && c.files.find((x) => x.name === name);
+      if (f) openLightbox(cat, f, -1);
+    });
+  });
+  const cl = $("recent-clear");
+  if (cl) cl.addEventListener("click", () => { recent = []; saveRecent(); renderRecentRow(); });
+}
+
+function renderFavoritesRow() {
+  const wrap = $("favorites-row");
+  if (!wrap || !DATA) return;
+  if (!favorites.size) { wrap.classList.add("hidden"); wrap.innerHTML = ""; return; }
+  const cells = [];
+  for (const key of favorites) {
+    const idx = key.indexOf("/");
+    const cat = key.slice(0, idx);
+    const name = key.slice(idx + 1);
+    const c = DATA.categories.find((x) => x.name === cat);
+    const f = c && c.files.find((x) => x.name === name);
+    if (!f) continue;
+    cells.push(`<button class="recent-tile fav-tile" data-key="${esc(key)}" title="${esc(name)}">
+      <img loading="lazy" src="${esc(f.thumb)}" alt="">
+      <span class="fav-mark" aria-hidden="true">★</span>
+    </button>`);
+  }
+  if (!cells.length) { wrap.classList.add("hidden"); return; }
+  wrap.classList.remove("hidden");
+  wrap.innerHTML = `<div class="recent-head">
+      <span>Favorites (${favorites.size})</span>
+      <button class="btn ghost" id="favorites-clear" type="button">Clear all</button>
+    </div><div class="recent-tiles">${cells.join("")}</div>`;
+  wrap.querySelectorAll(".recent-tile").forEach((b) => {
+    b.addEventListener("click", () => {
+      const key = b.dataset.key;
+      const idx = key.indexOf("/");
+      const cat = key.slice(0, idx);
+      const name = key.slice(idx + 1);
+      const c = DATA.categories.find((x) => x.name === cat);
+      const f = c && c.files.find((x) => x.name === name);
+      if (f) openLightbox(cat, f, -1);
+    });
+  });
+  const cl = $("favorites-clear");
+  if (cl) cl.addEventListener("click", clearFavorites);
+}
+
 /* ---------- Card interaction ---------- */
 
 function attachCardEvents(card, cat, file) {
@@ -348,13 +559,16 @@ function attachCardEvents(card, cat, file) {
   // can still fire after a long-press even with preventDefault on touchend.
   card.addEventListener("click", (e) => {
     if (e.target.closest(".select-btn")) return;
+    if (e.target.closest(".fav-btn")) return;
+    if (e.target.closest(".chip")) return;
     if (Date.now() - lastLongPressAt < 700) return;
     const idx = viewList.findIndex((v) => v.cat === cat && v.file === file);
     openLightbox(cat, file, idx >= 0 ? idx : 0);
   });
 
-  // Desktop: right-click toggles selection
+  // Desktop: right-click toggles selection (unless on a sub-button)
   card.addEventListener("contextmenu", (e) => {
+    if (e.target.closest(".fav-btn") || e.target.closest(".chip")) return;
     e.preventDefault();
     toggleSelect(cat, file);
   });
@@ -412,8 +626,11 @@ function render() {
     `Showing ${items.length.toLocaleString()} wallpapers`;
 
   if (!items.length) {
-    grid.innerHTML = `<div class="empty">
-        <p>No wallpapers match your filters.</p>
+    const msg = isFavOnly() && !favorites.size
+      ? `<p>You haven't favorited any wallpapers yet.</p>
+         <p class="empty-hint">Tap the <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" style="vertical-align:-2px"><path d="M8 1.5l2.06 4.18 4.61.67-3.34 3.25.79 4.6L8 11.99l-4.12 2.17.79-4.6L1.33 6.35l4.61-.67L8 1.5z"/></svg> on any wallpaper to save it here.</p>`
+      : `<p>No wallpapers match your filters.</p>`;
+    grid.innerHTML = `<div class="empty">${msg}
         <button class="btn ghost" id="empty-clear">Clear filters</button>
       </div>`;
     const b = $("empty-clear");
@@ -442,7 +659,7 @@ function render() {
       if (isSel) card.classList.add("selected");
 
       const media = file.kind === "video"
-        ? `<video src="${RAW}/${cat}/${encodeURIComponent(file.name)}" poster="${esc(file.thumb)}" preload="none" muted loop></video>`
+        ? `<video src="${esc(fileURL(cat, file))}" poster="${esc(file.thumb)}" preload="none" muted loop playsinline></video>`
         : `<img loading="lazy" src="${esc(file.thumb)}" alt="${esc(file.name)}">`;
 
       const flag = (file.kind === "video" ? '<span class="kind-flag">video</span>' : "") +
@@ -450,21 +667,46 @@ function render() {
 
       const t = file.tags || {};
       const chips = [];
-      for (const s of t.series || []) chips.push(`<span class="chip chip-series">${esc(s)}</span>`);
-      for (const ch of (t.characters || []).slice(0, 2)) chips.push(`<span class="chip">${esc(ch)}</span>`);
+      for (const s of t.series || []) chips.push(`<button class="chip chip-series" data-filter="series" data-value="${esc(s)}" type="button">${esc(s)}</button>`);
+      for (const ch of (t.characters || []).slice(0, 2)) chips.push(`<button class="chip" data-filter="character" data-value="${esc(ch)}" type="button">${esc(ch)}</button>`);
       const chipRow = chips.length ? `<div class="chips">${chips.join("")}</div>` : "";
+
+      const key = `${cat}/${file.name}`;
+      const isFav = favorites.has(key);
 
       card.innerHTML = media +
         flag +
+        (isFav ? '<span class="fav-flag" aria-hidden="true">★</span>' : "") +
         `<div class="meta">` +
           `<span class="fname" title="${esc(file.name)}">${esc(file.name)}</span>` +
           `<span class="meta-right">` +
             `<span class="fsize">${fmtSize(file.size)}</span>` +
+            `<button class="fav-btn ${isFav ? "active" : ""}" type="button" aria-pressed="${isFav}" aria-label="Favorite ${esc(file.name)}" title="${isFav ? "Remove from favorites" : "Add to favorites"}">` +
+              `<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l2.06 4.18 4.61.67-3.34 3.25.79 4.6L8 11.99l-4.12 2.17.79-4.6L1.33 6.35l4.61-.67L8 1.5z"/></svg>` +
+            `</button>` +
             `<button class="select-btn" type="button" aria-pressed="${isSel}" aria-label="Select ${esc(file.name)}">` +
               (isSel ? '<span class="check">✓</span>' : '<span class="plus">+</span>') +
             `</button>` +
           `</span>` +
         `</div>` + chipRow;
+
+      if (isFav) card.classList.add("fav");
+
+      const favBtn = card.querySelector(".fav-btn");
+      if (favBtn) {
+        favBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          toggleFavorite(cat, file);
+        });
+      }
+      card.querySelectorAll(".chip[data-filter]").forEach((b) => {
+        b.addEventListener("click", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          applyChipFilter(b.dataset.filter, b.dataset.value);
+        });
+      });
 
       // hover play/pause for videos (desktop only)
       if (file.kind === "video" && !IS_TOUCH) {
@@ -504,7 +746,7 @@ async function getBlobUrl(cat, file) {
   const key = `${cat}/${file.name}`;
   const cached = blobCache.get(key);
   if (cached) return cached;
-  const url = `${RAW}/${cat}/${encodeURIComponent(file.name)}`;
+  const url = fileURL(cat, file);
   const res = await fetch(url);
   if (!res.ok) throw new Error("HTTP " + res.status);
   const blob = await res.blob();
@@ -626,19 +868,35 @@ async function downloadSelected() {
 /* ---------- Lightbox ---------- */
 
 function openLightbox(cat, file, idx) {
-  const url = `${RAW}/${cat}/${encodeURIComponent(file.name)}`;
+  const url = fileURL(cat, file);
   const key = `${cat}/${file.name}`;
   viewIndex = idx >= 0 ? idx : viewList.findIndex((v) => v.cat === cat && v.file === file);
 
-  $("lb-media").innerHTML = file.kind === "video"
-    ? `<video src="${url}" controls autoplay></video>`
-    : `<img src="${url}" alt="${esc(file.name)}">`;
+  const isVideo = file.kind === "video";
+  $("lb-media").innerHTML = isVideo
+    ? `<video id="lb-video" src="${esc(url)}" poster="${esc(file.thumb || "")}" controls autoplay ${lbMuted ? "muted" : ""} ${lbLoop ? "loop" : ""} playsinline></video>`
+    : `<img src="${esc(url)}" alt="${esc(file.name)}">`;
 
   const t = file.tags || {};
   const tagStr = [t.series, t.characters, t.tags].flat().filter(Boolean).map(esc).join(" · ");
   $("lb-info").innerHTML =
     `<strong>${esc(file.name)}</strong> &middot; ${fmtSize(file.size)} &middot; ${esc(cat)}` +
     (tagStr ? `<br><span class="lb-tags">${tagStr}</span>` : "");
+
+  // video-only controls (mute / loop)
+  $("lb-video-controls").classList.toggle("hidden", !isVideo);
+  if (isVideo) {
+    const muteBtn = $("lb-mute");
+    muteBtn.classList.toggle("active", !lbMuted);
+    muteBtn.setAttribute("aria-pressed", String(!lbMuted));
+    muteBtn.title = lbMuted ? "Unmute (m)" : "Mute (m)";
+    muteBtn.querySelector(".lb-mute-on").classList.toggle("hidden", lbMuted);
+    muteBtn.querySelector(".lb-mute-off").classList.toggle("hidden", !lbMuted);
+    const loopBtn = $("lb-loop");
+    loopBtn.classList.toggle("active", lbLoop);
+    loopBtn.setAttribute("aria-pressed", String(lbLoop));
+    loopBtn.title = lbLoop ? "Disable loop (l)" : "Enable loop (l)";
+  }
 
   // Pre-fetch the blob so Download can act within the user gesture (iOS).
   prefetchBlob(cat, file);
@@ -657,12 +915,21 @@ function openLightbox(cat, file, idx) {
     $("lb-select").classList.toggle("active", nowSel);
   };
 
+  // favorite button (lightbox)
+  const lbFav = $("lb-fav");
+  lbFav._sel = key;
+  lbFav.title = favorites.has(key) ? "Remove from favorites" : "Add to favorites";
+  lbFav.classList.toggle("active", favorites.has(key));
+  lbFav.setAttribute("aria-pressed", String(favorites.has(key)));
+  lbFav.onclick = () => toggleFavorite(cat, file);
+
   // prev/next
   $("lb-prev").classList.toggle("hidden", viewList.length < 2 || viewIndex <= 0);
   $("lb-next").classList.toggle("hidden", viewList.length < 2 || viewIndex >= viewList.length - 1);
   $("lb-count").textContent = viewList.length ? `${viewIndex + 1} / ${viewList.length}` : "";
 
   $("lightbox").classList.remove("hidden");
+  pushRecent(cat, file);
 }
 
 function lbStep(dir) {
@@ -684,12 +951,34 @@ wire($("lb-prev"), "click", () => lbStep(-1));
 wire($("lb-next"), "click", () => lbStep(1));
 wire($("lightbox"), "click", (e) => { if (e.target === $("lightbox")) closeLightbox(); });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeLightbox();
   const typing = document.activeElement && /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName);
-  if (e.key === "ArrowLeft" && !$("lightbox").classList.contains("hidden")) lbStep(-1);
-  if (e.key === "ArrowRight" && !$("lightbox").classList.contains("hidden")) lbStep(1);
-  if (e.key === "/" && !typing) { e.preventDefault(); searchEl.focus(); }
-  if ((e.key === "f" || e.key === "F") && !e.ctrlKey && !e.metaKey && !typing) { e.preventDefault(); toggleFilters(); }
+
+  // ESC closes lightbox OR shortcuts overlay
+  if (e.key === "Escape") {
+    if (!$("shortcuts-overlay").classList.contains("hidden")) { hideShortcuts(); return; }
+    if (!$("lightbox").classList.contains("hidden")) { closeLightbox(); return; }
+  }
+
+  // inside lightbox
+  if (!$("lightbox").classList.contains("hidden")) {
+    if (e.key === "ArrowLeft") lbStep(-1);
+    else if (e.key === "ArrowRight") lbStep(1);
+    else if (e.key === "m" || e.key === "M") toggleLbMute();
+    else if (e.key === "l" || e.key === "L") toggleLbLoop();
+    else if (e.key === " " || e.key === "Spacebar") {
+      const v = getLbVideo();
+      if (v) { e.preventDefault(); if (v.paused) v.play(); else v.pause(); }
+    }
+    return;
+  }
+
+  // global shortcuts (skip when typing)
+  if (e.key === "/" && !typing) { e.preventDefault(); searchEl.focus(); return; }
+  if (e.key === "?" && !typing) { e.preventDefault(); showShortcuts(); return; }
+  if ((e.key === "f" || e.key === "F") && !e.ctrlKey && !e.metaKey && !typing) { e.preventDefault(); toggleFilters(); return; }
+  if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey && !typing) { e.preventDefault(); openRandom(); return; }
+  if ((e.key === "t" || e.key === "T") && !e.ctrlKey && !e.metaKey && !typing) { e.preventDefault(); toggleTheme(); return; }
+  if ((e.key === "g" || e.key === "G") && !e.ctrlKey && !e.metaKey && !typing) { e.preventDefault(); toggleDensity(); return; }
 });
 
 // Swipe left/right in the lightbox (touch)
@@ -706,7 +995,137 @@ $("lb-media").addEventListener("touchend", (e) => {
   }
 }, { passive: true });
 
-/* ---------- Events ---------- */
+/* ---------- Mute / loop on lightbox video ---------- */
+
+function getLbVideo() {
+  return document.getElementById("lb-video");
+}
+
+function toggleLbMute(force) {
+  const v = getLbVideo();
+  if (!v) return;
+  lbMuted = force !== undefined ? !!force : !lbMuted;
+  v.muted = lbMuted;
+  const btn = $("lb-mute");
+  if (btn) {
+    btn.classList.toggle("active", !lbMuted);
+    btn.setAttribute("aria-pressed", String(!lbMuted));
+    btn.title = lbMuted ? "Unmute (m)" : "Mute (m)";
+    btn.querySelector(".lb-mute-on").classList.toggle("hidden", lbMuted);
+    btn.querySelector(".lb-mute-off").classList.toggle("hidden", !lbMuted);
+  }
+}
+
+function toggleLbLoop(force) {
+  const v = getLbVideo();
+  if (!v) return;
+  lbLoop = force !== undefined ? !!force : !lbLoop;
+  v.loop = lbLoop;
+  const btn = $("lb-loop");
+  if (btn) {
+    btn.classList.toggle("active", lbLoop);
+    btn.setAttribute("aria-pressed", String(lbLoop));
+    btn.title = lbLoop ? "Disable loop (l)" : "Enable loop (l)";
+  }
+}
+
+/* ---------- Random wallpaper ---------- */
+
+function openRandom() {
+  if (!DATA) return;
+  const items = visibleFiles();
+  if (!items.length) return toast("No wallpapers match your filters.");
+  const pick = items[Math.floor(Math.random() * items.length)];
+  const idx = items.indexOf(pick);
+  openLightbox(pick.cat, pick.file, idx);
+}
+
+/* ---------- Back to top ---------- */
+
+function wireBackToTop() {
+  const b = $("back-top");
+  if (!b) return;
+  const onScroll = () => b.classList.toggle("visible", window.scrollY > 600);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  b.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
+
+/* ---------- Theme (light/dark) ---------- */
+
+const THEME_KEY = "wallpapers:theme";
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const b = $("theme-toggle");
+  if (b) {
+    b.setAttribute("aria-pressed", String(theme === "light"));
+    b.title = theme === "light" ? "Switch to dark" : "Switch to light";
+    b.querySelector(".theme-dark").classList.toggle("hidden", theme === "light");
+    b.querySelector(".theme-light").classList.toggle("hidden", theme !== "light");
+  }
+}
+
+function initTheme() {
+  let theme = "dark";
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") theme = saved;
+  } catch (_) {}
+  applyTheme(theme);
+}
+
+function toggleTheme() {
+  const cur = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+  const next = cur === "light" ? "dark" : "light";
+  applyTheme(next);
+  try { localStorage.setItem(THEME_KEY, next); } catch (_) {}
+}
+
+/* ---------- Grid density ---------- */
+
+const DENSITY_KEY = "wallpapers:density";
+function applyDensity(d) {
+  document.documentElement.dataset.density = d;
+  const b = $("density-toggle");
+  if (b) {
+    b.setAttribute("aria-pressed", String(d === "compact"));
+    b.title = d === "compact" ? "Larger cards" : "Compact cards";
+    b.querySelector(".density-comfortable").classList.toggle("hidden", d === "compact");
+    b.querySelector(".density-compact").classList.toggle("hidden", d !== "compact");
+  }
+}
+
+function initDensity() {
+  let d = "comfortable";
+  try {
+    const saved = localStorage.getItem(DENSITY_KEY);
+    if (saved === "compact" || saved === "comfortable") d = saved;
+  } catch (_) {}
+  applyDensity(d);
+}
+
+function toggleDensity() {
+  const cur = document.documentElement.dataset.density === "compact" ? "compact" : "comfortable";
+  const next = cur === "compact" ? "comfortable" : "compact";
+  applyDensity(next);
+  try { localStorage.setItem(DENSITY_KEY, next); } catch (_) {}
+}
+
+/* ---------- Keyboard shortcuts ---------- */
+
+function showShortcuts() {
+  const ov = $("shortcuts-overlay");
+  if (!ov) return;
+  ov.classList.remove("hidden");
+}
+
+function hideShortcuts() {
+  const ov = $("shortcuts-overlay");
+  if (ov) ov.classList.add("hidden");
+}
+
+wire($("lb-mute"), "click", () => toggleLbMute());
+wire($("lb-loop"), "click", () => toggleLbLoop());
 
 let searchTimer = null;
 wire(searchEl, "input", () => {
@@ -718,9 +1137,29 @@ wire(kindEl, "change", () => { render(); updateFilterBadge(); });
 wire(aspectEl, "change", () => { render(); updateFilterBadge(); });
 wire(seriesEl, "change", () => { render(); updateFilterBadge(); });
 wire(sortEl, "change", render);
+wire($("fav-only"), "change", () => { render(); updateFilterBadge(); });
 wire($("select-none"), "click", clearSelection);
 wire($("download-selected"), "click", downloadSelected);
+wire($("random-btn"), "click", openRandom);
+wire($("theme-toggle"), "click", toggleTheme);
+wire($("density-toggle"), "click", toggleDensity);
+wire($("back-top"), "click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+wire($("shortcuts-close"), "click", hideShortcuts);
+wire($("shortcuts-overlay"), "click", (e) => { if (e.target === $("shortcuts-overlay")) hideShortcuts(); });
 
-loadIndex().catch((err) => {
+/* ---------- Boot ---------- */
+
+loadFavorites();
+loadRecent();
+initTheme();
+initDensity();
+wireBackToTop();
+
+loadIndex().then(() => {
+  // now DATA is loaded → safe to render dependent rows
+  updateFavCount();
+  renderRecentRow();
+  renderFavoritesRow();
+}).catch((err) => {
   grid.innerHTML = `<div class="empty">Failed to load catalog: ${esc(String(err))}</div>`;
 });

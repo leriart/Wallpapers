@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 
@@ -26,6 +26,43 @@
     </div>
 
     <div class="topbar-actions">
+      <button id="random-btn" type="button" class="btn ghost icon-only" title="Random wallpaper (r)" aria-label="Random wallpaper">
+        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="14" height="14" rx="3"></rect>
+          <circle cx="8" cy="8" r="1.4" fill="currentColor"></circle>
+          <circle cx="12" cy="12" r="1.4" fill="currentColor"></circle>
+          <circle cx="12" cy="8" r="1.4" fill="currentColor"></circle>
+          <circle cx="8" cy="12" r="1.4" fill="currentColor"></circle>
+        </svg>
+      </button>
+      <button id="density-toggle" type="button" class="btn ghost icon-only" title="Toggle grid density (g)" aria-label="Toggle grid density" aria-pressed="false">
+        <svg class="icon density-comfortable" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="6" height="6" rx="1.3"></rect>
+          <rect x="11" y="3" width="6" height="6" rx="1.3"></rect>
+          <rect x="3" y="11" width="6" height="6" rx="1.3"></rect>
+          <rect x="11" y="11" width="6" height="6" rx="1.3"></rect>
+        </svg>
+        <svg class="icon density-compact hidden" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2.5" y="3" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="7.75" y="3" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="13" y="3" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="2.5" y="8.25" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="7.75" y="8.25" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="13" y="8.25" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="2.5" y="13.5" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="7.75" y="13.5" width="4.5" height="4.5" rx="1"></rect>
+          <rect x="13" y="13.5" width="4.5" height="4.5" rx="1"></rect>
+        </svg>
+      </button>
+      <button id="theme-toggle" type="button" class="btn ghost icon-only" title="Toggle theme (t)" aria-label="Toggle theme" aria-pressed="false">
+        <svg class="icon theme-dark" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16.5 11.2A7 7 0 0 1 8.8 3.5a7 7 0 1 0 7.7 7.7z"></path>
+        </svg>
+        <svg class="icon theme-light hidden" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10" cy="10" r="3.5"></circle>
+          <path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"></path>
+        </svg>
+      </button>
       <button id="filter-toggle" type="button" class="btn filter-toggle" aria-expanded="false" aria-controls="filter-panel">
         <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 5h14M6 10h8M9 15h2"></path>
@@ -51,6 +88,7 @@
           <path d="M13.2 13.2 17 17"></path>
         </svg>
         <input id="search" type="search" placeholder="Search name, character, series, tag…" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <kbd class="search-kbd" title="Press / to focus search">/</kbd>
       </div>
       <select id="category" aria-label="Category"></select>
       <select id="series" aria-label="Series">
@@ -70,6 +108,7 @@
       </select>
       <select id="sort" aria-label="Sort order">
         <option value="default">Sort: default</option>
+        <option value="favorites">Sort: favorites first</option>
         <option value="name">Sort: name A–Z</option>
         <option value="size-desc">Sort: largest</option>
         <option value="size-asc">Sort: smallest</option>
@@ -80,13 +119,34 @@
         <span class="switch" aria-hidden="true"></span>
         <span>NSFW</span>
       </label>
+      <label class="nsfw-toggle fav-only" title="Show only favorited wallpapers">
+        <input type="checkbox" id="fav-only">
+        <span class="switch fav-switch" aria-hidden="true"></span>
+        <span>Favorites <span id="fav-count" class="count">0</span></span>
+      </label>
       <button id="clear-filters" type="button" class="btn ghost">Clear filters</button>
+      <button id="shortcuts-btn" type="button" class="btn ghost" title="Keyboard shortcuts (?)" aria-label="Show keyboard shortcuts">
+        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2.5" y="5" width="15" height="10" rx="2"></rect>
+          <path d="M6 9h.01M9 9h.01M12 9h.01M6 12h8"></path>
+        </svg>
+      </button>
     </div>
   </div>
+  <div id="progress-bar" class="progress-bar hidden" aria-hidden="true"><div></div></div>
 </header>
+
+<section id="recent-row" class="recent-row hidden"></section>
+<section id="favorites-row" class="recent-row hidden"></section>
 
 <main id="grid" class="grid"></main>
 <div id="live-region" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+<button id="back-top" type="button" class="back-top hidden" title="Back to top" aria-label="Back to top">
+  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 16V4M5 9l5-5 5 5"></path>
+  </svg>
+</button>
 
 <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Wallpaper preview">
   <div class="lightbox-inner">
@@ -100,10 +160,32 @@
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 4 6 6-6 6"></path></svg>
     </button>
     <div id="lb-media"></div>
+    <div id="lb-video-controls" class="lb-video-controls hidden">
+      <button id="lb-mute" type="button" class="lb-vbtn" aria-label="Toggle mute" aria-pressed="false" title="Unmute (m)">
+        <svg class="lb-mute-on hidden" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7v6h3l4 3V4L7 7H4z"></path>
+          <path d="M14 7c1.4 1 1.4 5 0 6"></path>
+          <path d="M16 5c2.6 1.8 2.6 8.2 0 10"></path>
+        </svg>
+        <svg class="lb-mute-off" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7v6h3l4 3V4L7 7H4z"></path>
+          <path d="m14 9 4 4M18 9l-4 4"></path>
+        </svg>
+      </button>
+      <button id="lb-loop" type="button" class="lb-vbtn" aria-label="Toggle loop" aria-pressed="true" title="Disable loop (l)">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 10a5 5 0 0 1 5-5h3l-2-2M16 10a5 5 0 0 1-5 5H8l2 2"></path>
+        </svg>
+      </button>
+    </div>
     <div class="lb-footer">
       <div id="lb-info" class="lb-info"></div>
       <div class="lb-actions">
         <span id="lb-count" class="lb-count"></span>
+        <button id="lb-fav" type="button" class="btn ghost lb-fav-btn" aria-label="Favorite" aria-pressed="false" title="Add to favorites">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l2.06 4.18 4.61.67-3.34 3.25.79 4.6L8 11.99l-4.12 2.17.79-4.6L1.33 6.35l4.61-.67L8 1.5z"/></svg>
+          <span>Favorite</span>
+        </button>
         <button id="lb-select" type="button" class="btn ghost">Select</button>
         <a id="lb-download" class="btn primary" download>
           <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -117,8 +199,39 @@
   </div>
 </div>
 
+<div id="shortcuts-overlay" class="shortcuts-overlay hidden" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+  <div class="shortcuts-card">
+    <div class="shortcuts-head">
+      <h2>Keyboard shortcuts</h2>
+      <button id="shortcuts-close" type="button" class="btn ghost icon-only" aria-label="Close">
+        <svg class="icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"></path></svg>
+      </button>
+    </div>
+    <div class="shortcuts-grid">
+      <div class="sc-group">
+        <h3>Browse</h3>
+        <div class="sc-row"><kbd>/</kbd><span>Focus search</span></div>
+        <div class="sc-row"><kbd>f</kbd><span>Toggle filters</span></div>
+        <div class="sc-row"><kbd>r</kbd><span>Random wallpaper</span></div>
+        <div class="sc-row"><kbd>t</kbd><span>Toggle theme</span></div>
+        <div class="sc-row"><kbd>g</kbd><span>Toggle grid density</span></div>
+        <div class="sc-row"><kbd>?</kbd><span>Show this help</span></div>
+      </div>
+      <div class="sc-group">
+        <h3>Preview</h3>
+        <div class="sc-row"><kbd>←</kbd><span>Previous</span></div>
+        <div class="sc-row"><kbd>→</kbd><span>Next</span></div>
+        <div class="sc-row"><kbd>m</kbd><span>Mute / unmute video</span></div>
+        <div class="sc-row"><kbd>l</kbd><span>Loop video</span></div>
+        <div class="sc-row"><kbd>Space</kbd><span>Play / pause</span></div>
+        <div class="sc-row"><kbd>Esc</kbd><span>Close preview</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="toast" class="toast hidden" role="status"></div>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

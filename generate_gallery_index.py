@@ -133,14 +133,19 @@ def main():
             # (structure the ryowalls library browser expects). The poster is a
             # sidecar for Ryoku — never listed as a wallpaper itself.
             items = []
+            video_rel = {}  # filename -> path relative to repo root
             for sub in sorted(folder.iterdir()):
                 if not sub.is_dir():
                     continue
                 for f in sorted(sub.iterdir()):
                     if f.is_file() and f.suffix.lower() in VIDEO_EXTENSIONS:
                         items.append(f)
+                        # store the real relative path so the gallery URL
+                        # points inside the <stem>/ subdir
+                        video_rel[f.name] = f"{folder.name}/{sub.name}/{f.name}"
         else:
             items = [f for f in sorted(folder.iterdir()) if f.is_file()]
+            video_rel = {}
         for f in items:
             if f.name.startswith("."):
                 continue
@@ -158,14 +163,18 @@ def main():
             else:
                 thumbs_fail += 1
             thumb_path = REPO_ROOT / "docs" / thumb_rel
-            files.append({
+            entry = {
                 "name": f.name,
                 "kind": kind,
                 "size": f.stat().st_size,
                 "thumb": thumb_rel,
                 "aspect": aspect_of(thumb_path),
                 "tags": tag_wallpapers(folder.name, f.name),
-            })
+            }
+            if kind == "video":
+                # actual repo-relative path (videos live in <stem>/ subfolders)
+                entry["path"] = video_rel.get(f.name, f"{folder.name}/{f.name}")
+            files.append(entry)
             if folder.name == "NSFW":
                 files[-1]["nsfw"] = True
         files.sort(key=lambda x: x["name"].lower())

@@ -18,6 +18,47 @@ from wallpaper_tags import tag_wallpapers
 
 
 CLIP_TAGS_FILE = "docs/vision_tags.json"
+DATE_CACHE_FILE = "docs/added_dates.json"
+
+
+def _load_date_cache():
+    p = REPO_ROOT / DATE_CACHE_FILE
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _git_added_date(path: str):
+    """Date (YYYY-MM-DD) when `path` was first added to the repo, or None."""
+    try:
+        r = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "log", "--diff-filter=A", "--format=%cI", "-1", "--", path],
+            capture_output=True, text=True, timeout=20,
+        )
+        iso = r.stdout.strip()
+        if iso:
+            return iso[:10]
+    except Exception:
+        pass
+    return None
+
+
+def _head_date():
+    """Date of HEAD commit (fallback for shallow CI checkouts)."""
+    try:
+        r = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "log", "-1", "--format=%cI"],
+            capture_output=True, text=True, timeout=20,
+        )
+        iso = r.stdout.strip()
+        if iso:
+            return iso[:10]
+    except Exception:
+        pass
+    return None
 
 
 def _merge_clip_tags(categories):
@@ -123,6 +164,8 @@ def main():
     total_media = 0
     thumbs_ok = 0
     thumbs_fail = 0
+    date_cache = _load_date_cache()
+    head_date = None
 
     for folder in sorted(REPO_ROOT.iterdir()):
         if not folder.is_dir() or folder.name.startswith((".", "_")) or folder.name in ("docs", "Por organizar"):
@@ -177,6 +220,18 @@ def main():
             files.append(entry)
             if folder.name == "NSFW":
                 files[-1]["nsfw"] = True
+            # added date: cache first, then git history, then HEAD commit date
+            date_key = entry.get("path") or f"{folder.name}/{f.name}"
+            d = date_cache.get(date_key)
+            if d is None:
+                d = _git_added_date(date_key)
+                if d is None:
+                    if head_date is None:
+                        head_date = _head_date()
+                    d = head_date or ""
+                if d:
+                    date_cache[date_key] = d
+            entry["date"] = d or ""
         files.sort(key=lambda x: x["name"].lower())
         categories.append({"name": folder.name, "files": files})
 
@@ -187,6 +242,8 @@ def main():
         "branch": "main",
         "categories": categories,
     }), encoding="utf-8")
+    (REPO_ROOT / DATE_CACHE_FILE).write_text(
+        json.dumps(date_cache, indent=1, sort_keys=True), encoding="utf-8")
 
     # Clean orphan thumbnails (files that no longer exist in the repo)
     valid_thumbs = set()

@@ -330,6 +330,8 @@ function visibleFiles() {
   }
   const sort = sortEl.value;
   if (sort === "name") out.sort((a, b) => a.file.name.localeCompare(b.file.name));
+  else if (sort === "date-desc") out.sort((a, b) => (b.file.date || "").localeCompare(a.file.date || ""));
+  else if (sort === "date-asc") out.sort((a, b) => (a.file.date || "").localeCompare(b.file.date || ""));
   else if (sort === "size-desc") out.sort((a, b) => b.file.size - a.file.size);
   else if (sort === "size-asc") out.sort((a, b) => a.file.size - b.file.size);
   else if (sort === "random") {
